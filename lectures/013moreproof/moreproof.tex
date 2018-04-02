@@ -1,0 +1,641 @@
+\documentclass{beamer}
+\usetheme{Singapore}
+
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+
+\newcommand{\set}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\nats}{\ensuremath{\mathbb{N}}}
+\newcommand{\nni}{\ensuremath{\mathbb{N}^0}}
+\newcommand{\ints}{\ensuremath{\mathbb{Z}}}
+\newcommand{\power}{\ensuremath{\mathcal{P}}}
+\renewcommand{\neg}{\sim}
+\newcommand{\xor}{\oplus}
+\newcommand{\then}{\ensuremath{\Rightarrow}}
+\newcommand{\lcm}{\mbox{lcm}}
+\newcommand{\QED}{\mbox{}\hfill\ensuremath{\blacksquare}}
+
+\newcommand{\grf}[2]{\centerline{\includegraphics[width=#1\textwidth]{#2}}}
+\newcommand{\tw}{\textwidth}
+\newcommand{\bc}{\begin{columns}}
+\newcommand{\ec}{\end{columns}}
+\newcommand{\cc}[1]{\column{#1\textwidth}}
+
+\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{ #1 }}}
+\newcommand{\efr}{\end{frame}}
+
+\newcommand{\cola}[1]{\begin{columns}\begin{column}{#1\textwidth}}
+\newcommand{\colb}[1]{\end{column}\begin{column}{#1\textwidth}}
+\newcommand{\colc}{\end{column}\end{columns}}
+
+\title{Book of Proof: Part III, More on Proof}
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\begin{document}
+\begin{frame}
+\maketitle
+
+\end{frame}
+
+\bfr{If-and-Only-If Proof}
+
+\begin{center}
+
+  {\bf Outline for If-and-Only-If Proof}
+  \fbox{\parbox{0.8\textwidth}{
+      {\bf Proposition} $P$ if and only if $Q$.
+
+      {\it Proof.}
+\\\\
+      ``Only if''
+      
+      [Prove $P\then Q$ by whatever means you can.]
+\\\\
+      ``If''
+      
+      [Prove $Q\then P$ by whatever means you can.]
+    }
+  }
+\end{center}
+
+\end{frame}
+
+\bfr{Equivalent Statements}
+
+{\bf Theorem} Suppose $A$ is an $n\times n$ matrix.  The following
+statements are equivalent:
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+\item $A$ is invertible.
+\item $Ax=b$ has a unique solution for every $b\in\mathbb{R}^n$.
+\item $Ax=0$ has only the trivial solution.
+\item The reduced row echelong form of $A$ is $I_n$.
+\item $\det(A)\neq 0$.
+\item The matrix $A$ does not have 0 as an eigenvector.
+\end{enumerate}
+
+\end{frame}
+
+\bfr{Equivalent Statements}
+\[
+\begin{array}{ccccc}
+  a & \Rightarrow & b & \Rightarrow & c\\
+  \Uparrow &&&&\Downarrow \\
+  f & \Leftarrow & e & \Leftarrow &  d
+\end{array}
+\]
+\pause\vfill
+\[
+\begin{array}{ccccc}
+  a & \Rightarrow & b & \Leftrightarrow & c\\
+  \Uparrow &&\Downarrow&&\\
+  f & \Leftarrow & e & \Leftrightarrow &  d
+\end{array}
+\]
+\pause\vfill
+\[
+\begin{array}{ccccc}
+  a & \Leftrightarrow & b & \Leftrightarrow & c\\
+   &&\Updownarrow  \\
+  f & \Leftrightarrow & e & \Leftrightarrow &  d
+\end{array}
+\]
+
+
+\end{frame}
+
+\bfr{Existence Proofs}
+
+{\bf Proposition} There exists an even prime number.
+\pause
+
+{\it Proof.} Two is an even prime number.\QED
+
+\pause\vfill
+
+{\bf Proposition}  There exists an integer that can be expressed as
+the sum of two perfect cubes in two different ways.
+\pause
+
+{\it Proof.}
+\begin{align*}
+  1^3 + 12^3 &= 1729\\
+  9^3 + 10^3 &= 1729
+\end{align*}\QED
+\end{frame}
+
+
+\bfr{Example}
+
+{\bf Proposition 7.1} If $a,b\in\nats$ then \\there exist
+$k,\ell\in\ints$ for which $\gcd(a,b)=ak+b\ell$.
+
+\vfill
+
+For example:
+\begin{description}
+
+  \item $\gcd(12,18) = 6$ and $6 = (-1)12 + (1)18$
+  \item $\gcd(9,21) = 3$ and $3= (-2)9 + (1)21$
+
+\end{description}
+
+
+
+\end{frame}
+
+
+\bfr{Example}
+
+{\bf Proposition 7.1} If $a,b\in\nats$ then \\there exist
+$k,\ell\in\ints$ for which $\gcd(a,b)=ak+b\ell$.
+
+\vfill
+
+{\it Proof.}  Suppose $a,b\in\nats$.
+
+Consider the set $A=\set{ax+by : x,y\in\ints}$.
+
+$A$ contains positive integers and 0.
+
+Let $d\in A$ be the smallest positive integer.
+
+$d = ak + b\ell$ for some $k,\ell\in\ints$.
+
+We will show that $d=\gcd(a,b)$.
+
+First, prove that $d\mid a$ and $d\mid b$.
+
+Then show that it is the largest such number.
+
+
+\end{frame}
+
+\bfr{Example}
+
+{\bf Proposition 7.1} If $a,b\in\nats$ then \\there exist
+$k,\ell\in\ints$ for which $\gcd(a,b)=ak+b\ell$.
+
+\vfill
+    {\it Proof (continued).}
+
+    $d=ak+b\ell$ is the smallest positive element of
+$A=\set{ax+by : x,y\in\ints}$.
+
+Show that $d \mid a$.
+
+Use division algorithm: $a = qd + r$.
+\begin{align*}
+  r &= a - qd\\
+  &= a - q(ak+b\ell)\\
+  &= a(1-qk) + b(-q\ell)
+\end{align*}
+So $r\in A$, $0\leq r< d$, so $r=0$.
+
+So $a = qd + r = qd$ and so $d\mid a$.
+\pause
+
+A similar argument shows $d\mid b$.
+\end{frame}
+
+\bfr{Example}
+
+{\bf Proposition 7.1} If $a,b\in\nats$ then \\there exist
+$k,\ell\in\ints$ for which $\gcd(a,b)=ak+b\ell$.
+
+\vfill
+{\it Proof (continued).}  $d=ak+b\ell$ is the smallest positive element of
+$A=\set{ax+by : x,y\in\ints}$, and $d \mid a$ and $d \mid b$.
+
+\begin{align*}
+a &=   \gcd(a,b) \cdot m\\
+b &= \gcd(a,b)\cdot n\\
+d &= ak + b\ell \\
+&= \gcd(a,b)\cdot mk + \gcd(a,b)\cdot n\ell\\
+&= \gcd(a,b)(mk+n\ell)\\
+d &\geq \gcd(a,b)\\
+d &= \gcd(a,b)  
+\end{align*}
+\QED
+
+\end{frame}
+
+\bfr{Proofs involving sets}
+
+  {\bf How to show $a\in\set{x:P(x)}$}
+  
+  \fbox{\parbox{0.6\textwidth}{
+    Show that $P(a)$ is true.\QED
+  }}
+
+  \vfill
+  
+  {\bf How to show $a\in\set{x\in S:P(x)}$}
+  
+  \fbox{\parbox{0.6\textwidth}{
+    1.    Verify that $a\in S$.\\    
+    2.    Show that $P(a)$ is true.\QED
+  }}
+
+\end{frame}
+
+\bfr{Proofs involving sets}
+
+{\bf How to Prove $A\subseteq B$}
+
+{\bf (Direct approach)}
+  
+  \fbox{\parbox{0.6\textwidth}{
+      {\it Proof.}  Suppose $a\in A$.
+
+      $\vdots$
+
+      Therefore $a\in B$. \QED
+  }}
+
+  \vfill
+
+  {\bf How to Prove $A\subseteq B$}
+
+
+{\bf (Contrapositive approach)}
+  
+  \fbox{\parbox{0.6\textwidth}{
+      {\it Proof.}  Suppose $a\not \in B$.
+
+      $\vdots$
+
+      Therefore $a\not \in A$. \QED
+  }}
+
+
+
+\end{frame}
+
+\bfr{Proofs involving sets}
+
+{\bf How to Prove $A = B$}
+
+  
+  \fbox{\parbox{0.6\textwidth}{
+      {\it Proof.}
+
+      [Prove that $A\subseteq B$.]
+
+      [Prove that $B\subseteq A$.]
+
+ \QED
+  }}
+\end{frame}
+
+\bfr{Disproof}
+
+\fbox{\parbox{0.9\textwidth}{
+    {\bf How to disprove $P$:}
+
+    Prove $\neg P$. \QED
+}}
+
+\pause\vfill
+
+\fbox{\parbox{0.9\textwidth}{
+    {\bf How to disprove $\forall x\in S, P(x)$:}
+
+    Produce an example of $x\in S$ where $P(x)$ is false. \QED
+}}
+
+
+\pause\vfill
+
+\fbox{\parbox{0.9\textwidth}{
+    {\bf How to disprove $P(x)\then Q(x)$:}
+
+    Produce an example of $x$ where $P(x)$ is true but $Q(x)$ is false.
+    \QED
+}}
+
+
+\end{frame}
+
+\bfr{Proving facts about \nats}
+
+\grf{1.0}{sumofodds.png}
+
+\end{frame}
+
+\bfr{Proving facts about \nats}
+
+For all $n\in\nats$,
+
+\begin{align*}
+  1 + 3 + 5 + 7 + ... + (2n-1) &=n^2  \\\\
+  \sum_{i=1}^n (2i-1)  &= n^2
+\end{align*}
+
+\begin{itemize}
+  \item
+Does not appear to be a conditional we can work from.
+\item
+Negating it does not lead to an easy contradiction.
+\end{itemize}
+
+\end{frame}
+
+\bfr{Mathematical Induction}
+
+\grf{0.75}{domino.png}
+
+\end{frame}
+
+\bfr{Mathematical Induction}
+
+
+  {\bf Outline for Proof by Induction}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Prove that for $k\in\nats$, $S_k \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+  \vfill\pause
+  
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  For all $n\in\nats$, $S_n$.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Prove that for $k\in\nats$, $S_k \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} If $n\in\nats$, then $1+3+5+7 +...+(2n-1) = n^2$.
+
+(1) If $n=1$, then we need to prove $1=1^2$, which is obviously true.
+
+(2) Assume
+\begin{align*}
+1+3+5+7 +...+(2k-1) &= k^2 &\mbox{for some $k\in\nats$.}
+\end{align*}
+
+
+\vfill
+\centerline{$\vdots$}
+\vfill
+
+Therefore,
+\[
+1+3+5+7 +...+(2(k+1)-1) = (k+1)^2
+\]
+
+\QED
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} If $n\in\nats$, then $1+3+5+7 +...+(2n-1) = n^2$.
+
+(1) If $n=1$, then $1=1^2$, which is true.
+
+(2) Assume $1+3+5+7 +...+(2k-1) = k^2$ for some $k\in\nats$.
+
+Then
+\begin{align*}
+  1+3+5+7 +... + 2(k+1) -1 &=\\
+{\color{blue}  1+3+5+7 +...+(2k-1)} + (2(k+1) -1) &= {\color{blue} k^2} + (2(k+1) -1)\\
+  &= k^2 + 2d + 1\\
+  &= (k+1)^2
+\end{align*}
+
+Therefore,
+\[
+1+3+5+7 +...+(2(k+1)-1) = (k+1)^2
+\]
+\QED
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} For all $n\in\nats$,  \[\sum_{i=1}^n (2i-1) = n^2\]
+
+(1) If $n=1$, then we need to prove $1=1^2$, which is obviously true.
+
+(2) Assume, for some $k\in\nats$ (the induction hypothesis):
+\begin{align*}
+\sum_{i=1}^k (2i-1) &= k^2 
+\end{align*}
+
+
+\vfill
+\centerline{$\vdots$}
+\vfill
+
+Therefore,
+\begin{align*}
+\sum_{i=1}^{k+1} (2i-1) & = (k+1)^2
+\end{align*}
+
+\QED
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} If $n\in\nats$, then \[\sum_{i=1}^n (2i-1) = n^2\]
+
+(1) If $n=1$, then we need to prove $1=1^2$, which is obviously true.
+
+(2)Assume
+\begin{align*}
+\sum_{i=1}^k (2i-1) &= k^2 &\mbox{for some $k\in\nats$.}\\
+  \sum_{i=1}^{k+1} (2i-1) &= 
+  {\color{blue}\sum_{i=1}^k(2i-1)} + (2(k+1) -1)\\
+  &= {\color{blue}k^2} + 2k + 1 &\mbox{by induction hypothesis}\\
+ &= (k+1)^2
+\end{align*}
+\QED
+
+\end{frame}
+
+
+
+\bfr{Example Proof by Induction}
+
+
+{\bf Proposition} If $n\in\nni$, then $5\mid (n^5-n)$.
+
+{\sl Proof.}
+
+(1) If $n=0$, then we need to prove $5\mid (0^5-0)$, which is true.
+
+(2) Assume $5\mid (k^5-k)$ for some $k\in\nni$.
+
+\vfill
+
+$\vdots$
+\vfill
+
+Therefore $5\mid((k+1)^5 - (k+1))$.
+\QED
+
+\vfill
+
+{\sl What can we get from definitions?}
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} If $n\in\nni$, then $5\mid (n^5-n)$.
+
+{\sl Proof.}
+
+(1) If $n=0$, then we need to prove $5\mid (0^5-0)$, which is true.
+
+(2) Assume $5\mid (k^5-k)$ for some $k\in\nni$.
+
+Then $(k^5-k) = 5a$ for some $a\in\nats$.
+\vfill
+
+$\vdots$
+\vfill
+Then $((k+1)^5 - (k+1)) = 5b$ for some  $b\in\nats$.
+
+Therefore $5\mid((k+1)^5 - (k+1))$.
+\QED
+
+\end{frame}
+
+\bfr{Example Proof by Induction}
+
+{\bf Proposition} If $n\in\nni$, then $5\mid (n^5-n)$.
+
+{\sl Proof.}
+
+(1) If $n=0$, then we need to prove $5\mid (0^5-0)$, which is true.
+
+(2) Assume $5\mid (k^5-k)$ for some $k\in\nni$.
+
+Then $(k^5-k) = 5a$ for some $a\in\nats$.
+\begin{align*}
+  (k+1)^5 - (k+1) &= k^5 + 5k^4 + 10k^3 + 10k^2 + 5k + 1 - k - 1\\
+  &= {\color{blue}(k^5-k)} + 5k^4 + 10k^3 + 10k^2 + 5k\\
+  &= {\color{blue}5a} + 5k^4 + 10k^3 + 10k^2 + 5k\\
+  &= 5(a + k^4 + 2k^3 + 2k^2 + k)
+\end{align*}
+Then $((k+1)^5 - (k+1)) = 5b$ for some  $b\in\nats$.
+
+Therefore $5\mid((k+1)^5 - (k+1))$.
+\QED
+\end{frame}
+
+\bfr{SymPy}
+
+For some help with large algebraic expressions:
+\url{http://www.sympy.org/}
+
+\vfill
+\begin{Verbatim}[frame=single]
+>>> from sympy import *
+>>> k = symbols('k')
+>>> expr = (k+1)^5 - (k + 1)
+>>> expand(expr)
+k**5 + 5*k**4 + 10*k**3 + 10*k**2 + 4*k
+>>> expand(expr - (k**5 - k))
+5*k**4 + 10*k**3 + 10*k**2 + 5*k
+\end{Verbatim}
+  
+
+\end{frame}
+  
+\bfr{Strong Induction}
+
+
+
+  {\bf Outline for Proof by Induction}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Prove that for $k\in\nats$, $S_k \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+  \vfill
+
+  {\bf Outline for Proof by Strong Induction}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.  (Or the first several $S_n$.)
+
+      (2) Prove that for $k\in\nats$, $(S_1\land S_2 \land S_3 \land ... \land S_k) \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+
+\end{frame}
+
+\bfr{Smallest Counterexample}
+
+  {\bf Outline for Proof by Induction}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Prove that for $k\in\nats$, $S_k \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+  \vfill
+
+  {\bf Outline for Proof by Smallest Counterexample}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true. 
+
+      (2) Suppose that not every $S_n$ is true.
+
+      (3) Let $S_k$ be the smallest false one.
+
+      (4) Then $S_{k-1}$ is true and $S_k$ is false.
+
+      (5) Use this to get a contradiction.
+      \QED
+  }}
+
+\end{frame}
+
+\end{document}

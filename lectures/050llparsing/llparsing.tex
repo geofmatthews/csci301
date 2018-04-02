@@ -1,0 +1,782 @@
+\documentclass{beamer}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{alltt}
+
+\usepackage{graphicx}
+\newtheorem{theo}{Theorem}[section]
+
+\newcommand{\myfig}[1]{\centerline{\includegraphics[scale=0.25]{figures/#1.png}}}
+
+\newcommand{\trans}[5]{
+\begin{tabular}{|c|c|c|c|c|}\hline
+#1 & #2 & #3 & #4 & #5 \\\hline
+\end{tabular}
+}
+
+\newcommand{\arr}{&\rightarrow&}
+\newcommand{\darr}{&\Rightarrow&}
+\newcommand{\ar}{\rightarrow}
+\newcommand{\dar}{\Rightarrow}
+\newcommand{\bee}{\begin{eqnarray*}}
+\newcommand{\eee}{\end{eqnarray*}}
+\newcommand{\mt}{\ensuremath{\epsilon}}
+
+\newcommand{\deriv}[1]{\ensuremath{\stackrel{#1}{\Longrightarrow}}}
+\newcommand{\derive}[1]{&\stackrel{#1}{\Longrightarrow}&}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\li}{\item}
+\newcommand{\ei}{\end{itemize}}
+
+
+\newcommand{\sect}[1]{
+\section{#1}
+\begin{frame}[fragile]\frametitle{#1}
+}
+
+\mode<presentation>
+{
+%  \usetheme{Madrid}
+  % or ...
+
+%  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+
+\title[Context Free Languages and Pushdown Automata]
+{
+Context Free Languages and Pushdown Automata
+}
+
+\subtitle{} % (optional)
+
+\author[Geoffrey Matthews]
+{Geoffrey Matthews}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[WWU/CS]
+{
+  Department of Computer Science\\
+  Western Washington University
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{\today}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+%\pgfdeclareimage[height=0.5cm]{university-logo}{WWULogoProColor}
+%\logo{\pgfuseimage{university-logo}}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\newcommand{\myref}[1]{\small\item\url{#1}}
+\newcommand{\myreft}[1]{\footnotesize\item\url{#1}}
+
+%\begin{frame}
+%  \frametitle{Outline}
+%  \tableofcontents
+%  % You might wish to add the option [pausesections]
+%\end{frame}
+
+\sect{Readings}
+
+\begin{itemize}
+
+\myreft{http://www.cs.rochester.edu/~nelson/courses/csc_173/grammars/cfg.html}
+
+\myreft{http://en.wikipedia.org/wiki/Context-free_grammar}
+
+\myreft{http://en.wikipedia.org/wiki/Context-free_language}
+\myreft{http://en.wikipedia.org/wiki/Parsing}
+
+\myreft{http://en.wikipedia.org/wiki/Pushdown_automata}
+\myreft{http://en.wikipedia.org/wiki/LR_parser}
+\myreft{https://parasol.tamu.edu/~rwerger/Courses/434/lec12-sum.pdf}
+\end{itemize}
+
+\end{frame}
+
+\sect{Top-down Parsing of CFGs}
+\begin{columns}
+\column{0.6\textwidth}
+\bi
+\li We start with the input and attempt to build the parse tree.
+\li If we begin with the start symbol and attempt to build the tree
+below it, we are doing {\bf top-down} parsing.
+\li Equivalently, we try to constuct a leftmost derivation from left
+to right.
+\ei
+\column{0.4\textwidth}
+\bee
+S \arr AS\ | \ \mt\\
+A \arr AA\ | \ a
+\eee
+\myfig{derivationtree}
+\end{columns}
+\vfill
+\[
+S \deriv{S\ar AS} AS
+\deriv{A\ar AA} AAS
+\deriv{A\ar a} aAS
+\deriv{A\ar a} aaS
+\deriv{S\ar \epsilon} aa
+\]
+\end{frame}
+
+\sect{PDA for any grammar}
+\bi
+\li Start with $\$S$ on the stack, pad input on the right with $\$$
+\li Pop variables and replace them with a rule RHS
+\li Match terminals on the stack with terminals on the input
+\li When you find $\$$ on both stack and input, accept
+\ei
+
+\begin{columns}
+\column{0.5\textwidth}
+\[ S \ar aSc\ | \ b \]
+
+\[ aabcc \]
+
+\bee
+S &\deriv{S\ar aSc}& aSc\\
+  &\deriv{S\ar aSc}& aaScc \\
+  &\deriv{S\ar b}& aabcc
+\eee
+
+\column{0.5\textwidth}
+
+\begin{tabular}{|l|r|l|}\hline
+Stack & Input & Rule \\\hline
+\$S & aabcc\$ & $S\ar aSc$ \\\hline
+\$cSa & aabcc\$ & match \\\hline
+\$cS & abcc\$ & $S\ar aSc$\\\hline
+\$ccSa & abcc\$ & match\\\hline
+\$ccS & bcc\$ & $S\ar b$\\\hline
+\$ccb & bcc\$ & match \\\hline
+\$cc & cc\$ & match \\\hline
+\$c & c\$ & match \\\hline
+\$ & \$ & accept \\\hline
+\end{tabular}
+
+\end{columns}
+
+\end{frame}
+
+\sect{PDA for any grammar}
+\begin{columns}
+\column{0.4\textwidth}
+$ S \ar aSc\ | \ b $
+\begin{eqnarray*}
+qa\$ &\rightarrow& qN\$S\\
+qb\$ &\rightarrow& qN\$S\\
+qaS &\rightarrow& qRaSc\\
+qaS &\rightarrow& qRb\\
+qbS &\rightarrow& qRaSc\\
+qbS &\rightarrow& qRb\\
+qaa &\rightarrow& qR\varepsilon\\
+qbb &\rightarrow& qR\varepsilon\\
+q\$\$ &\rightarrow&qR\varepsilon
+\end{eqnarray*}
+
+\column{0.6\textwidth}
+
+$S \deriv{S\ar aSc} aSc  \deriv{S\ar aSc} aaScc   \deriv{S\ar b} aabcc$
+
+\bigskip
+
+\begin{tabular}{|l|r|l|}\hline
+Stack & Input & Rule \\\hline
+\$ & aabcc\$ & push $S$ \\\hline
+\$S & aabcc\$ & $S\ar aSc$ \\\hline
+\$cSa & aabcc\$ & match \\\hline
+\$cS & abcc\$ & $S\ar aSc$\\\hline
+\$ccSa & abcc\$ & match\\\hline
+\$ccS & bcc\$ & $S\ar b$\\\hline
+\$ccb & bcc\$ & match \\\hline
+\$cc & cc\$ & match \\\hline
+\$c & c\$ & match \\\hline
+\$ & \$ & match \\\hline
+ &  & accept \\\hline
+\end{tabular}
+
+\end{columns}
+
+\end{frame}
+
+\sect{$LL(k)$ grammars:  deterministic PDAs}
+\bi
+\li Start with $S$ on the stack
+\li Pop variables and replace them with a rule RHS
+\li Match terminals on the stack with terminals on the input
+\li The trick is knowing {\em which rule to use} when we pop a variable
+\li If we can always determine this, the PDA will be deterministic
+\li $LL(k)$ means we find a leftmost derivation by scanning the input
+left to right, and have to lookahead at most $k$ symbols.
+\li With $LL(1)$, we construct a {\bf chart} showing, for any given
+(input,variable) pair, which rule to use. 
+\ei
+\end{frame}
+
+\sect{An $LL(1)$ grammar and chart for $a^nbc^n$}
+\begin{columns}
+\column{0.5\textwidth}
+\[ S \ar aSc\ | \ b \]
+
+\[ aabcc \]
+
+\bee
+S &\deriv{S\ar aSc}& aSc\\
+  &\deriv{S\ar aSc}& aaScc \\
+  &\deriv{S\ar b}& aabcc
+\eee
+\vfill
+\begin{tabular}{|c|c|c|c|c|}\hline
+  & a & b & c & \$ \\\hline
+S & $S\ar aSc$ & $S\ar b$ & & \\\hline
+\end{tabular}
+\column{0.5\textwidth}
+
+\begin{tabular}{|l|r|l|}\hline
+Stack & Input & Rule \\\hline
+\$S & aabcc\$ & $S\ar aSc$ \\\hline
+\$cSa & aabcc\$ & match \\\hline
+\$cS & abcc\$ & $S\ar aSc$\\\hline
+\$ccSa & abcc\$ & match\\\hline
+\$ccS & bcc\$ & $S\ar b$\\\hline
+\$ccb & bcc\$ & match \\\hline
+\$cc & cc\$ & match \\\hline
+\$c & c\$ & match \\\hline
+\$ & \$ & accept \\\hline
+\end{tabular}
+
+\end{columns}
+
+\end{frame}
+
+\sect{Another $LL(1)$ grammar and chart}
+\footnotesize
+\begin{columns}
+\column{0.6\textwidth}
+\bee 
+S \arr ASb \ | \ C\\
+A \arr a \\
+C \arr cC \ | \ \mt\\
+S \derive{S\ar ASb} ASb \\
+\derive{A\ar a} aSb\\
+\derive{S\ar ASb} aASbb \\
+\derive{A\ar a} aaSbb\\
+\derive{S\ar C} aaCbb\\
+\derive{C\ar cC} aacCbb\\
+\derive{C\ar cC} aaccCbb\\
+\derive{C\ar\epsilon} aaccb
+\eee
+\vfill
+\begin{tabular}{|c|c|c|c|c|}\hline
+  & a & b & c & \$ \\\hline
+S & $S\ar ASb$ &  & $S\ar C$ & $S\ar C$ \\\hline
+A & $A\ar a$ &  &  & \\\hline
+C &  & $C\ar \mt$ & $C\ar cC$ & $C\ar \mt$ \\\hline
+\end{tabular}
+\column{0.4\textwidth}
+
+\begin{tabular}{|l|r|l|}\hline
+Stack & Input & Rule \\\hline
+\$S & aaccbb\$ & $S\ar ASb$ \\\hline
+\$bSA & aaccbb\$ & $A\ar a$ \\\hline
+\$bSa & aaccbb\$ & match \\\hline
+\$bS & accbb\$ & $S\ar ASb$ \\\hline
+\$bbSA & accbb\$ & $A\ar a$ \\\hline
+\$bbSa & accbb\$ & match \\\hline
+\$bbS & ccbb\$ & $S\ar C$ \\\hline
+\$bbC & ccbb\$ & $C \ar cC$ \\\hline
+\$bbCc & ccbb\$ & match \\\hline
+\$bbC & cbb\$ & match \\\hline
+\$bbC & cbb\$ & $C\ar cC$ \\\hline
+\$bbCc & cbb\$ & match \\\hline
+\$bbC & bb\$ & $C\ar \mt$ \\\hline
+\$bb & bb\$ & match \\\hline
+\$b & b\$ & match \\\hline
+\$ & \$ & accept \\\hline
+\end{tabular}
+
+\end{columns}
+
+\end{frame}
+
+\sect{Some grammars are not $LL(1)$}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{eqnarray*}
+  S &\ar& AB \\
+  A &\ar& aA | a \\
+  B &\ar& bB | c
+\end{eqnarray*}
+
+\bee
+S \derive{S\ar AB} AB\\
+  \derive{A\ar Aa} aAB \\
+  \derive{A\ar a} aaB\\
+  \derive{B\ar bB} aabB\\
+  \derive{B\ar c} aabc
+\eee
+\vfill
+\column{0.5\textwidth}
+
+\begin{tabular}{|l|r|l|}\hline
+Stack & Input & Rule \\\hline
+\$S & aabc\$ & $S\ar AB$ \\\hline
+\$BA & aabc\$ & $A\ar aA$ \\\hline
+\$BAa & aabc\$ & match\\\hline
+\$BA & abc\$ & $A\ar a$\\\hline
+\$Ba & abc\$ & match \\\hline
+\$B & bc\$ & $B\ar bB$ \\\hline
+\$Bb & bc\$ & match \\\hline
+\$B & c\$ & $B\ar c$ \\\hline
+\$c & c\$ & match \\\hline
+\$ & \$ & accept \\\hline
+\end{tabular}
+
+\end{columns}
+\begin{tabular}{|c|c|c|c|c|}\hline
+  & a & b & c & \$ \\\hline
+S & $S\ar AB$ &  & & \\\hline
+A & $A\ar Aa \mid a$ & & & \\\hline
+B &  & $B\ar Bb$ & $B\ar c$ & \\\hline
+\end{tabular}
+
+\end{frame}
+
+\sect{$LL(1)$ parsing by recursive descent}
+\begin{columns}
+\column{0.5\textwidth}
+\[ S \ar aSc\ | \ b \]
+
+\[ aabcc \]
+
+\bee
+S \derive{S\ar aSc} aSc\\
+  \derive{S\ar aSc} aaScc \\
+  \derive{S\ar b} aabcc
+\eee
+\vfill
+\begin{tabular}{|c|c|c|c|c|}\hline
+  & a & b & c & \$\\\hline
+S & $S\ar aSc$ & $S\ar b$ & & \\\hline
+\end{tabular}
+\column{0.5\textwidth}
+\begin{alltt}
+(define (S)
+  (cond 
+    ((front? 'a)
+     (displayln "S -> aSc")
+     (match 'a)
+     (S)
+     (match 'c))
+    ((front? 'b)
+     (displayln "S -> b")
+     (match 'b))
+    (else
+     (error))))
+\end{alltt}
+\end{columns}
+
+\end{frame}
+\sect{$LL(1)$ parsing by recursive descent}
+\footnotesize
+\begin{columns}
+\column{0.5\textwidth}
+\bee 
+S \arr ASb \ | \ C\\
+A \arr a \\
+C \arr cC \ | \ \mt\\
+S \derive{S\ar ASb} ASb \\
+\derive{A\ar a} aSb\\
+\derive{S\ar ASb} aASbb \\
+\derive{A\ar a} aaSbb\\
+\derive{S\ar C} aaCbb\\
+\derive{C\ar cC} aacCbb\\
+\derive{C\ar cC} aaccCbb\\
+\derive{C\ar \epsilon} aaccbb
+\eee
+\vfill
+\begin{tabular}{|c|c|c|c|c|}\hline
+  & a & b & c & \$ \\\hline
+S & $S\ar ASb$ &  & $S\ar C$ & $S\ar C$ \\\hline
+A & $A\ar a$ &  &  & \\\hline
+C &  & $C\ar \mt$ & $C\ar cC$ & $C\ar \mt$ \\\hline
+\end{tabular}
+\column{0.5\textwidth}
+\begin{alltt}
+(define (S2)
+  (cond ((front? 'a)
+         (A) (S2) (match 'b))
+        ((front? 'c) 
+         (C))
+        ((front? '$)
+         (C))
+        (else (error))))
+(define (A)
+  (cond ((front? 'a)
+         (match 'a))
+        (else (error))))
+(define (C)
+  (cond ((front? 'b)  )
+        ((front? 'c)
+         (match 'c) (C))
+        ((front? '$)  )
+        (else (error))))
+\end{alltt}
+\end{columns}
+
+\end{frame}
+
+\sect{A non-$LL(1)$ grammar for $a^mb^nc$, $m\geq 1$ and $n \geq 0$}
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+S \arr AB\\
+A \arr aA\ | \ a\\
+B \arr bB\ | \ c
+\eee
+\column{0.5\textwidth}
+\bee
+S \derive{S\ar AB} AB\\
+  \derive{A\ar aA} aAB\\
+  \derive{A\ar a} aaB\\
+  \derive{B\ar bB} aabB\\
+  \derive{B\ar bB} aabbB\\
+  \derive{B\ar c} aabbc
+\eee
+\end{columns}
+\bigskip
+
+\bi
+\li Need to see two letters to determine which production to use.
+\ei
+
+\end{frame}
+
+\sect{Sometimes we can find $LL(1)$ to replace a non-$LL(1)$}
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+S \arr AB\\
+A \arr aA\ | \ a\\
+B \arr bB\ | \ c
+\eee
+\column{0.5\textwidth}
+\bee
+S \arr aAB\\
+A \arr aA \ | \ \mt\\
+B \arr bB \ | \ c
+\eee
+\end{columns}
+\bigskip
+\bi
+\li Same language, different grammars.
+\li $LL(1)$ is a property of {\bf grammars}, not {\bf languages}.
+\ei
+
+
+\end{frame}
+
+\sect{An $LL(k)$ grammar whose language has no $LL(k-1)$ grammar}
+\bee
+S \arr aSA \ | \ \mt\\
+A \arr a^{k-1}bS \ | \ c\\
+S &\stackrel{*}{\Rightarrow}& aaaAAA\\
+ &\stackrel{*}{\Rightarrow}& 
+aaa\overbrace{\underbrace{aa\ldots a}_{k-1}bS}^{A}
+\overbrace{\underbrace{aa\ldots  a}_{k-1}bS}^{A}\overbrace{c}^{A}\\
+\eee
+
+\end{frame}
+
+\sect{A deterministic language with no $LL(k)$ grammar}
+\[
+\{a^n \ | \ n \geq 0\} \cup \{a^nb^n \ | \ n \geq 0\}
+\]
+\vfill
+\centerline{$
+\underbrace{aaaaa\ldots}_{n}
+$\hspace{1cm}$
+\underbrace{aaaaa\ldots}_n\underbrace{bbbbb\ldots}_n
+$}
+\vfill
+\myfig{detbutnotllk}
+\vfill
+
+\end{frame}
+
+
+
+\sect{An $LL(1)$ grammar without terminals on RHS}
+\bee
+S\arr A \ | \ B\\
+A \arr aA \ | \ \mt\\
+B \arr bB \ | \ c
+\eee
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+ & a & b & c & \$\\\hline
+S & $S\ar A$ & $S\ar B$ & $S \ar B$ & $S\ar A$\\\hline
+A & $A\ar aA$ &  && $A\ar\mt$\\\hline
+B && $B\ar bB$ & $B\ar c$&\\\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\sect{Transforming some $LL(k)$ to $LL(1)$ by Left-Factoring}
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+S \arr abcX \ | \ abcY\\
+X \arr xX \ | \ x\\
+Y \arr yY \ | \ y
+\eee
+\column{0.5\textwidth}
+\bee
+S \arr aB\\
+B \arr bC\\
+C \arr cX \ | \ cY\\
+X \arr xX \ | \ x\\
+Y \arr yY \ | \ y
+\eee
+\end{columns}
+
+\end{frame}
+
+\sect{Left recursion is not $LL(k)$}
+\begin{columns}
+\column{0.5\textwidth}
+\[
+A \ar Aa \ | \ b
+\]
+\bi
+\li The entire input must be read before we know how many times to
+apply the first rule, before we apply the second.
+\ei
+\column{0.5\textwidth}
+\bee
+A \derive{A\ar Aa} Aa\\
+  \derive{A \ar Aa} Aaa\\
+  \derive{A\ar Aa} Aaaa\\
+  \derive{A\ar Aa} \ldots\\
+  \derive{A\ar Aa} Aaaaaaaaaaaaaaaaaaaaa\\
+  \derive{A\ar b} baaaaaaaaaaaaaaaaaaaa
+\eee
+\end{columns}
+
+\end{frame}
+
+\sect{Immediate left recursion can be removed}
+\bee
+A \arr Aw \ | \ y
+\eee
+
+\bi
+\pause \li Any string in the language must start with a $y$ followed by 0 or
+more $w$'s
+\ei
+
+\pause 
+\bee
+A \arr yB \\
+B \arr wB \ | \ \mt
+\eee
+
+\vfill
+
+\end{frame}
+
+\sect{More general immediate left recursion}
+\bee
+A \arr Aw_1 \ | \ Aw_2 \ | \ \ldots \ | \ Aw_{n} \ | \ x_1 \ | \ x_2
+\ | \ \ldots \ | \ x_m
+\eee
+
+\pause 
+\bee
+A \arr x_1B \ | \ x_2B \ | \ \ldots \ | \ x_mB\\
+B \arr w_1B \ | \ w_2B \ | \ \ldots \ | \ w_nB \ | \ \mt
+\eee
+
+\vfill
+
+\end{frame}
+
+\sect{Removing left recursion example}
+
+\bee
+A \arr Aa \ | \ b
+\eee
+
+\bee 
+A \arr bB \\
+B \arr aB \ | \ \mt
+\eee
+\end{frame}
+
+\sect{Removing left recursion from arithmetic, (a + a) * a}
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+E \arr E + T \ | \ T\\
+T \arr T * F \ | \ F\\
+F \arr ( E ) \ | \ a
+\eee
+
+\vspace{1cm}
+
+\bi
+\li Note we get the phrase structure of the expression reflected in
+the tree.
+\li What kind of tree do we get from a + a + a?
+\li How could we make it right associative?
+\ei
+
+\column{0.5\textwidth}
+\myfig{arithmetictree1}
+\end{columns}
+
+\end{frame}
+
+\sect{Remove the left recursion}
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+E \arr E + T \ | \ T\\
+T \arr T * F \ | \ F\\
+F \arr ( E ) \ | \ a
+\eee
+\column{0.5\textwidth}
+\bee 
+E \arr TR\\
+R \arr +TR \ | \ \mt\\
+T \arr FV \\
+V \arr *FV \ | \ \mt \\
+F \arr (E) \ | \ a
+\eee
+\end{columns}
+\vfill
+
+\end{frame}
+
+\sect{What happened to the tree?}
+\begin{columns}
+\column{0.25\textwidth}
+\bee 
+E \arr TR\\
+R \arr +TR \ | \ \mt\\
+T \arr FV \\
+V \arr *FV \ | \ \mt \\
+F \arr (E) \ | \ a
+\eee
+\column{0.75\textwidth}
+\myfig{arithmetictree2}
+\end{columns}
+\vfill
+
+\end{frame}
+
+\sect{Indirect left recursion}
+
+\bee
+S \arr Bb\\
+B \arr Sa \ | \ a
+\eee
+\[
+S \dar Bb \dar Sab
+\]
+
+\end{frame}
+
+\sect{Removing indirect left recursion}
+\bee
+S \arr Bb\\
+B \arr Sa \ | \ a
+\eee
+Replace $B$'s RHS in $S$'s RHS:
+\bee
+S \arr Sab \ | \ ab
+\eee
+Now remove the immediate left recursion
+\bee
+S \arr abT\\
+T \arr abT \ | \ \mt
+\eee
+\end{frame}
+
+
+\sect{Removing indirect left recursion}
+
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+A \arr Bb \ | \ e\\
+B \arr Cc \ | \ f\\
+C \arr Ad \ | \ g
+\eee
+
+\vspace{1in}
+
+\bi
+\li This method can be applied generally, but the rules multiply.
+\ei
+
+\column{0.5\textwidth}
+1. Replace $B$'s RHS in $A$'s RHS:
+\bee
+A \arr Ccv \ | \  fb \ | \  e
+\eee
+2. Now replace $C$'s RHS
+\bee
+A \arr Adcb \ | \ gcb \ | \  fb \ | \  e
+\eee
+3. Now remove the immediate left recursion
+\bee
+A \arr gcbD \ | \ fbD \ | \ eD\\
+D \arr dcbD \ | \ \mt
+\eee
+
+\end{columns}
+
+
+
+\vfill
+
+\end{frame}
+
+\sect{$LL(k)$ problems}
+Find an $LL(1)$ grammar and parse table for the following languages
+\begin{itemize}
+\li $\{a, ba, bba\}$
+\li $a^*b$
+\li $a^{n+1}bc^{n}$
+\li $a^mb^nc^{m+n}$
+\end{itemize}
+
+\end{frame}
+
+
+\end{document}

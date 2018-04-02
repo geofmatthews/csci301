@@ -1,0 +1,67 @@
+\newcommand{\mt}{\epsilon}
+\psset{arrows=->,arrowscale=2,levelsep=1}
+
+\newcommand{\nd}[1]{\Tcircle{#1}}
+
+\pstree{\nd{E}}
+{
+  \pstree{\nd{T}}
+  {
+    \pstree{\nd{F}}
+    {
+      \nd{(}
+      \pstree{\nd{E}}
+      {
+        \pstree{\nd{T}}
+	{
+	  \pstree{\nd{F}}
+	  {
+	    \nd{a}
+	  }
+	  \pstree{\nd{V}}
+	  {
+	    \nd{$\mt$}
+	  }
+	}
+	\pstree{\nd{R}}
+	{
+	  \nd{+}
+	  \pstree{\nd{T}}
+	  {
+	    \pstree{\nd{F}}
+	    {
+	      \nd{a}
+	    }
+	    \pstree{\nd{V}}
+	    {
+	      \nd{$\mt$}
+	    }
+	  }
+	  \pstree{\nd{R}}
+	  {
+	    \nd{$\mt$}
+	  }
+	}
+      }
+      \nd{)}
+    }
+    \pstree{\nd{V}}
+    {
+      \nd{*}
+      \pstree{\nd{F}}
+      {
+        \nd{a}
+      }
+      \pstree{\nd{V}}
+      {
+        \nd{$\mt$}
+      }
+    }
+  }
+  \pstree{\nd{R}}
+  {
+    \nd{$\mt$}
+  }
+}
+
+

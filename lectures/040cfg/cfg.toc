@@ -1,0 +1,46 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Readings}{2}{0}{1}
+\beamer@sectionintoc {2}{String Substitution}{3}{0}{2}
+\beamer@sectionintoc {3}{Formal Grammars}{4}{0}{3}
+\beamer@sectionintoc {4}{Vertical bar means ``or''}{5}{0}{4}
+\beamer@sectionintoc {5}{Rules can be recursive}{6}{0}{5}
+\beamer@sectionintoc {6}{Context Free Grammar}{7}{0}{6}
+\beamer@sectionintoc {7}{Context Free Grammar Example 1}{8}{0}{7}
+\beamer@sectionintoc {8}{Context Free Grammar Example 2}{9}{0}{8}
+\beamer@sectionintoc {9}{Context Free Grammar Example 3}{10}{0}{9}
+\beamer@sectionintoc {10}{Context Free Grammar Example 4}{11}{0}{10}
+\beamer@sectionintoc {11}{Context Free Grammar for Arithmetic Expressions}{12}{0}{11}
+\beamer@sectionintoc {12}{Context Free Grammar for Programming Language}{13}{0}{12}
+\beamer@sectionintoc {13}{Derivations}{14}{0}{13}
+\beamer@sectionintoc {14}{Derivations}{16}{0}{14}
+\beamer@sectionintoc {15}{All regular languages are context free languages}{17}{0}{15}
+\beamer@sectionintoc {16}{Generate All Possible Sentences from a CF grammar}{18}{0}{16}
+\beamer@sectionintoc {17}{Generate All Possible Sentences from a CF grammar}{19}{0}{17}
+\beamer@sectionintoc {18}{Generate All Possible Sentences from a CF grammar}{20}{0}{18}
+\beamer@sectionintoc {19}{CFG problems}{23}{0}{19}
+\beamer@sectionintoc {20}{Removing $\ensuremath {\epsilon }$ from grammars}{24}{0}{20}
+\beamer@sectionintoc {21}{Removing $\ensuremath {\epsilon }$ from grammars}{25}{0}{21}
+\beamer@sectionintoc {22}{Chomsky Normal Form}{26}{0}{22}
+\beamer@sectionintoc {23}{Converting to Chomsky Normal Form}{27}{0}{23}
+\beamer@sectionintoc {24}{Example converting to Chomsky Normal Form}{28}{0}{24}
+\beamer@sectionintoc {25}{Note on Eliminating Unit Rules}{29}{0}{25}
+\beamer@sectionintoc {26}{Consequences of Chomsky Normal Form}{30}{0}{26}
+\beamer@sectionintoc {27}{Greibach Normal Form}{32}{0}{27}
+\beamer@sectionintoc {28}{Converting to Greibach Normal Form}{33}{0}{28}
+\beamer@sectionintoc {29}{Consequences of Greibach Normal Form}{34}{0}{29}
+\beamer@sectionintoc {30}{Pumping Lemma for CF Languages}{35}{0}{30}
+\beamer@sectionintoc {31}{Pumping Lemma for CF Languages}{36}{0}{31}
+\beamer@sectionintoc {32}{Proof that $L = 0^n1^n2^n$ is not CF}{37}{0}{32}
+\beamer@sectionintoc {33}{Pumping Lemma exercises (some are hard)}{38}{0}{33}
+\beamer@sectionintoc {34}{CF Languages are closed under union, product, and closure}{39}{0}{34}
+\beamer@sectionintoc {35}{CF languages are NOT closed under complement}{40}{0}{35}
+\beamer@sectionintoc {36}{CF languages are NOT closed under intersection}{41}{0}{36}
+\beamer@sectionintoc {37}{The intersection of a CF language and a regular language is CF}{42}{0}{37}
+\beamer@sectionintoc {38}{Pushdown automata}{43}{0}{38}
+\beamer@sectionintoc {39}{Tape drives}{44}{0}{39}
+\beamer@sectionintoc {40}{Deterministic pushdown automata}{45}{0}{40}
+\beamer@sectionintoc {41}{Computation and Termination}{46}{0}{41}
+\beamer@sectionintoc {42}{Properly nested parentheses}{47}{0}{42}
+\beamer@sectionintoc {43}{$0^n1^n$}{48}{0}{43}
+\beamer@sectionintoc {44}{$b$ in the middle}{49}{0}{44}

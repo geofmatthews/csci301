@@ -1,0 +1,19 @@
+\newcommand{\emptystring}{\ensuremath{\epsilon}}
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{Start}{}}
+
+\begin{psmatrix}[colsep=1.7]
+\start & \nd{0} & \ndd{1} 
+\ncline{Start}{0}
+\ncline 01 \myput{\emptystring,?}{nop}
+\nccircle 0{0.5} \myput{a,?}{A}
+\nccircle[angleA=180] 0{0.5} \myput{b,?}{B}
+\nccircle 1{0.5} \myput{a,A}{pop}
+\nccircle[angleA=180] 1{0.5} \myput{b,B}{pop}
+\end{psmatrix}
+
+

@@ -1,0 +1,11 @@
+\BOOKMARK [2][]{Outline0.1}{Left recursion: \040S Sa | a}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Right recursion: \040S aS | a}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Middle recursion: S aSa | bSb | c}{}% 3
+\BOOKMARK [2][]{Outline0.4}{S ABA aA | B bB | b}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Part IS | aB | bAA aS | bAAB bS | aBB}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Part IIS | aB | bAA aS | bAAB bS | aBB}{}% 6
+\BOOKMARK [2][]{Outline0.7}{Part IIIS | aB | bAA aS | bAAB bS | aBB}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Part IVS | aB | bAA aS | bAAB bS | aBB}{}% 8
+\BOOKMARK [2][]{Outline0.9}{Part VS | aB | bAA aS | bAAB bS | aBB}{}% 9
+\BOOKMARK [2][]{Outline0.10}{Part VIS | aB | bAA aS | bAAB bS | aBB}{}% 10
+\BOOKMARK [2][]{Outline0.11}{Part VIIS | aB | bAA aS | bAAB bS | aBB}{}% 11

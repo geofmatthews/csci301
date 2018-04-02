@@ -1,0 +1,29 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Readings}{2}{0}{1}
+\beamer@sectionintoc {2}{Top-down Parsing of CFGs}{3}{0}{2}
+\beamer@sectionintoc {3}{PDA for any grammar}{4}{0}{3}
+\beamer@sectionintoc {4}{PDA for any grammar}{5}{0}{4}
+\beamer@sectionintoc {5}{$LL(k)$ grammars: deterministic PDAs}{6}{0}{5}
+\beamer@sectionintoc {6}{An $LL(1)$ grammar and chart for $a^nbc^n$}{7}{0}{6}
+\beamer@sectionintoc {7}{Another $LL(1)$ grammar and chart}{8}{0}{7}
+\beamer@sectionintoc {8}{Some grammars are not $LL(1)$}{9}{0}{8}
+\beamer@sectionintoc {9}{$LL(1)$ parsing by recursive descent}{10}{0}{9}
+\beamer@sectionintoc {10}{$LL(1)$ parsing by recursive descent}{11}{0}{10}
+\beamer@sectionintoc {11}{A non-$LL(1)$ grammar for $a^mb^nc$, $m\geq 1$ and $n \geq 0$}{12}{0}{11}
+\beamer@sectionintoc {12}{Sometimes we can find $LL(1)$ to replace a non-$LL(1)$}{13}{0}{12}
+\beamer@sectionintoc {13}{An $LL(k)$ grammar whose language has no $LL(k-1)$ grammar}{14}{0}{13}
+\beamer@sectionintoc {14}{A deterministic language with no $LL(k)$ grammar}{15}{0}{14}
+\beamer@sectionintoc {15}{An $LL(1)$ grammar without terminals on RHS}{16}{0}{15}
+\beamer@sectionintoc {16}{Transforming some $LL(k)$ to $LL(1)$ by Left-Factoring}{17}{0}{16}
+\beamer@sectionintoc {17}{Left recursion is not $LL(k)$}{18}{0}{17}
+\beamer@sectionintoc {18}{Immediate left recursion can be removed}{19}{0}{18}
+\beamer@sectionintoc {19}{More general immediate left recursion}{22}{0}{19}
+\beamer@sectionintoc {20}{Removing left recursion example}{24}{0}{20}
+\beamer@sectionintoc {21}{Removing left recursion from arithmetic, (a + a) * a}{25}{0}{21}
+\beamer@sectionintoc {22}{Remove the left recursion}{26}{0}{22}
+\beamer@sectionintoc {23}{What happened to the tree?}{27}{0}{23}
+\beamer@sectionintoc {24}{Indirect left recursion}{28}{0}{24}
+\beamer@sectionintoc {25}{Removing indirect left recursion}{29}{0}{25}
+\beamer@sectionintoc {26}{Removing indirect left recursion}{30}{0}{26}
+\beamer@sectionintoc {27}{$LL(k)$ problems}{31}{0}{27}

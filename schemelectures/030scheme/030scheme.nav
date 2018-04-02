@@ -1,0 +1,93 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\sectionentry {1}{Recursion {\em vs.} Tail-recursion}{2}{Recursion {\em vs.} Tail-recursion}{0}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\slideentry {1}{0}{1}{2/3}{}{0}}
+\headcommand {\beamer@framepages {2}{3}}
+\headcommand {\sectionentry {2}{Named {\tt let}}{4}{Named {\tt let}}{0}}
+\headcommand {\beamer@sectionpages {2}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\slideentry {2}{0}{1}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\sectionentry {3}{Fast recursion}{5}{Fast recursion}{0}}
+\headcommand {\beamer@sectionpages {4}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {3}{0}{1}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\sectionentry {4}{Lists}{6}{Lists}{0}}
+\headcommand {\beamer@sectionpages {5}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\slideentry {4}{0}{1}{6/7}{}{0}}
+\headcommand {\beamer@framepages {6}{7}}
+\headcommand {\sectionentry {5}{Scheme Programs are Lists}{8}{Scheme Programs are Lists}{0}}
+\headcommand {\beamer@sectionpages {6}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {5}{0}{1}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\sectionentry {6}{Building Lists in Scheme:}{9}{Building Lists in Scheme:}{0}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {6}{0}{1}{9/10}{}{0}}
+\headcommand {\beamer@framepages {9}{10}}
+\headcommand {\sectionentry {7}{An improper list results in a dot:}{11}{An improper list results in a dot:}{0}}
+\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@subsectionpages {9}{10}}
+\headcommand {\slideentry {7}{0}{1}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\sectionentry {8}{length}{12}{length}{0}}
+\headcommand {\beamer@sectionpages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {8}{0}{1}{12/13}{}{0}}
+\headcommand {\beamer@framepages {12}{13}}
+\headcommand {\sectionentry {9}{nth}{14}{nth}{0}}
+\headcommand {\beamer@sectionpages {12}{13}}
+\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\slideentry {9}{0}{1}{14/15}{}{0}}
+\headcommand {\beamer@framepages {14}{15}}
+\headcommand {\sectionentry {10}{last}{16}{last}{0}}
+\headcommand {\beamer@sectionpages {14}{15}}
+\headcommand {\beamer@subsectionpages {14}{15}}
+\headcommand {\slideentry {10}{0}{1}{16/17}{}{0}}
+\headcommand {\beamer@framepages {16}{17}}
+\headcommand {\sectionentry {11}{scale-list}{18}{scale-list}{0}}
+\headcommand {\beamer@sectionpages {16}{17}}
+\headcommand {\beamer@subsectionpages {16}{17}}
+\headcommand {\slideentry {11}{0}{1}{18/19}{}{0}}
+\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\sectionentry {12}{increment-list}{20}{increment-list}{0}}
+\headcommand {\beamer@sectionpages {18}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\slideentry {12}{0}{1}{20/21}{}{0}}
+\headcommand {\beamer@framepages {20}{21}}
+\headcommand {\sectionentry {13}{map}{22}{map}{0}}
+\headcommand {\beamer@sectionpages {20}{21}}
+\headcommand {\beamer@subsectionpages {20}{21}}
+\headcommand {\slideentry {13}{0}{1}{22/23}{}{0}}
+\headcommand {\beamer@framepages {22}{23}}
+\headcommand {\sectionentry {14}{scale-list using map}{24}{scale-list using map}{0}}
+\headcommand {\beamer@sectionpages {22}{23}}
+\headcommand {\beamer@subsectionpages {22}{23}}
+\headcommand {\slideentry {14}{0}{1}{24/25}{}{0}}
+\headcommand {\beamer@framepages {24}{25}}
+\headcommand {\sectionentry {15}{increment-list using map}{26}{increment-list using map}{0}}
+\headcommand {\beamer@sectionpages {24}{25}}
+\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\slideentry {15}{0}{1}{26/27}{}{0}}
+\headcommand {\beamer@framepages {26}{27}}
+\headcommand {\sectionentry {16}{append}{28}{append}{0}}
+\headcommand {\beamer@sectionpages {26}{27}}
+\headcommand {\beamer@subsectionpages {26}{27}}
+\headcommand {\slideentry {16}{0}{1}{28/29}{}{0}}
+\headcommand {\beamer@framepages {28}{29}}
+\headcommand {\sectionentry {17}{remove}{30}{remove}{0}}
+\headcommand {\beamer@sectionpages {28}{29}}
+\headcommand {\beamer@subsectionpages {28}{29}}
+\headcommand {\slideentry {17}{0}{1}{30/31}{}{0}}
+\headcommand {\beamer@framepages {30}{31}}
+\headcommand {\beamer@partpages {1}{31}}
+\headcommand {\beamer@subsectionpages {30}{31}}
+\headcommand {\beamer@sectionpages {30}{31}}
+\headcommand {\beamer@documentpages {31}}
+\headcommand {\def \inserttotalframenumber {18}}

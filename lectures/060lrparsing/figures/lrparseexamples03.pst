@@ -1,0 +1,29 @@
+
+
+\newcommand{\no}[1]{\circlenode{#1}{#1}}
+\newcommand{\noo}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\self}[2]{\nccircle{#1}{0.5}\nbput{#2}}
+\newcommand{\selfu}[2]{\nccircle[angleA=180]{#1}{0.5}\nbput{#2}}
+
+
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[colsep=2]
+                    &  & \noo{8} & \no{1} & \no{4} & \noo{6} \\
+\rnode{start}{start}& \no{0} &   &     & \noo{3} \\
+                    & & \noo{9} & \no{2} & \no{5} & \noo{7}\\
+\ncline{start}{0}
+\nccurve[angleA=90,angleB=180]08\naput{$S$}
+\nccurve[angleA=-90,angleB=180]09\nbput{$c$}
+\ncline01\nbput{$a$}
+\ncline02\naput{$b$}
+\self{1}{$a$}
+\selfu{2}{$b$}
+\nccurve[angleA=-70,angleB=70]12\naput{$b$}
+\nccurve[angleA=110,angleB=-110]21\naput{$a$}
+\ncline13\naput{$c$}
+\ncline23\naput{$c$}
+\ncline14\naput{$S$}
+\ncline25\nbput{$S$}
+\ncline46\naput{$a$}
+\ncline57\nbput{$b$}
+\end{psmatrix}

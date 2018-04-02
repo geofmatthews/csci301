@@ -1,0 +1,9 @@
+\frametitle{$LL(k)$ problems} 
+Find an $LL(1)$ grammar and parse table for the following languages
+\begin{itemize}
+\li $\{a, ba, bba\}$
+\li $a^*b$
+\li $a^{n+1}bc^{n}$
+\li $a^mb^nc^{m+n}$
+\end{itemize}
+

@@ -1,0 +1,17 @@
+\BOOKMARK [2][]{Outline0.1}{Recursion vs. Tail-recursion}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Named let}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Fast recursion}{}% 3
+\BOOKMARK [2][]{Outline0.4}{Lists}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Scheme Programs are Lists}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Building Lists in Scheme:}{}% 6
+\BOOKMARK [2][]{Outline0.7}{An improper list results in a dot:}{}% 7
+\BOOKMARK [2][]{Outline0.8}{length}{}% 8
+\BOOKMARK [2][]{Outline0.9}{nth}{}% 9
+\BOOKMARK [2][]{Outline0.10}{last}{}% 10
+\BOOKMARK [2][]{Outline0.11}{scale-list}{}% 11
+\BOOKMARK [2][]{Outline0.12}{increment-list}{}% 12
+\BOOKMARK [2][]{Outline0.13}{map}{}% 13
+\BOOKMARK [2][]{Outline0.14}{scale-list using map}{}% 14
+\BOOKMARK [2][]{Outline0.15}{increment-list using map}{}% 15
+\BOOKMARK [2][]{Outline0.16}{append}{}% 16
+\BOOKMARK [2][]{Outline0.17}{remove}{}% 17

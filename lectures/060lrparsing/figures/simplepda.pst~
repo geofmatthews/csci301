@@ -1,0 +1,10 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+
+\begin{psmatrix}[colsep=3]
+\nd{i} & \nd{j}
+\ncline ij \ncput*{$\frac{c,S}{push(S)}$}
+\end{psmatrix}

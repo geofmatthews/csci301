@@ -1,0 +1,20 @@
+\newcommand{\emptystring}{\ensuremath{\epsilon}}
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{Start}{\mbox{~}}}
+
+\begin{psmatrix}[colsep=2]
+\start  & \nd{0} & \nd{1} & \nd{2}
+\ncline{Start}{0} 
+\nccircle 0{0.5} \myput{a,?}{A}
+\ncline 01 \myput{b,A}{pop}
+\nccircle 1{0.5} \myput{b,A}{pop}
+\ncline 12 \myput{\emptystring,\$}{pop}
+
+\nccurve[angleA=-30,angleB=-150] 02 \myput{\emptystring,\$}{pop}
+\end{psmatrix}
+
+

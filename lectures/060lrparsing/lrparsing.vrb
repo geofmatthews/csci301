@@ -1,0 +1,8 @@
+\frametitle{Lex and Yacc Style Parsers} 
+
+\begin{itemize}
+  \item
+    \url{http://epaperpress.com/lexandyacc/}
+  \item
+    \url{https://docs.racket-lang.org/parser-tools/index.html}
+\end{itemize}

@@ -1,0 +1,26 @@
+\frametitle{ Eliminate $0$ }
+
+\begin{tikzpicture}[->,>=latex,thick,node distance=2.5cm,auto,every node/.style={scale=0.75}]
+\node[initial,state] (s) {$s$};
+\node[state] (0) [right of=s] {$0$};
+%\node[state] (1) [below right of=0] {$1$};
+%\node[state] (2) [above right of=1] {$2$};
+\node[accepting,state] (f) [above right of =1] {$f$};
+\path (s) edge node {$\epsilon$} (0)
+      (0) edge [loop above] node {$a\cup bb\cup bab^*a$} (0)
+      (0) edge  node {$b$} (f)
+;
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}[->,>=latex,thick,node distance=5cm,auto,every node/.style={scale=0.75}]
+\node[initial,state] (s) {$s$};
+%\node[state] (0) [right of=s] {$0$};
+%\node[state] (1) [below right of=0] {$1$};
+%\node[state] (2) [above right of=1] {$2$};
+\node[accepting,state] (f) [right of=s] {$f$};
+\path (s) edge  node {$(a\cup bb\cup bab^*a)^*b$} (f)
+;
+\end{tikzpicture}
+

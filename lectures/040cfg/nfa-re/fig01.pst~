@@ -1,0 +1,20 @@
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+
+\begin{pspicture}[showgrid=false](0,-1)(10,4)
+\begin{psmatrix}
+\rnode{Start}{Start} & \nd{1} & \ndd{2} & \nd{3} & \ndd{4}\\
+   &    & \nd{5}  & \nd{6}
+\ncline{Start}{1}
+\ncline 12 \ncput*{a}
+\ncline 23 \ncput*{a}
+\ncline 34 \ncput*{b}
+\ncline 15 \ncput*{b}
+\nccurve[angleA=30, angleB=150] 56 \ncput*{a}
+\nccurve[angleA=-30,angleB=-150] 56 \ncput*{b}
+\ncline 64 \ncput*{a}
+\nccircle 2{0.5} \ncput*{b}
+\end{psmatrix}
+\end{pspicture}

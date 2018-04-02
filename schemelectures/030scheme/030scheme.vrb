@@ -1,0 +1,10 @@
+\frametitle{remove} 
+\pause
+\begin{Verbatim}
+(define (remove n lst)
+  (cond ((empty? lst) '())
+        ((= n (car lst)) (remove n (cdr lst)))
+        (else (cons (car lst)
+                    (remove n (cdr lst))))))
+\end{Verbatim}
+

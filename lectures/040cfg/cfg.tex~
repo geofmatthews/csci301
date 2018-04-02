@@ -1,0 +1,999 @@
+\documentclass{beamer}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\newtheorem{theo}{Theorem}[section]
+
+\newcommand{\myfig}[1]{\centerline{\includegraphics[scale=0.25]{figures/#1.png}}}
+
+\newcommand{\trans}[5]{
+\begin{tabular}{|c|c|c|c|c|}\hline
+#1 & #2 & #3 & #4 & #5 \\\hline
+\end{tabular}
+}
+
+\newcommand{\arr}{&\rightarrow&}
+\newcommand{\darr}{&\Rightarrow&}
+\newcommand{\ar}{\rightarrow}
+\newcommand{\dar}{\Rightarrow}
+\newcommand{\bee}{\begin{eqnarray*}}
+\newcommand{\eee}{\end{eqnarray*}}
+\newcommand{\emptystring}{\ensuremath{\epsilon}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\li}{\item}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand{\sect}[1]{
+\section{#1}
+\begin{frame}[fragile]\frametitle{#1}
+}
+
+\mode<presentation>
+{
+%  \usetheme{Madrid}
+  % or ...
+
+%  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+
+\title[Notes on Context Free Languages]
+{
+Notes on Context Free Languages
+}
+
+\subtitle{} % (optional)
+
+\author[Geoffrey Matthews]
+{Geoffrey Matthews}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[WWU/CS]
+{
+  Department of Computer Science\\
+  Western Washington University
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{\today}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+%\pgfdeclareimage[height=0.5cm]{university-logo}{WWULogoProColor}
+%\logo{\pgfuseimage{university-logo}}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\newcommand{\myref}[1]{\small\item\url{#1}}
+\newcommand{\myreft}[1]{\footnotesize\item\url{#1}}
+
+%\begin{frame}
+%  \frametitle{Outline}
+%  \tableofcontents
+%  % You might wish to add the option [pausesections]
+%\end{frame}
+
+\sect{Readings}
+
+\begin{itemize}
+
+\myreft{http://www.cs.rochester.edu/~nelson/courses/csc_173/grammars/cfg.html}
+
+\myreft{http://en.wikipedia.org/wiki/Context-free_grammar}
+
+\myreft{http://en.wikipedia.org/wiki/Context-free_language}
+\myreft{http://en.wikipedia.org/wiki/Parsing}
+
+\myreft{http://en.wikipedia.org/wiki/Pushdown_automata}
+\myreft{http://en.wikipedia.org/wiki/LR_parser}
+\myreft{https://parasol.tamu.edu/~rwerger/Courses/434/lec12-sum.pdf}
+\myreft{http://www.cs.sunysb.edu/~cse350/slides/cfg3.pdf}
+\end{itemize}
+
+\end{frame}
+
+
+\sect{Context Free Grammar}
+
+A context free grammar is a grammar where all the rules are the
+following form:
+\[
+S \rightarrow w
+\]
+where $S$ is a single nonterminal and $w$ is a string of terminals and
+nonterminals. 
+
+\end{frame}
+
+\sect{Context Free Grammar Examples}
+
+
+\begin{eqnarray*}
+S &\rightarrow& aS | \emptystring
+\end{eqnarray*}
+
+\begin{eqnarray*}
+S &\rightarrow& ABC \\
+A &\rightarrow& a \\
+B &\rightarrow& b\\
+C &\rightarrow& c
+\end{eqnarray*}
+
+\begin{eqnarray*}
+S &\rightarrow& AB | A \\
+A &\rightarrow& aA | a \\
+B &\rightarrow& Bb | b 
+\end{eqnarray*}
+
+
+\end{frame}
+
+\sect{Context Free Grammar for Arithmetic Expressions}
+
+\bee
+E \arr T\\
+E \arr E + E \\
+E \arr E * E \\
+E \arr (E)\\
+T \arr a\\
+T \arr b\\
+T \arr T0\\
+T \arr T1
+\eee
+
+Note that $T$ could have been reprsented by a regular expression.
+
+\end{frame}
+
+\newcommand{\pg}[1]{\mbox{\bf\ #1\ }}
+\sect{Context Free Grammar for Programming Language}
+\bee
+S \arr \pg{while} E \pg{do} S\ |\ \pg{if} E \pg{then} S \pg{else}
+S\ |\ 
+I \pg{:=} E\\
+S \arr \pg{\{} SL \pg{\}} \\
+L \arr \pg{;} SL | \emptystring \\
+E \arr \ldots \\
+I \arr \ldots
+\eee
+\bi
+\li Reference manuals for programming languages usually give the syntax
+of the language as a CFG.
+\ei
+\end{frame}
+
+\sect{Derivations}
+\begin{columns}
+\column{0.5\textwidth}
+\bi
+\li Start with $S$
+\li Find a rule for a nonterminal.
+\li Replace nonterminal with RHS.
+\li Until no more nonterminals.
+\ei
+\bee
+S \arr AS | \emptystring \\
+A \arr AA | a\\
+\eee
+\[
+S \dar AS \dar AAS \dar AA \dar Aa \dar aa
+\]
+\column{0.5\textwidth}
+
+\myfig{derivationtree}
+
+\centerline{Parse Tree}
+
+\end{columns}
+
+\vfill
+\pause
+The {\bf language of a grammar} is the set of all sentences for which
+there exists a derivation.
+
+\end{frame}
+
+\sect{Derivations}
+\bi
+\li If there is more than one possible tree for some sentence, 
+the grammar is {\bf ambiguous}.
+\li There are usually many possible derivations, but only one tree.
+\li Important derivations are {\bf leftmost} and {\bf rightmost}.
+\ei
+\begin{columns}
+\column{0.5\textwidth}
+\bee
+S \arr AS | \emptystring \\
+A \arr AA | a\\
+\eee
+\[
+S \dar AS \dar AAS \dar AA \dar Aa \dar aa
+\]
+\[
+S \dar AS \dar AAS \dar aAS \dar aaS \dar aa
+\]
+\[
+S \dar AS \dar A \dar AA \dar Aa \dar aa
+\]
+\column{0.5\textwidth}
+
+\myfig{derivationtree}
+
+\centerline{Parse Tree}
+
+\end{columns}
+
+\end{frame}
+
+\sect{Generate All Possible Sentences from a CF grammar}
+\begin{columns}
+\column{0.3\textwidth}
+\bee
+S \arr abS \ | \ bAc \ | \ d\\
+A \arr aA \ | \ \emptystring
+\eee
+\column{0.5\textwidth}
+Length 1 derivations:
+\bee
+S \darr abS\\
+S \darr bAc\\
+S \darr d\\
+\eee
+\column{0.2\textwidth}
+\begin{enumerate}
+\item $d$
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\sect{Generate All Possible Sentences from a CF grammar}
+\begin{columns}
+\column{0.3\textwidth}
+\bee
+S \arr abS \ | \ bAc \ | \ d\\
+A \arr aA \ | \ \emptystring
+\eee
+\column{0.5\textwidth}
+Length 2 derivations:
+\bee
+S \darr abS \dar ababS\\
+S \darr abS \dar abbAc\\
+S \darr abS \dar abd\\
+S \darr bAc \dar baAc\\
+S \darr bAc \dar bc\\
+\eee
+\column{0.2\textwidth}
+\begin{enumerate}
+\item  $d$
+\item $abd$
+\item $bc$
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\sect{Generate All Possible Sentences from a CF grammar}
+\begin{columns}
+\column{0.3\textwidth}
+\bee
+S \arr abS \ | \ bAc \ | \ d\\
+A \arr aA \ | \ \emptystring
+\eee
+\column{0.5\textwidth}
+Length 3 derivations:
+\bee
+S \darr abS \dar ababS \dar abababS\\
+S \darr abS \dar ababS \dar ababbAc\\
+S \darr abS \dar ababS \dar ababd\\
+S \darr abS \dar abbAc \dar abbaAc\\
+S \darr abS \dar abbAc \dar abbc\\
+S \darr bAc \dar baAc \dar baaAc\\
+S \darr bAc \dar baAc \dar bac\\
+\eee
+\column{0.2\textwidth}
+\begin{enumerate}
+\item  $d$
+\item $abd$
+\item $bc$
+\item $ababd$
+\item $abbc$
+\item $bac$
+\item
+\ldots
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+\sect{Combining CFLs}
+
+If $A$ is the start symbol for a CFG for language $L_1$, and $B$ is the start
+symbol for a CFG for language $L_2$, then:
+\begin{itemize}
+\item The language $L_1 \cup L_2$ has the CFG
+\[
+ S \rightarrow A | B
+\]
+\item The language $L_1L_2$ has the CFG
+\[
+S \rightarrow AB
+\]
+\item The language $(L_1)^*$ has the CFG
+\[
+S \rightarrow \emptystring | AS
+\]
+\end{itemize}
+\end{frame}
+
+\sect{CFG problems}
+\bi
+\li Any regular language.
+\li $a^nb^n$
+\li $a^nb^{2n}$
+\li $a^nb^{3n}$
+\li $a^{4n+5}b^{3n+2}$
+\li $a^nb^ma^n$
+\li Even length palindromes
+\li Odd length palindromes
+\li All palindromes
+\li All strings with the same number of $a$'s and $b$'s
+\li $\{a^ib^jc^k\ |\ i \not = j \mbox{~or~} j \not = k\}$
+\ei
+\end{frame}
+
+
+\sect{Pushdown automata}
+
+\bi
+
+\li A pushdown automaton is a finite state automaton with a FIFO
+stack.  Assume $\$$ marks the bottom of the stack.
+
+\li Transitions from any state $i$ to any state $j$ are labelled with
+an {\em input symbol}, $c$, a {\em stack symbol}, $S$, and a {\em stack
+  operation} ($push(S)$, $pop$, or $nop$).
+
+\myfig{simplepda}
+
+\li Whenever the automaton is in state $i$, and the current input
+symbol and current stack top match, the transition may be taken, and
+the stack operation executed.
+
+
+\li A string is accepted if we can reach a final state
+ {\em and} consume all the input.
+
+\li Nondeterministic: $\emptystring$-transitions and multiple transitions on same (input,stack) pairs allowed.
+\ei
+
+
+\end{frame}
+
+\sect{PDA for $a^nb^n$}
+\begin{columns}
+\column{0.65\textwidth}
+\myfig{anbnpda}
+
+\column{0.35\textwidth}
+
+Transition table
+
+\begin{tabular}{|c|c|c|c|c|}\hline
+$S_1$ & in & st & op & $S_2$ \\\hline\hline
+0 & $\emptystring$ & \$ & nop & 3 \\\hline
+0 & a & \$ & A & 1 \\\hline
+1 & a & A & A & 1 \\\hline
+1 & b & A & pop & 2 \\\hline
+2 & b & A & pop & 2 \\\hline
+2 & \emptystring & \$ & nop & 3 \\\hline
+\end{tabular}
+
+\end{columns}
+\end{frame}
+
+\sect{PDA for $a^nb^{2n}$}
+\myfig{anb2npda}
+\end{frame}
+
+\sect{PDA for $a^{2n}b^{n}$}
+\myfig{a2nbnpda}
+
+\bi
+\pause \li Is there another way?
+\pause \li What about only stacking half the $a$'s?
+\ei
+
+\end{frame}
+
+\sect{Empty stack acceptance}
+
+\bi
+\li An alternative model of PDA's.
+\li No accepting states.
+\li Accept if input is consumed and the stack is empty.
+\ei
+\end{frame}
+
+\sect{Empty stack PDA for $a^nb^n$}
+\myfig{anbnemptystack}
+\pause
+\bi
+\li Empty stack and final state PDAs are {\bf equivalent in power}.
+\li The set of languages accepted by one is identical to the set
+accepted by the other.
+\li How would we prove that?
+\ei
+
+\end{frame}
+
+
+
+\sect{Transforming a final state PDA to an empty stack PDA}
+\bi
+\li Use a new start state $S'$ and a new ``empty stack'' state $E'$
+and a new stack symbol $\$'$ that is on the stack when the new machine
+starts. 
+\li Add the transition \\
+\begin{tabular}{|c|c|c|c|c|}\hline
+$S'$ & \emptystring & $\$'$ & $\$$ & $S$ \\\hline
+\end{tabular}
+\li For each final state $F_i$, add the transition\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+$F_i$ & \emptystring & $?$ & pop & $E'$ \\\hline
+\end{tabular}
+\li Add the transition\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+$E'$ & \emptystring & $?$ & pop & $E'$ \\\hline
+\end{tabular}
+
+\ei
+\end{frame}
+
+\sect{Example final state to empty stack PDA}
+\myfig{fs2espda}
+\end{frame}
+
+\sect{Simpler solution for the same language}
+\myfig{fs2espda2}
+
+\end{frame}
+\sect{Empty stack to final state}
+\begin{enumerate}
+\li Use a new start state $S'$ and a new ``empty stack'' state $E'$
+and a new stack symbol $\$'$ that is on the stack when the new machine
+starts. 
+\li Add the transition \\
+\begin{tabular}{|c|c|c|c|c|}\hline
+$S'$ & \emptystring & $\$'$ & $\$$ & $S$ \\\hline
+\end{tabular}
+\li For each state $S_i$, add the transition\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+$S_i$ & \emptystring & $\$'$ & nop & $E'$ \\\hline
+\end{tabular}
+\end{enumerate}
+\end{frame}
+\sect{Empty stack to final state}
+\myfig{es2fspda}
+\end{frame}
+
+\sect{Context Free = PDA Accepted}
+
+\begin{theo}
+The context free languages are the same as the PDA languages.
+\end{theo}
+
+\bi
+\pause \li What must we do to prove this?
+\pause \li Prove CFL $\subset$ PDA
+\bi \li Show that for any CF grammar, there is a PDA for the same language \ei
+\pause \li Prove PDA $\subset$ CFL
+\bi \li Show that for any PDA, there is a CF grammar for the same language \ei
+\pause \li Note:  Our proofs use empty-stack PDAs.
+\ei
+\end{frame}
+
+\sect{CF grammar to PDA}
+\bi
+\li The PDA has one state, 0.
+\li The stack symbols are the terminals and nonterminals
+\li The initial symbol on the stack is the grammar's start symbol
+\li For each terminal $a$, add the transition:\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & a & pop & 0\\\hline
+\end{tabular}
+\li For each production $A \rightarrow B_1B_2\ldots B_n$, add the transition:\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & $\emptystring$ & A & pop,push($B_n$),\ldots,push($B_2$),push($B_1$) & 0\\\hline
+\end{tabular}
+\li For each production $A \rightarrow \emptystring$, add the transition:\\
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & $\emptystring$ & A & pop & 0\\\hline
+\end{tabular}
+
+\ei
+\end{frame}
+
+\sect{Example CF grammar to PDA}
+\[ S \rightarrow aSb\ |\ \emptystring \]
+\vfill
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & a & pop & 0 \\\hline
+0 & b & b & pop & 0 \\\hline
+0 & $\emptystring$ & $S$ & pop & 0\\\hline
+0 & $\emptystring$ & $S$ & pop,push(b),push($S$),push(a) & 0\\\hline
+\end{tabular}
+\end{center}
+
+\vfill
+\[ S \Rightarrow aSb \Rightarrow aaSbb \Rightarrow aabb
+\]
+
+\vfill
+
+\end{frame}
+\sect{PDA (empty stack) to CF grammar}
+\bi
+\li Let 0 be the start state, and \$ the starting stack symbol.
+\li Let $S$ be starting grammar symbol,
+\li Other grammar nonterminals will all be $B_{ij}$, where $i$ and $j$ are
+states and $B$ is a stack symbol.
+\li For each state $j$ add a production: \hfill
+\( S \rightarrow \$_{0j} \)
+\li For each ``pop'', add a rule:\\
+\trans{i}{a}{B}{pop}{j} \hfill  $B_{ij} \rightarrow a$
+\li For each ``nop'', add a rule for every other state $m$:\\
+\trans{i}{a}{B}{nop}{j} \hfill  $B_{im} \rightarrow aB_{jm}$
+\li For each ``push'', add a rule for every pair of
+states $m$ and $n$:\\
+\trans{i}{a}{B}{push(C)}{j} \hfill $B_{in} \rightarrow aC_{jm}B_{mn}$
+
+\ei
+\vfill
+
+\end{frame}
+\sect{PDA to CFG example, $a^nb^{n+2}$, $n \geq 1$}
+\begin{columns}
+\column{0.5\textwidth}
+\myfig{pda2cfg}
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & \$ & A & 0\\\hline
+0 & a & A & A & 0\\\hline
+0 & b & A & nop & 1\\\hline
+1 & b & \$ & pop & 1\\\hline
+1 & b & A & pop & 1\\\hline
+\end{tabular}
+\column{0.5\textwidth}
+\bee
+S \arr \$_{00} \mbox{~(not used)}\\
+S \arr \$_{01}\\
+\rule{0pt}{1.5em}
+\$_{00} \arr aA_{00}\$_{00} \mbox{~(not used)}\\
+\$_{01} \arr aA_{00}\$_{01} \mbox{~(not used)}\\
+\$_{00} \arr aA_{01}\$_{10} \mbox{~(not used)}\\
+\$_{01} \arr aA_{01}\$_{11}\\
+\rule{0pt}{1.5em}
+A_{01} \arr aA_{01}A_{11}\\
+\rule{0pt}{1.5em}
+A_{00} \arr bA_{10} \mbox{~(not used)}\\
+A_{01} \arr bA_{11}\\
+\rule{0pt}{1.5em}
+\$_{11} \arr b\\
+A_{11} \arr b
+\eee
+\end{columns}
+\end{frame}
+
+\sect{PDA to CFG example, $a^nb^{n+2}$, $n \geq 1$}
+\begin{columns}
+\column{0.5\textwidth}
+\myfig{pda2cfg}
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & \$ & A & 0\\\hline
+0 & a & A & A & 0\\\hline
+0 & b & A & nop & 1\\\hline
+1 & b & \$ & pop & 1\\\hline
+1 & b & A & pop & 1\\\hline
+\end{tabular}
+\column{0.5\textwidth}
+\bee
+S \arr \$_{01}\\
+\$_{01} \arr aA_{01}\$_{11}\\
+A_{01} \arr aA_{01}A_{11}\\
+A_{01} \arr bA_{11}\\
+\$_{11} \arr b\\
+A_{11} \arr b
+\eee
+\end{columns}
+\end{frame}
+
+
+\sect{PDA to CFG example, $a^nb^{n+2}$, $n \geq 1$}
+\begin{columns}
+\column{0.5\textwidth}
+\myfig{pda2cfg}
+
+\bigskip
+
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & \$ & A & 0\\\hline
+0 & a & A & A & 0\\\hline
+0 & b & A & nop & 1\\\hline
+1 & b & \$ & pop & 1\\\hline
+1 & b & A & pop & 1\\\hline
+\end{tabular}
+\column{0.5\textwidth}
+\bee
+S \arr P\\
+P \arr aQR\\
+Q \arr aQT\\
+Q \arr bT\\
+R \arr b\\
+T \arr b
+\eee
+\pause
+Simpler:
+\bee
+S \arr aBb\\
+B \arr aBb|bb
+\eee
+\end{columns}
+\end{frame}
+
+
+\sect{Nondeterministic PDAs are more powerful}
+\begin{theo}
+Some CF languages are accepted only by nondeterministic PDAs.
+\end{theo}
+\pause
+\bee
+S \arr aSa\ |\ bSb\ |\ \emptystring
+\eee
+\pause
+\begin{columns}
+\column{0.5\textwidth}
+\myfig{palindrome}
+\column{0.5\textwidth}
+\begin{tabular}{|c|c|c|c|c|}\hline
+0 & a & ? & push(A) & 0 \\\hline
+0 & b & ? & push(B) & 0 \\\hline
+0 & \emptystring & ? & nop & 1 \\\hline
+1 & a & A & pop & 1 \\\hline
+1 & b & B & pop & 1 \\\hline
+1 & \emptystring & \$ & nop & 2 \\\hline
+\end{tabular}
+\end{columns}
+\end{frame}
+
+\sect{PDA examples}
+\bi
+\li Any regular language.
+\li $a^nb^{2n}$
+\li $a^nb^{3n}$
+\li $a^nb^*a^n$
+\li Even length palindromes
+\li Odd length palindromes
+\li All palindromes
+\li Balanced parentheses
+\li All strings with the same number of $a$'s and $b$'s
+\li $\{a^ib^jc^k\ |\ i = j \mbox{~or~} j  = k\}$
+\li $\{a^ib^jc^k\ |\ i \not = j \mbox{~or~} j \not = k\}$
+\ei
+\end{frame}
+
+\sect{Removing $\emptystring$ from grammars}
+
+\bee
+S \arr aDaE\\
+D \arr bD \ | \ E\\
+E \arr cE \ | \ \emptystring
+\eee
+
+\bi
+\li Find all nonterminals $N$ such that $N \dar \emptystring$.
+\li Make new rules from old by removing one or more
+of the null nonterminals. 
+\li Remove all null productions $N\ar \emptystring$.
+\li May have to keep $S\ar \emptystring$, but only if $\emptystring \in L(S)$.
+\ei
+
+
+\end{frame}
+
+\sect{Removing $\emptystring$ from grammars}
+\begin{columns}
+\column{0.35\textwidth}
+\bee
+S \arr aDaE\\
+D \arr bD \ | \ E\\
+E \arr cE \ | \ \emptystring
+\eee
+
+\column{0.65\textwidth}
+\bi
+\li Null nonterminals:  $D$ and $E$
+\ei
+
+\bigskip
+
+\begin{tabular}{ll}
+Original Production & New Productions \\\hline
+$S\ar aDaE$ & $S \ar aaE\ | \ aDa \ | \ aa$\\
+$D \ar bD$ & $ D\ar b$\\
+$D\ar E$ & $D\ar \emptystring$\\
+$E\ar cE$ & $E\ar c$\\
+$E\ar \emptystring$ & none\\\hline
+\end{tabular}
+\bigskip
+
+Final grammar:
+\bee
+S \arr aDaE \ | \ aaE \ | \ aDa\ | \ aa\\
+D \arr bD \ | \ b\ | \ E\\
+E \arr cE\ | \ c
+\eee
+
+\end{columns}
+\end{frame}
+
+\sect{Chomsky Normal Form}
+\bi
+\li All rules must be in one of these forms:
+\bee
+A \arr BC\\
+A \arr a\\
+S \arr \emptystring
+\eee
+
+\li $A$, $B$ and $C$ are nonterminals, $a$ is a single terminal, and
+$S$ is the start symbol. 
+\li The last rule is necessary only if the language contains $\emptystring$.
+\li If a grammar is in CNF, what do we know about the tree?
+\li If a grammar is in CNF, how long is a derivation?
+\ei
+\end{frame}
+
+
+
+\sect{Converting to Chomsky Normal Form}
+\begin{enumerate}
+\li Add $S_0$, a new start symbol, and the rule $S_0\ar S$.
+\li Eliminate $\emptystring$ rules.
+\li For each terminal $x$, add a rule $X\ar x$ and replace all
+terminals in long strings with the corresponding nonterminals.
+\li Eliminate {\bf unit} rules, $A\ar B$:
+\bi
+\li Find all rules $B\ar W$, where $W$ is a string longer than one.
+\li Add $A\ar W$ for all of them.
+\ei
+\li Fix longer rules:
+\bi
+\li Replace $A\ar UVWXYZ$ with
+\li $A\ar UA_1$, $A_1\ar VA_2$, $A_2\ar WA_3$, $A_3\ar XA_4$, $A_4\ar YZ$.
+\ei
+\end{enumerate}
+\end{frame}
+
+\sect{Example converting to Chomsky Normal Form}
+\footnotesize
+\bee
+S \arr aSb \ | \ T\\
+T \arr cT \ | \ \emptystring
+\eee
+\begin{columns}
+\column{0.4\textwidth}
+Step 1:
+\bee
+S_0 \arr S\\
+S \arr aSb \ | \ T\\
+T \arr cT \ | \ \emptystring
+\eee
+Step 2:
+\bee
+S_0 \arr S \ | \ \emptystring\\
+S \arr aSb \ |\  ab \ | \ T\\
+T \arr cT \ | \ c
+\eee
+Step 3*:
+\bee
+S_0 \arr S \ | \ \emptystring\\
+S \arr ASB \ |\  AB \ | \ T\\
+T \arr CT \ | \ c\\
+\eee
+
+\column{0.6\textwidth}
+Step 4: 
+\bee
+S_0 \arr ASB \ |\  AB \ | \ CT \ | \ c \ | \ \emptystring\\
+S \arr ASB \ |\  AB \ | \ CT \ | \ c\\
+T \arr CT \ | \ c\\
+\eee
+
+Step 5:
+\bee
+S_0 \arr AD \ |\  AB \ | \ CT \ | \ c \ | \ \emptystring\\
+S \arr AD \ |\  AB \ | \ CT \ | \ c\\
+D \arr SB\\
+T \arr CT \ | \ c\\
+\eee
+
+
+\vfill
+
+*Step 3 also adds  $A \ar a, B \ar b, C \ar c$
+
+\end{columns}
+\end{frame}
+
+\sect{Greibach Normal Form}
+\bi
+\li All rules must be in one of these forms:
+\bee
+A \arr aB_1B_2\ldots B_n\\
+S \arr \emptystring
+\eee
+\li $B_1B_2\ldots B_n$ is a (possibly empty) string of nonterminals.
+\li The last rule is needed only if the language contains $\emptystring$.
+\li There can be no left recursion.
+\li What do the trees look like?
+\li How long are the derivations?
+\ei
+
+\end{frame}
+
+\sect{Converting to Greibach Normal Form}
+\begin{enumerate}
+\li Add $S_0$, a new start symbol, and the rule $S_0\ar S$.
+\li Eliminate {\bf unit} rules, $A\ar B$.
+\li Remove left recursion.
+\li Eliminate $\emptystring$ rules.
+\li Make substitutions as needed.
+\bi\li Can be very difficult and explode to many rules.\ei
+\end{enumerate}
+
+
+\end{frame}
+\sect{Consequences of Greibach Normal Form}
+\bi
+\li All derivations of a string of length $n$ have $n$ steps.
+\li There are only finitely many derivations of length $n$ or less.
+\li To find a parse we can exhaustively search all derivations of
+length $n$ or less.
+\li There exists an {\bf effective procedure} to find a parse for a CFL.
+\ei 
+\end{frame}
+
+
+
+\sect{Pumping Lemma for CF Languages}
+\bi
+\li If a CFL is infinite, it must have recursion in it somewhere:
+\bee
+S \arr uNy\\
+N \arr vNx \ | \ w
+\eee
+\li This means derivations like this are possible:
+
+\hspace{-1cm}\mbox{$S\dar uNy \dar uvNxy \dar uvvNxxy \dar \ldots \dar uv^4Nx^4y \dar uv^4wx^4y $}
+
+\ei
+\end{frame}
+\sect{Pumping Lemma for CF Languages}
+\begin{theo}
+If a language $L$ is context-free, then there exists some $p\geq 1$
+such that any string $s$ in $L$ with $|s|\geq p$ can be written as
+\[
+s = uvxyz
+\]
+with substrings $u$,$v$,$x$,$y$,$z$, such that
+\begin{enumerate}
+\item $|vxy| \leq p$
+\item $|vy| \geq 1$
+\item $uv^nxy^nz$ is in $L$ for all $n\geq 0$
+\end{enumerate}
+\end{theo}
+
+\end{frame}
+
+\sect{Proof that $L = a^nb^nc^n$ is not CF}
+\bi
+\li Suppose $L$ is CF, then $p$ exists as in the theorem.
+\li $a^pb^pc^p \in L$ by definition.
+\li From theorem, $a^pb^pc^p = uvwxy$ and $uv^nwx^ny \in L$ for all $n$, 
+but we don't know which parts are where.
+\li Case 1: $v$ or $x$ contains two different letters.
+\bi
+\li Then $uv^2wx^2y$ must have letters out of alphabetical order.
+\li Then $uv^2wx^2y \not \in L$, contradiction.
+\ei
+\li Case 2: $v$ and $x$ each contain only one kind of letter. 
+\bi 
+\li Then  $uv^2wx^2y$ contains more of 1 or 2 kinds of
+letter, not all three.
+\li Then $uv^2wx^2y \not \in L$, contradiction.
+\ei
+\ei
+\end{frame}
+
+\sect{Pumping Lemma exercises (some are hard)}
+Show that each of the following languages is not CF.
+\bi
+\li $a^n$ where $n$ is prime
+\li $a^m$ where $m=n^2$
+\li $a^\ell b^mc^n$ where $\ell < m < n$
+\li $a^nb^nc^i$ where $i \leq n$
+\li $ww$ where $w\in (a + b)^*$
+\li $a^nb^na^n$
+\ei
+\end{frame}
+
+\sect{CF Languages are closed under union, product, and closure}
+\bi
+\li Let $S_1$ and $S_2$ be the start symbols for $L_1$ and $L_2$.
+\li A grammar for $L_1\cup L_2$ can be constructed starting with
+\[ S \ar S_1 \ | \ S_2\]
+\li A grammar for $L_1L_2$ can be constructed starting with
+\[ S \ar S_1S_2\]
+\li A grammar for $L_1^*$ can be constructed starting with
+\[ S \ar S_1S \ | \ \emptystring
+\]
+\ei
+\end{frame}
+
+\sect{CF languages are NOT closed under complement}
+\bi
+\li $L = a^\ell b^m c^n$ where either $\ell \not = m$ or $m \not = n$ is
+CF 
+\bi \li (exercise) \ei
+\li The complement of $L$ is $a^nb^nc^n$, which is not CF
+\bi \li (see above) \ei
+\ei
+\end{frame}
+
+\sect{CF languages are NOT closed under intersection}
+\bi
+\li $L_1 = a^mb^mc^n$ is CF 
+\bi \li (exercise) \ei
+\li $L_2 = a^mb^nc^n$ is CF 
+\bi \li (exercise) \ei
+\li $L_1 \cap L_2 = a^nb^nc^n$, which is not CF
+\bi \li (see above) \ei
+\ei
+\end{frame}
+
+\sect{The intersection of a CF language and a regular language is CF}
+\bi
+\li Given a PDA for one and a DFSA for the other:
+\li Create a new PDA with states that are the cross product of the
+states of the two machines.
+\li As input is processed, run both machines in parallel.
+\li Accept if both accept.
+\ei
+\end{frame}
+
+\end{document}

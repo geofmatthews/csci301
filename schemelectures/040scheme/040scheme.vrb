@@ -1,0 +1,8 @@
+\frametitle{Apply} 
+
+\begin{Verbatim}
+  (+ 1 2 3 4 5)               =>  15
+  (+ (list 1 2 3 4 5))        =>  error
+  (apply + (list 1 2 3 4 5))  =>  15
+\end{Verbatim}
+

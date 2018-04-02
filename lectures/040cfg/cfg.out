@@ -1,0 +1,44 @@
+\BOOKMARK [2][]{Outline0.1}{Readings}{}% 1
+\BOOKMARK [2][]{Outline0.2}{String Substitution}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Formal Grammars}{}% 3
+\BOOKMARK [2][]{Outline0.4}{Vertical bar means ``or''}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Rules can be recursive}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Context Free Grammar}{}% 6
+\BOOKMARK [2][]{Outline0.7}{Context Free Grammar Example 1}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Context Free Grammar Example 2}{}% 8
+\BOOKMARK [2][]{Outline0.9}{Context Free Grammar Example 3}{}% 9
+\BOOKMARK [2][]{Outline0.10}{Context Free Grammar Example 4}{}% 10
+\BOOKMARK [2][]{Outline0.11}{Context Free Grammar for Arithmetic Expressions}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Context Free Grammar for Programming Language}{}% 12
+\BOOKMARK [2][]{Outline0.13}{Derivations}{}% 13
+\BOOKMARK [2][]{Outline0.14}{Derivations}{}% 14
+\BOOKMARK [2][]{Outline0.15}{All regular languages are context free languages}{}% 15
+\BOOKMARK [2][]{Outline0.16}{Generate All Possible Sentences from a CF grammar}{}% 16
+\BOOKMARK [2][]{Outline0.17}{Generate All Possible Sentences from a CF grammar}{}% 17
+\BOOKMARK [2][]{Outline0.18}{Generate All Possible Sentences from a CF grammar}{}% 18
+\BOOKMARK [2][]{Outline0.19}{CFG problems}{}% 19
+\BOOKMARK [2][]{Outline0.20}{Removing \040from grammars}{}% 20
+\BOOKMARK [2][]{Outline0.21}{Removing \040from grammars}{}% 21
+\BOOKMARK [2][]{Outline0.22}{Chomsky Normal Form}{}% 22
+\BOOKMARK [2][]{Outline0.23}{Converting to Chomsky Normal Form}{}% 23
+\BOOKMARK [2][]{Outline0.24}{Example converting to Chomsky Normal Form}{}% 24
+\BOOKMARK [2][]{Outline0.25}{Note on Eliminating Unit Rules}{}% 25
+\BOOKMARK [2][]{Outline0.26}{Consequences of Chomsky Normal Form}{}% 26
+\BOOKMARK [2][]{Outline0.27}{Greibach Normal Form}{}% 27
+\BOOKMARK [2][]{Outline0.28}{Converting to Greibach Normal Form}{}% 28
+\BOOKMARK [2][]{Outline0.29}{Consequences of Greibach Normal Form}{}% 29
+\BOOKMARK [2][]{Outline0.30}{Pumping Lemma for CF Languages}{}% 30
+\BOOKMARK [2][]{Outline0.31}{Pumping Lemma for CF Languages}{}% 31
+\BOOKMARK [2][]{Outline0.32}{Proof that L = 0n1n2n is not CF}{}% 32
+\BOOKMARK [2][]{Outline0.33}{Pumping Lemma exercises \(some are hard\)}{}% 33
+\BOOKMARK [2][]{Outline0.34}{CF Languages are closed under union, product, and closure}{}% 34
+\BOOKMARK [2][]{Outline0.35}{CF languages are NOT closed under complement}{}% 35
+\BOOKMARK [2][]{Outline0.36}{CF languages are NOT closed under intersection}{}% 36
+\BOOKMARK [2][]{Outline0.37}{The intersection of a CF language and a regular language is CF}{}% 37
+\BOOKMARK [2][]{Outline0.38}{Pushdown automata}{}% 38
+\BOOKMARK [2][]{Outline0.39}{Tape drives}{}% 39
+\BOOKMARK [2][]{Outline0.40}{Deterministic pushdown automata}{}% 40
+\BOOKMARK [2][]{Outline0.41}{Computation and Termination}{}% 41
+\BOOKMARK [2][]{Outline0.42}{Properly nested parentheses}{}% 42
+\BOOKMARK [2][]{Outline0.43}{0n1n}{}% 43
+\BOOKMARK [2][]{Outline0.44}{b in the middle}{}% 44

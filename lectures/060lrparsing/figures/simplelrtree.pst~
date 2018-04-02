@@ -1,0 +1,13 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\tree}[2]{\pstree{\Tcircle{#1}}{#2}}
+\newcommand{\node}[1]{\Tcircle{#1}}
+
+\psset{levelsep=1}
+
+\tree{S}{
+  \tree{A}{\node{a}}
+  \tree{B}{\node{b}}
+}

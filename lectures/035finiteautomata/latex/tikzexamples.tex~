@@ -1,0 +1,9 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+\title{Some examples from {\em Theory of Computation}}
+\author{Geoffrey Matthews}
+\begin{document}
+

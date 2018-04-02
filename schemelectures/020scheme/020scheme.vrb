@@ -1,0 +1,13 @@
+\frametitle{Procedures as Returned Values: Newton's Method Again} 
+
+\begin{alltt}
+(define average-damp
+  (lambda (f)
+    (lambda (x) (/ (+ x (f x)) 2))))
+
+(define sqrt
+  (lambda (x)
+    (fixed-point (average-damp (lambda (y) (/ x y))))))
+\end{alltt}
+
+

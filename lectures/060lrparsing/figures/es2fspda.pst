@@ -1,0 +1,26 @@
+\newcommand{\mt}{\epsilon}
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{Start}{\fbox{\tiny Start}}}
+
+\psset{arrows=->,arrowscale=2}
+
+\begin{psmatrix}[colsep=1.7]
+&\rnode{s1}{~}&\circlenode{0}{0}\\
+\rnode{s2}{~}&
+  \nd{$S'$}&
+  \circlenode{00}{0}&
+  \ndd{$E'$}\\
+&\rnode{s3}{~}&\circlenode[doubleline=true]{000}{~}
+  
+\ncline{s1}{0}
+\nccircle{0}{0.5} \myput{\mt,\$}{pop}
+
+\ncline{s2}{$S'$}
+\ncline{$S'$}{00} \myput{\mt,\$'}{\$}
+\nccircle{00}{0.5} \myput{\mt,\$}{pop}
+\ncline{00}{$E'$} \myput{\mt,\$'}{nop}
+
+\ncline{s3}{000}
+\end{psmatrix}

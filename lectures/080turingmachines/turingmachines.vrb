@@ -1,0 +1,29 @@
+\frametitle{ The language $A_{TM}$ is not decidable: EASY PROOF! }
+\[
+A_{TM} = \{ \langle M,w\rangle : \mbox{$M$ is a TM that accepts $w$}\}
+\]
+
+Proof?\pause\ By contradiction.
+
+\begin{itemize}
+  \item Assume there is a TM $H$ that decides this
+    language.
+  \item Construct the following TM, $B$:
+
+\centerline{
+  \fbox{
+    \parbox{3in}{
+      $B$: On input $\langle w\rangle$:
+      \begin{itemize}
+      \item Obtain own description, $\langle B \rangle$.
+      \item Run $H$ on $\langle B,w\rangle$.
+      \item If $H$ accepts, reject, else accept.
+      \end{itemize}
+    }
+  }
+}
+\item Running $B$ on input $w$ does the opposite of what $H$ says.
+\item Therefore, $H$ is wrong about $B$.
+\item $H$ does not decide $A_{TM}$.
+\end{itemize}
+

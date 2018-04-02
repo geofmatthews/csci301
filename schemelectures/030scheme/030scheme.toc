@@ -1,0 +1,19 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Recursion {\em vs.} Tail-recursion}{2}{0}{1}
+\beamer@sectionintoc {2}{Named {\tt let}}{4}{0}{2}
+\beamer@sectionintoc {3}{Fast recursion}{5}{0}{3}
+\beamer@sectionintoc {4}{Lists}{6}{0}{4}
+\beamer@sectionintoc {5}{Scheme Programs are Lists}{8}{0}{5}
+\beamer@sectionintoc {6}{Building Lists in Scheme:}{9}{0}{6}
+\beamer@sectionintoc {7}{An improper list results in a dot:}{11}{0}{7}
+\beamer@sectionintoc {8}{length}{12}{0}{8}
+\beamer@sectionintoc {9}{nth}{14}{0}{9}
+\beamer@sectionintoc {10}{last}{16}{0}{10}
+\beamer@sectionintoc {11}{scale-list}{18}{0}{11}
+\beamer@sectionintoc {12}{increment-list}{20}{0}{12}
+\beamer@sectionintoc {13}{map}{22}{0}{13}
+\beamer@sectionintoc {14}{scale-list using map}{24}{0}{14}
+\beamer@sectionintoc {15}{increment-list using map}{26}{0}{15}
+\beamer@sectionintoc {16}{append}{28}{0}{16}
+\beamer@sectionintoc {17}{remove}{30}{0}{17}

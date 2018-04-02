@@ -1,0 +1,25 @@
+\frametitle{ Computer Programs }
+\begin{itemize}
+\item You know how to compute $\pi$ to any precision.
+  \pause
+\item Given any real number, $x\in\mathbb{R}$, is there a computer
+  program to compute it to any precision?
+  \pause
+\item How many computer programs are there?
+\item Let $\mathbb{P} = \{ x : \mbox{$x$ is a computer program in Scheme}\}$.
+  \pause
+\item Each program, in binary, represents a different natural number.
+  \pause
+\item Therefore there is an injection $f : \mathbb{P} \rightarrow \nats$.
+  \pause
+\item Therefore $|P| \leq |\nats|$, and since $P$ is infinite, $|P| = |\nats|$.
+  \pause
+\item How many real numbers are there?  $|\mathbb{R}|$
+  \pause
+\item Therefore $|\mathbb{P}| < |\mathbb{R}|$.
+  \pause
+\item Therefore there exists a real number $x\in\mathbb{R}$
+  that cannot be computed
+  by any computer program.
+\end{itemize}
+

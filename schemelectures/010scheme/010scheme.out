@@ -1,0 +1,23 @@
+\BOOKMARK [2][]{Outline0.1}{Resources}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Running the textbook examples}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Simple Scheme Program}{}% 3
+\BOOKMARK [2][]{Outline0.4}{Simple Scheme Program Unit Tests}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Every powerful language has}{}% 5
+\BOOKMARK [2][]{Outline0.6}{The REPL does the following three things:}{}% 6
+\BOOKMARK [2][]{Outline0.7}{There are 4 types of expressions:}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Mantras}{}% 8
+\BOOKMARK [2][]{Outline0.9}{Finding the value of a combination}{}% 9
+\BOOKMARK [2][]{Outline0.10}{Program Evaluation In Lisp}{}% 10
+\BOOKMARK [2][]{Outline0.11}{Introducing Local Variables}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Beware! This will NOT work.}{}% 12
+\BOOKMARK [2][]{Outline0.13}{But this will.}{}% 13
+\BOOKMARK [2][]{Outline0.14}{Defining Procedures}{}% 14
+\BOOKMARK [2][]{Outline0.15}{Defining Procedures}{}% 15
+\BOOKMARK [2][]{Outline0.16}{Defining Procedures}{}% 16
+\BOOKMARK [2][]{Outline0.17}{Procedures always return a value}{}% 17
+\BOOKMARK [2][]{Outline0.18}{Solving problems}{}% 18
+\BOOKMARK [2][]{Outline0.19}{Newton's Method in Scheme}{}% 19
+\BOOKMARK [2][]{Outline0.20}{Newton's Method in Scheme}{}% 20
+\BOOKMARK [2][]{Outline0.21}{Definitions can be nested}{}% 21
+\BOOKMARK [2][]{Outline0.22}{Parameters need not be repeated}{}% 22
+\BOOKMARK [2][]{Outline0.23}{Introducing local functions with letrec }{}% 23

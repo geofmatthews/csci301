@@ -1,0 +1,281 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{color}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\begin{document}
+\centerline{\Large\bf CSCI 301: Formal Languages and Functional Programming}
+\centerline{\large\bf Syllabus, Spring, 2018}
+
+\paragraph{Instructor:} Geoffrey Matthews\\
+{\em Email:} {\tt geoffrey dot matthews at wwu dot edu}\\
+{\em Office hours:} MTWF 10:00-10:50, CF 469
+
+\paragraph{Meeting times:} \mbox{}
+
+  \begin{tabular}{l|ll|lllll}
+    CRN & \multicolumn{2}{l|}{Lecture}
+    & \multicolumn{3}{l}{Lab}   \\\hline
+    21331 & MTWF & CF225& 12:00-12:50  & W & CF167& 12:00-12:50 
+\\
+    22526 &  MTWF & CF225& 12:00-12:50  & T & CF167&  10:00-11:50 
+    \\\hline
+    \end{tabular}
+	
+  You  may attend a
+  lab session you did not sign up for on a space available
+  basis (you may not bump someone who has registered for
+  that section).  There are no labs the first week of class.
+
+\paragraph{Catalog copy:} Introduction to discrete structures important to
+  computer science, including sets, trees, functions, and
+  relations. Proof techniques. Introduction to the formal language
+  classes and their machines, including regular languages and finite
+  automata, context free languages and pushdown automata. Turing
+  machines and computability will be introduced. Programming using a
+  functional language is required in the implementation of
+  concepts. Includes lab.
+
+\paragraph{Goals:}  On completion of this course, students will demonstrate:
+\begin{enumerate}
+\item
+Thorough understanding of the mathematical definitions of concepts
+important to computer science, including sets, tuples, lists, strings,
+languages, graphs, trees, functions and relations
+\item
+The ability to prove basic theorems involving these
+mathematical concepts
+\item
+The ability to employ effectively the functional programming style in a
+functional programming language
+\item
+Solid understanding of fundamental classes of languages, including
+regular and context free, and their corresponding machines
+\item
+Basic understanding of Turing machines and computability
+\item
+Basic understanding of important algorithms, including conversion of
+finite automata to different forms, conversion of grammars to machines
+\item
+Basic understanding of LL(k) and LR(K) grammars and the parsing
+techniques used for those grammars
+\end{enumerate}
+
+\paragraph{Websites:}
+\begin{itemize}
+  \item For class materials: \url{https://github.com/geofmatthews/csci301}
+  \item For turning in homework and
+    grading: \url{https://wwu.instructure.com/} 
+\end{itemize}
+
+
+\paragraph{Goals:} This class is an introduction to computer science {\em
+    theory}.  This is exactly parallel to the distinction between
+  theoretical physics and applied physics.  We will use simplified,
+  abstract, ideal mathematical models of computers, so that we can
+  study the theoretical limits of what they can accomplish.  We will
+  begin studying the basic mathematics we need, and then study
+  mathematical models of computers of increasing complexity and power.
+  Two classes of computers, finite state automata and push-down
+  automata, also form the basis of powerful programming paradigms
+  useful in a variety of situations.
+
+  We will also study the functional programming language {\em Scheme}.
+  Its simplicity, power, and mathematical elegance will inform our
+  study of computers in the abstract, and also teach us new styles of
+  programming.
+
+
+  \paragraph{Math texts:} \mbox{}
+
+  Required:
+\begin{itemize}
+\item \url{http://www.people.vcu.edu/~rhammack/BookOfProof/}
+\item \url{http://cg.scs.carleton.ca/~michiel/TheoryOfComputation/}
+\end{itemize}
+ Optional:
+\begin{itemize}
+\item {\tiny \url{http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/lecture-notes/}}
+\item
+ \url{https://www.tutorialspoint.com/automata_theory/}
+\item
+ \url{https://www.geeksforgeeks.org/theory-of-computation-automata-tutorials/}
+\item
+ \url{http://users.utu.fi/jkari/automata/}
+\item
+ \url{http://maths.mq.edu.au/~chris/notes/second_langmach.html}
+\end{itemize} 
+\paragraph{Programming texts:} \mbox{}
+
+Required:
+\begin{itemize}
+\item
+      \url{http://ds26gte.github.io/tyscheme/} 
+\item
+  \url{http://www.scheme.com/tspl3/}  Note: Use the 3rd edition
+  and do {\em not} use the
+  4th edition of this book.  Our software is based on R5RS scheme and
+  the 3rd edition covers this.  The 4th edition is based on R6RS scheme.
+\item
+ The {\em help desk} within Racket leads to documentation on
+    the implementation.
+\end{itemize}
+    Optional:
+\begin{itemize}
+\item
+    \url{http://mitpress.mit.edu/sicp/}
+\item
+  \url{http://www.shido.info/lisp/idx_scm_e.html}
+\item
+  \url{https://classes.soe.ucsc.edu/cmps112/Spring03/languages/scheme/SchemeTutorialA.html}
+\end{itemize}
+
+\paragraph{Software:} {\em DrRacket}, available here: 
+\url{http://racket-lang.org/}
+
+\paragraph{Quizzes:}  
+Pop quizzes may be handed out at any time.  After working
+on them individually we will solve them together in class.
+They must be turned in during class for credit.  No makeups.
+
+\paragraph{Exams:} A midterm and a final, according to the schedule below.
+The final will be cumulative.
+
+Exams are closed book, with the exception that you may
+consult two pieces of paper during the exam.  You may write or print
+whatever you wish on both sides.
+
+\paragraph{Laboratory exercises:}
+Laboratory exercises will be handed out every week except
+the first and last weeks of class.  They will involve
+programming in {\em Scheme}.
+Each lab is due by midnight Monday of the following week.
+Note that the last lab will be due Monday of dead week.
+No late work will be accepted.
+
+\paragraph{Homework problems:}
+There will be some pencil-and-paper math assignments.  You must format
+your solutions using the \LaTeX\ technical typesetting system and
+submit the solutions online. Points will be awarded to each assignment
+based on its difficulty.  Note that there may be an assignment due
+during dead week.
+
+Ample time to complete the assignments will be allowed.
+Late work will not be accepted.  
+
+Pedagogically, it is important that you do as much independent work as
+possible.  The assigned homework represents a minimum, but there are
+many exercises in the books and online to get more practice at the
+math involved.
+
+We will attempt to grade the homework in a timely
+fashion; this may necessitate grading only a sample of the problems
+submitted.
+
+\paragraph{Assessment and grades:}
+
+Your grade will be based on the math homework, labs, quizzes, and the two
+exams. Weights are as follows.
+
+Grades will be assigned based on scores as shown.  At the discretion
+of the instructor, scores may be scaled.  Awarding $\pm$ is also at
+the discretion of the instructor.
+
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+Homework & Labs & Quizzes & Midterm & Final\\\hline
+25\% & 25\% & 5\% & 15\% & 30\% \\\hline
+\end{tabular}\hfill
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+\% & 90-100 & 80-89 & 70-79 & 60-69 & 0-60\\\hline
+Grade & A & B & C & D & F\\\hline
+\end{tabular}
+
+
+  
+\paragraph{Schedule:}
+
+  \begin{center}
+\begin{tabular}{c|cccc|c}                      
+ & \multicolumn{4}{c|}{\bf Readings} &  \\
+{\bf Week} &\em TYS & \em TSPL &\em BoP&\em ITC & {\bf Notes} \\\hline  
+Jan 8  & 1 & 1 & I   &   \\
+Jan 15 & 2,3,4 & 2 & II\&III  & &  Monday holiday \\          
+Jan 22 & 5,6,7 & 3 & IV  & 1 \\
+Jan 29 &  &   &     & 2 \\
+Feb 5  &  &   &     & 2 \\
+Feb 12 &  &   &     & 3 & Midterm Wednesday \\
+Feb 19 &  &   &     & 3 & Monday holiday\\
+Feb 26 &  &   &     & 4\\
+Mar 5  &  &   &     & 5 \\
+Mar 12 &  & \multicolumn{3}{c|}{Review} & \\                 
+Mar 19 &  &   &     &   & Final Monday  \\
+\end{tabular}
+
+\begin{tabular}{ll}
+Book & URL\\\hline
+{\em TYS} &       \url{http://ds26gte.github.io/tyscheme/} \\
+{\em TSPL} & \url{http://www.scheme.com/tspl3/} \\
+{\em BoP} & \url{http://www.people.vcu.edu/~rhammack/BookOfProof/}\\
+{\em ITC} & \url{http://cg.scs.carleton.ca/~michiel/TheoryOfComputation/}\\
+\end{tabular}
+
+\end{center}
+
+\paragraph{Attendance policy:} Attendance is not required but strongly
+  recommended.  Studies show that regular attendance is highly
+  correlated with performance.
+
+  You must be in attendance to receive credit for a pop quiz.  There
+  are no makeups for pop quizzes.
+
+  You are responsible for all material covered in the lectures, books,
+  handouts, or other assigned reading.  If you miss a lecture,
+  make sure you get notes from another student.
+
+  If you have an emergency that necessitates your absence from class,
+  notify me as soon as possible, preferable before the absence.  I
+  will handle each case individually and may, for example, extend the
+  due date for the assignment, schedule a make-up exam, or simply
+  adjust your remaining scores to determine your grade.
+
+\paragraph{Academic dishonesty:} Please read Appendix D of WWU's Catalog on
+  Academic Dishonesty.  It is available online at
+  \url{http://catalog.wwu.edu}.
+
+  Unless specified otherwise, all work for this course is meant to
+  be done {\bf individually.}  The work that you turn in for a grade
+  must be completely your own, or you will be guilty of academic
+  dishonesty and could receive an F for the course.
+
+  However, it can be a valiable learning experience to discuss
+  work with your fellow students, and this is encouraged.
+  However, after working with a colleague, {\bf you may not keep any
+    paper or electronic copies of anything you produced together!}
+  You may only keep your memories.  In particular, this means that
+  {\bf you may not ask for or give help while sitting in front of a
+    computer where the assignment is open!}  Also, {\bf you may not
+    use anything a colleague has emailed to you!}  Delete the email
+  and do not save a copy.
+
+  To help understand what I mean, remember the \fbox{\bf Long Term
+    Memory Rule}.  You may discuss, sketch, write things down, use
+  your computers, whatever, but after you are done working with your
+  fellow students all files must be deleted, whiteboards erased, and
+  all papers you created must be destroyed.  You should then watch a
+  rerun of {\em the Simpson's}, play a game of ping-pong, take a walk,
+  or something else for half an hour. After this you can go back to
+  your assignment (alone) and use the knowledge you have now gained.
+
+  It is very easy for experienced software developers like your
+  instructor and your TA to detect copied assignments.  Please do not
+  put us in a situation where we have to fail you for plagiarism.
+
+
+
+\end{document}

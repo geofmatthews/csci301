@@ -1,0 +1,286 @@
+\documentclass{beamer}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{alltt}
+\usepackage{graphicx}
+
+\newtheorem{theo}{Theorem}[section]
+
+
+\newcommand{\myfig}[1]{\centerline{\includegraphics[scale=0.25]{figures/#1.png}}}
+\newcommand{\myfigt}[1]{\centerline{\includegraphics[scale=0.2]{figures/#1.png}}}
+
+\newcommand{\trans}[5]{
+\begin{tabular}{|c|c|c|c|c|}\hline
+#1 & #2 & #3 & #4 & #5 \\\hline
+\end{tabular}
+}
+
+\newcommand{\arr}{&\rightarrow&}
+\newcommand{\darr}{&\Rightarrow&}
+\newcommand{\ar}{\ensuremath{\rightarrow}}
+\newcommand{\dar}{\ensuremath{\Rightarrow}}
+\newcommand{\bee}{\begin{eqnarray*}}
+\newcommand{\eee}{\end{eqnarray*}}
+\newcommand{\lmb}{\ensuremath{\lambda}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\li}{\item}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand{\sect}[1]{
+\section{#1}
+\begin{frame}[fragile]\frametitle{#1}
+}
+\newcommand{\sectc}[1]{
+\section{#1}
+\begin{frame}[fragile]\frametitle{#1}
+\begin{columns}
+}
+\newcommand{\nc}[1]{\column{#1\textwidth}}
+\newcommand{\ec}{\end{columns}}
+
+\mode<presentation>
+{
+%  \usetheme{Madrid}
+  % or ...
+
+%  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+\usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+
+\title[Languages]
+{
+Languages
+}
+
+\subtitle{} % (optional)
+
+\author[Geoffrey Matthews]
+{Geoffrey Matthews}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[WWU/CS]
+{
+  Department of Computer Science\\
+  Western Washington University
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{\today}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+%\pgfdeclareimage[height=0.5cm]{university-logo}{WWULogoProColor}
+%\logo{\pgfuseimage{university-logo}}
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\newcommand{\myref}[1]{\small\item\url{#1}}
+\newcommand{\myreft}[1]{\footnotesize\item\url{#1}}
+
+%\begin{frame}
+%  \frametitle{Outline}
+%  \tableofcontents
+%  % You might wish to add the option [pausesections]
+%\end{frame}
+
+\sect{Readings}
+
+\begin{itemize}
+
+\myreft{http://web.science.mq.edu.au/~chris/notes/second_langmach.html}
+
+\myreft{http://en.wikipedia.org/wiki/Formal_language}
+
+\end{itemize}
+
+\end{frame}
+
+\sect{Strings}
+
+\bi
+\li A finite set $A$ of symbols is given as the {\bf alphabet}
+\li A {\bf string} or {\bf sentence} is a finite sequence of symbols from the alphabet.
+\li The {\bf length} of a string is denoted $|s|$
+\li $\lambda$ denotes the empty string. $|\lmb|=0$
+\bigskip
+\li $\lambda$, $a$, $abbca$, and $bccb$ are strings over the alphabet $\{a,b,c\}$
+\li $\lambda$, $110101$ and $0011$ are strings over the alphabet $\{0,1\}$
+\li $\lambda$, ``the black cat'' and ``cat cat the the'' are strings over the alphabet $\{$black, cat, the$\}$
+\ei
+
+\end{frame}
+
+\sect{Concatenation}
+\bi
+\li The concatenation of two strings is the string obtained by placing them next to each other.
+\li The concatenation of $aaa$ and $bccb$ is $aaabccb$
+\li The concatenation of a string $s$ with itself $n$ times is denoted $s^n$
+\li $(ab)^2 = abab$, $(aba)^3 = abaabaaba$, $(ab)^0 = \lmb$
+\ei
+\end{frame}
+
+\sect{Languages}
+\bi
+\li A set of strings over an alphabet is a {\bf language}.
+\li Languages over $\{a,b\}$:
+
+$\emptyset$, $\{\lambda\}$, $\{b\}$, $\{\lambda, abb, aaaa\}$,
+$\{a^n | n \in \mathbb{N}\}= \{\lmb, a, aa, aaa, aaaa, \ldots\}$,
+$\{ab^n | n \in \mathbb{N}\}= \{a, ab, abb, abbb, \ldots\}$,
+$\{(ab)^n | n \in \mathbb{N}\}= \{\lmb, ab, abab, ababab, \ldots\}$
+
+\li Since they are sets, we can make new languages from old with:
+
+ \hfill $L\cup M$ \hfill
+ $L\cap M$ \hfill
+ $L - M$ \hfill
+ $\overline{L}$ \hfill\mbox{~}
+
+\ei
+\end{frame}
+
+\sect{Product of Languages}
+\bi
+\li The product of languages $L$ and $M$ is
+\[
+LM = \{st | s\in L \wedge t \in M\}
+\]
+\li If $L=\{ab, bb\}$ and $M = \{a,b,c\}$ then
+$LM = \{aba, abb, abc, bba, bbb, bbc\}$
+\li Is it always the case that $|LM|=|L||M|$?
+\pause
+\li If $L=\{a,ab\}$ and $M=\{\lmb, b\}$, then
+$LM = \{a,ab,abb\}$
+\pause
+\li If $L=\{a, ab\}$ and $M=\{a,ba\}$, then
+$LM = \{aa,aba,abba\}$
+\pause
+\li Why is it always the case that $|L\times M| = |L|\times|M|$?
+
+\ei
+
+\end{frame}
+
+\sect{Properties of Language Products}
+\bi
+\li $L\{\lmb\} = \{\lmb\}L =  L$
+\li $L\emptyset = \emptyset L = \emptyset$
+\ei
+
+
+\end{frame}
+
+\sect{Product of a language with itself}
+\bi
+\li $L^n = \{s_1s_2s_3\ldots s_k | k\in\mathbb{N} \wedge \forall i, s_i\in L\}$
+\li If $L = \{a, bb\}$, then
+
+\li $L^0 = \{\lmb\}$
+\li $L^1 = L = \{a,bb\}$
+\li $L^2 = LL = \{aa,abb,bba,bbbb\}$
+
+\ei
+\end{frame}
+
+\sect{Closure of a Language (Kleene Star)}
+\bi
+\li The {\bf closure} $L^*$ of a language $L$ is 
+\bee
+L^* &=& \bigcup_{i=0}^{\infty} L^i\\
+   &=& L^0 \cup L^1 \cup L^2 \cup \ldots
+\eee
+\li The {\bf positive closure} $L^+$ of a language $L$ is 
+\bee
+L^+ &=& \bigcup_{i=1}^{\infty} L^i\\
+   &=& L^1 \cup L^2 \cup L^3 \cup \ldots
+\eee
+
+\ei
+
+
+\end{frame}
+
+\sect{Properties of Closure}
+\bi
+\li $\emptyset^* = \{\lmb\}^* = \{\lmb\}$
+\li $\lmb \in L$ if and only if $L^+ = L^*$
+\li $L^* = L^*L^* = (L^*)^*$
+\li $(L^*M^*)^* = (L\cup M)^*$
+\li $L(ML)^* = (LM)^*L$
+
+\ei
+
+\end{frame}
+\sect{String Substitution}
+
+\bi
+\li Start with the string $ABBA$
+
+\li If we make the substitutions $A\ar a$ and $B\ar b$
+\li $ABBA \dar abba$
+
+\li If we make the substitutions $A\ar ab$ and $B\ar ba$
+\li  $ABBA \dar abbabaab$
+
+\li If we make the substitutions $A\ar bab$ and $B\ar bbb$
+\li  $ABBA \dar babbbbbbbbab$
+
+\ei
+
+\end{frame}
+
+
+\sect{Formal Grammars}
+\bi
+\li A set of {\bf terminals}, e.g. $\{$the,cat,sat,on,mat$\}$
+\li A set of {\bf nonterminals}, e.g. $\{S,N\}$
+\li A special nonterminal, the {\bf start symbol}, e.g. $S$
+\li A set of {\bf production rules}:
+\begin{eqnarray*}
+S \arr \mbox{the~} N \mbox{~sat on the~} N\\
+N\arr \mbox{cat}\\
+N\arr \mbox{mat}
+\end{eqnarray*}
+\li A {\bf derivation} is any string we get by starting with the start
+symbol and repeatedly making a single substitution until we only have
+terminals.
+\li $S\dar \mbox{~the~} N \mbox{~sat on the~} N \dar \mbox{~the cat sat
+  on the~} N \dar \mbox{~the cat sat on the mat}$
+\li $S\dar \mbox{~the~} N \mbox{~sat on the~} N \dar \mbox{~the mat sat
+  on the~} N \dar \mbox{~the mat sat on the mat}$
+\ei
+\end{frame}
+
+
+\sect{Rules can be recursive}
+
+\begin{eqnarray*}
+S \arr S \mbox{~and~} S\\
+S \arr \mbox{the~} N \mbox{~sat on the~} N\\
+N\arr \mbox{cat}\\
+N\arr \mbox{mat}
+\end{eqnarray*}
+
+\end{frame}
+
+\end{document}

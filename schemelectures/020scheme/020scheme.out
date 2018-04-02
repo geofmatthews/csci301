@@ -1,0 +1,17 @@
+\BOOKMARK [2][]{Outline0.1}{Procedures in Scheme}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Local Variables in Procedures: Closures}{}% 2
+\BOOKMARK [2][]{Outline0.3}{A Procedure that Returns a Procedure}{}% 3
+\BOOKMARK [2][]{Outline0.4}{A Procedure that Returns a Counter}{}% 4
+\BOOKMARK [2][]{Outline0.5}{Procedures as Returned Values: Derivatives}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Procedures as Returned Values: Procedures as Data}{}% 6
+\BOOKMARK [2][]{Outline0.7}{Procedures as parameters}{}% 7
+\BOOKMARK [2][]{Outline0.8}{Better notation for summations}{}% 8
+\BOOKMARK [2][]{Outline0.9}{Better notation for summations}{}% 9
+\BOOKMARK [2][]{Outline0.10}{Matches Scheme Code Better, Too}{}% 10
+\BOOKMARK [2][]{Outline0.11}{We have the same problem with derivatives}{}% 11
+\BOOKMARK [2][]{Outline0.12}{The chain rule}{}% 12
+\BOOKMARK [2][]{Outline0.13}{Finding fixed points}{}% 13
+\BOOKMARK [2][]{Outline0.14}{Fixed points in scheme:}{}% 14
+\BOOKMARK [2][]{Outline0.15}{Remember Newton's Method?}{}% 15
+\BOOKMARK [2][]{Outline0.16}{Newton's Method Using Functional Programming}{}% 16
+\BOOKMARK [2][]{Outline0.17}{Procedures as Returned Values: Newton's Method Again}{}% 17

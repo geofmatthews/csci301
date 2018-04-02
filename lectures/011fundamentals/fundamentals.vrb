@@ -1,0 +1,20 @@
+\frametitle{ Using set theory in counting }
+\[
+|A\cup B| = |A| + |B| - |A\cap B|
+\]
+
+How many 3-card hands are there for which all 3 cards are red, or all
+three cards are face cards?
+
+$A =$ 3-card hands, all red cards\hfill  $B =$ 3-card hands, all face cards
+
+\begin{align*}
+  |A| &= \binom{26}{3}\\
+  |B| &= \binom{12}{3}\\
+  |A\cap B| &= \binom{6}{3}\\
+  |A\cup B| &= |A| + |B| - |A\cap B|
+  = \binom{26}{3} + \binom{12}{3} - \binom{6}{3}
+\end{align*}
+
+
+

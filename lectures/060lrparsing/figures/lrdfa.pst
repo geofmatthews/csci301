@@ -1,0 +1,37 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+\newcommand{\myput}[1]{\ncput*{$#1$}}
+\newcommand{\start}{\rnode{start}{~}}
+\newcommand{\myline}[3]{\ncline{#1}{#2}\ncput*{$#3$}}
+
+\begin{psmatrix}[colsep=1.1,rowsep=0.5]
+          &        & \nd{2}  & \ndd{3}\\
+\start    & \nd{1} & \ndd{4} & \ndd{5}\\
+ \nd{0}   &        & \nd{7}  & \ndd{8}\\
+          & \nd{6} &         & \ndd{9} \\
+ \ndd{12} &        & \ndd{10} & \ndd{11}
+
+\ncline{start}{0}
+\myline 01a
+\myline 12C
+\myline 23d
+\myline 14c
+\myline 45C
+\myline 06b
+\myline 67C
+\myline 78D
+\myline 79d
+\myline 6{10}c
+\myline{10}{11}{C}
+
+\myline{0}{12}{S}
+
+\nccircle[angleA=-30]{4}{0.4} \myput{$c$}
+\nccircle[angleA=-30]{10}{0.4} \myput{$c$}
+
+\end{psmatrix}
+
+

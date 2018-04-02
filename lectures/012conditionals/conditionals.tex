@@ -1,0 +1,623 @@
+\documentclass{beamer}
+\usetheme{Singapore}
+
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+
+\newcommand{\set}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\nats}{\ensuremath{\mathbb{N}}}
+\newcommand{\nni}{\ensuremath{\mathbb{N}^0}}
+\newcommand{\ints}{\ensuremath{\mathbb{Z}}}
+\newcommand{\power}{\ensuremath{\mathcal{P}}}
+\renewcommand{\neg}{\sim}
+\newcommand{\xor}{\oplus}
+\newcommand{\then}{\ensuremath{\Rightarrow}}
+\newcommand{\lcm}{\mbox{lcm}}
+\newcommand{\QED}{\mbox{}\hfill\ensuremath{\blacksquare}}
+\newcommand{\equivmod}[3]{#1 \equiv #2\ (\mbox{mod } #3)}
+\newcommand{\nequivmod}[3]{#1 \not\equiv #2\ (\mbox{mod } #3)}
+
+\newcommand{\grf}[2]{\centerline{\includegraphics[width=#1\textwidth]{#2}}}
+\newcommand{\tw}{\textwidth}
+\newcommand{\bc}{\begin{columns}}
+\newcommand{\ec}{\end{columns}}
+\newcommand{\cc}[1]{\column{#1\textwidth}}
+
+\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{ #1 }}}
+\newcommand{\efr}{\end{frame}}
+
+\newcommand{\cola}[1]{\begin{columns}\begin{column}{#1\textwidth}}
+\newcommand{\colb}[1]{\end{column}\begin{column}{#1\textwidth}}
+\newcommand{\colc}{\end{column}\end{columns}}
+
+\title{Book of Proof: Part II, Conditionals}
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\begin{document}
+\begin{frame}
+\maketitle
+
+\end{frame}
+
+\bfr{Proofs}
+
+\begin{description}
+
+\item[Theorem]  Something important you want to prove.
+\item[Proposition]   Something not so important you want to prove.
+\item[Corollary]  Something you want to prove in order to prove something else.
+
+\end{description}
+\end{frame}
+
+\bfr{Definitions}
+
+\begin{description}
+\item[Definition 4.1] An integer $n$ is {\bf even} if $n=2a$ for some
+  integer $a\in\ints$.
+\item[Definition 4.1] An integer $n$ is {\bf odd} if $n=2a+1$ for some
+  integer $a\in\ints$.
+\item[Definition 4.3] Two integers have the {\bf same parity} if they
+  are both even or they are both odd.  Otherwise they have {\bf
+    opposite parity}.
+\item[Definition 4.4] Suppose $a$ and $b$ are integers.  We say that
+  $a$ {\bf divides} $b$, written $a\mid b$, if $b=ac$ for some
+  $c\in\ints$.  In this case we also say that $a$ is a {\bf divisor}
+  of $b$, and that $b$ is a {\bf multiple} of $a$.
+\item[Definition 4.5] A natural number $n$ is {\bf prime} if it has
+  exactly two positive divisors, 1 and $n$.
+
+\end{description}
+\end{frame}
+
+
+\bfr{Definitions}
+\begin{description}
+  \item[Definition 4.6] The {\bf greatest common divisor} of integers
+    $a$ and $b$, denoted $\gcd(a,b)$, is th largest integer that
+    divides both $a$ and $b$.  The {\bf least common multiple} of
+    non-zero integers $a$ and $b$, denoted $\lcm(a,b)$, is the
+    smallest positive integer that is a multiple of both $a$ and $b$.
+\end{description}
+
+\begin{align*}
+  \gcd(18,24) &= 6 & \gcd(5,5) &= 5\\
+  \gcd(32,-8) &= 8 & \gcd(50,18) &= 2\\
+  \gcd(50,9) &= 1 & \gcd(0,6) &= 6\\
+  \gcd(0,0) &= \mbox{undefined}\\
+  \lcm(4,6) &= 12 & \lcm(7,7) &=7
+\end{align*}
+
+\end{frame}
+
+\bfr{Some facts accepted without proof}
+
+If $a,b\in\ints$, then
+ $ a+b\in\ints$,
+$  a-b\in\ints$,
+$  ab\in\ints$.
+
+\vfill
+
+\begin{description}
+  \item[The Division Algorithm] Given integers $a$ and $b$ with $b>0$,
+    there exist unique integers $q$ and $r$ for which $a=qb+r$ and
+    $0\leq r < b$.
+\end{description}
+
+\vfill
+Every natural number greater than 1 has a unique factorization into
+primes. 
+
+\end{frame}
+
+
+\bfr{Direct Proof}
+\begin{center}
+
+If $P$, then $Q$.
+\vfill
+
+\begin{tabular}{|c|c||c|}\hline
+  $P$ & $Q$ & $P\then Q$ \\\hline\hline
+  $T$ & $T$ & $T$ \\\hline
+  $T$ & $F$ & $F$ \\\hline
+  $F$ & $T$ & $T$ \\\hline
+  $F$ & $F$ & $T$ \\\hline
+\end{tabular}\hfill
+
+\vfill
+
+  {\bf Outline for Direct Proof}
+
+  \fbox{\parbox{2in}{
+      {\bf Proposition} If $P$, then $Q$.\\
+      {\it Proof.}  Suppose $P$.\\
+      $\vdots$\\
+      Therefore, $Q$.\QED
+  }}
+\end{center}
+
+\end{frame}
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} If $x$ is odd, then $x^2$ is odd.
+
+    {\sl Proof.} Suppose $x$ is odd.
+
+    $\vdots$
+
+    Therefore $x^2$ is odd, {\em for some reason.} \QED}}
+\end{frame}
+
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} If $x$ is odd, then $x^2$ is odd.
+
+    {\sl Proof.} Suppose $x$ is odd.
+
+    Then $x=2a+1$ for some $a\in\ints$, by definition of an odd number.
+
+    $\vdots$
+
+    Therefore $x^2$ is odd, {\em for some reason.} \QED}}
+\end{frame}
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} If $x$ is odd, then $x^2$ is odd.
+
+    {\sl Proof.} Suppose $x$ is odd.
+
+    Then $x=2a+1$ for some $a\in\ints$, by definition of an odd number.
+
+    $\vdots$
+
+    Thus $x^2 = 2b+1$ for an integer $b$, {\em for some reason.}
+
+    Therefore $x^2$ is odd, by definition of an odd number. \QED}}
+\end{frame}
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+
+    \mbox{\bf Proposition} If $x$ is odd, then $x^2$ is odd.
+
+    \mbox{\it Proof.} Suppose $x$ is odd.
+
+    Then $x=2a+1$ for some $a\in\ints$, by definition of an odd number.
+
+    Thus
+    \begin{align*}
+      x^2 &= (2a+1)^2  & \mbox{by substitution}\\
+      &= 4a^2 + 4a + 1 &\mbox{by algebra}\\
+      &= 2(2a^2 + 2a) + 1 &\mbox{by algebra}
+    \end{align*}
+    If we let $b=2a^2+2a$ then $b$ is an integer, by math facts.
+
+    Thus $x^2 = 2b+1$ for an integer $b$, by substitution.
+
+    Therefore $x^2$ is odd, by definition of an odd number. \QED
+    }}
+\end{frame}
+
+
+\bfr{Example proof development}
+
+    {\bf Proposition} Let $a,b,c\in\ints$.  If $a\mid b$ and $b\mid
+    c$, then $a\mid c$.
+
+\end{frame}
+
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} Let $a,b,c\in\ints$.  If $a\mid b$ and $b\mid
+    c$, then $a\mid c$.
+
+    {\sl Proof.}
+
+    $\vdots$
+
+ \QED}}
+\end{frame}
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} Let $a,b,c\in\ints$.  If $a\mid b$ and $b\mid
+    c$, then $a\mid c$.
+
+    {\sl Proof.} Suppose  $a\mid b$ and $b\mid c$.
+
+    $\vdots$
+
+    Therefore $a\mid c$ \QED}}
+\end{frame}
+
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} Let $a,b,c\in\ints$.  If $a\mid b$ and $b\mid
+    c$, then $a\mid c$.
+
+    {\sl Proof.} Suppose  $a\mid b$ and $b\mid c$.
+
+    By definition, $a\mid b$  means there exists $d\in\ints$ with 
+    \begin{align*} b = ad \end{align*}
+    By definition, $b\mid c$  means there exists $e\in\ints$ with 
+    \begin{align*} c=be \end{align*}
+
+    $\vdots$
+
+    Thus $c= ax$ for some $x\in\ints$.
+
+    Therefore $a\mid c$, by definition. \QED}}
+\end{frame}
+\bfr{Example proof development}
+\fbox{\parbox{\textwidth}{
+    {\bf Proposition} Let $a,b,c\in\ints$.  If $a\mid b$ and $b\mid
+    c$, then $a\mid c$.
+
+    {\sl Proof.} Suppose  $a\mid b$ and $b\mid c$.
+
+    By definition, $a\mid b$  means there exists $d\in\ints$ with 
+    \begin{align*} b = ad \end{align*}
+    By definition, $b\mid c$  means there exists $e\in\ints$ with 
+    \begin{align*} c=be \end{align*}
+
+    By combining equations these two equations, we get
+    \[ c = be = (ad)e = a(de) \]
+
+    Let $x=de$, then $x\in\ints$.
+
+    Thus $c= ax$ for some $x\in\ints$.
+
+    Therefore $a\mid c$, by definition. \QED}}
+\end{frame}
+
+\bfr{Proof by cases}
+
+{\bf Proposition} If $n\in\ints$ then $1+(-1)^n(2n-1)$ is a multiple
+of 4.
+
+Proof.  Suppose $n\in\ints$.
+
+Then $n$ is either even or odd.
+
+{\bf Case 1.}  Suppose $n$ is even.  Then $n=2k$ for some $k\in\ints$
+and $(-1)^n = 1$.  Thus \[
+1 +(-1)^n(2n-1) = 1 + (1)(2\cdot 2k -1) = 4k
+\]
+which is a multiple of 4.
+
+{\bf Case 2.}  Suppose $n$ is odd.  Then $n=2k+1$ for some $k\in\ints$
+and $(-1)^n = -1$.  Thus \[
+1 +(-1)^n(2n-1) = 1 - (2(2k+1) -1) = -4k
+\]
+which is a multiple of 4.
+
+These cases show that $1+(-1)^n(2n-1)$ is always a multiple of 4.
+\QED
+
+\end{frame}
+
+\bfr{Without loss of generality}
+
+{\bf Proposition}  If two integers have opposite parity, then their
+sum is odd.
+
+{\sl Proof.}  Suppose $m$ and $n$ are integers with opposite parity.
+
+Without loss of generality, suppose $m$ is even and $n$ is odd.
+
+Thus $m=2a$ and $n=2b+1$ for some $a,b\in\ints$.
+
+Therefore $m+n=2a+2b+1 = 2(a+b)+1$, which is odd by definition.
+\QED
+
+\end{frame}
+
+
+\bfr{Contrapositive Proof}
+\newcommand{\row}[6]{#1&#2&#3&#4&#5&#6\\\hline}
+\begin{center}
+  If $P$, then $Q$.
+
+  If $\neg Q$, then $\neg P$.
+
+  \vfill
+
+  \begin{tabular}{|c|c||c|c||c|c|c|}\hline
+    $P$ & $Q$ & $\neg Q$ & $\neg P$ & $P\then Q$ & $\neg Q\then\neg
+    P$\\\hline\hline
+    \row TTFFTT
+    \row TFTFFF
+    \row FTFTTT
+    \row FFTTTT
+  \end{tabular}
+
+  \vfill
+  
+$(P\then Q) \iff (\neg Q \then \neg P)$
+
+
+\end{center}
+
+\end{frame}
+
+\bfr{Contrapositive Proof}
+\begin{center}
+
+  {\bf Outline for Contrapositive Proof}
+
+  \fbox{\parbox{2in}{
+      {\bf Proposition} If $P$, then $Q$.\\
+      {\it Proof.}  Suppose $\neg Q$.\\
+      $\vdots$\\
+      Therefore, $\neg P$.\QED
+  }}
+\end{center}
+\end{frame}
+
+\bfr{Example Contrapositive Proof}
+
+{\bf Proposition} Suppose $x\in\ints$.  If $7x+9$ is even, then $x$ is
+odd.
+
+{\sl Proof.}  (Contrapositive)
+
+Suppose $x$ is not odd.
+
+Thus $x$ is even, and $x=2a$ for some $a\in\ints$.
+
+Then $7x+9 = 7(2a) + 9 = 14a + 8 + 1 = 2(7a+4) + 1$.
+
+Thus $7x+9 = 2b+1$ where $b$ is the integer $7a+1$.
+
+By definition, $7x+9$ is odd.
+
+Therefore $7x+9$ is not even. \QED
+
+\end{frame}
+
+\bfr{Congruence of Integers}
+
+{\bf Definition 5.1}  Given $a,b\in\ints$ and $n\in\nats$, we say that
+$a$ and $b$ are {\bf congruent modulo $n$} if $n\mid(a-b)$.  We
+express this as $\equivmod{a}{b}{n}$.
+
+\newcommand{\equivexamp}[3]{
+\item $#1 \equiv #2\ (\mbox{mod } #3)$ because $#3 \mid (#1 - #2)$.
+  }
+\newcommand{\nequivexamp}[3]{
+\item $#1 \not\equiv #2\ (\mbox{mod } #3)$ because $#3 \nmid (#1 - #2)$.
+  }
+{\bf Example 5.1}
+\begin{enumerate}
+\equivexamp {9}{1}{4}
+\equivexamp {6}{10}{4}
+\nequivexamp {14}{8}{4}
+\equivexamp {20}{4}{8}
+\equivexamp {17}{(-4)}{3}
+
+\end{enumerate}
+
+\vfill
+
+{\sl They have the same remainder upon division by $n$.}
+\end{frame}
+
+\bfr{Proof of Congruence}
+
+{\bf Proposition}  If $\equivmod{a}{b}{n}$ then $\equivmod{a^2}{b^2}{n}$.
+
+{\it Proof.}  Suppose $\equivmod{a}{b}{n}$.
+
+By definition, $n\mid (a-b)$.
+
+By definition, $a-b = nc$ for some $c\in\ints$.
+\begin{align*}
+  a-b &= nc\\
+  (a-b)(a+b) &= nc(a+b)\\
+  a^2 - b^2 &= nc(a+b)
+\end{align*}
+Let $d=c(a+b)$, so $d\in\ints$ and $a^2-b^2 = nd$.
+
+This tells us that $n\mid (a^2-b^2)$.
+
+So, by definition, $\equivmod{a^2}{b^2}{n}$.\QED
+
+\end{frame}
+
+
+\bfr{Proof by Contradiction}
+\newcommand{\rowfive}[5]{#1&#2&#3&#4&#5\\\hline}
+\begin{center}
+  \begin{tabular}{|c|c||c|c||c|}\hline
+    $P$ & $C$ & $\neg P$ & $C\land \neg C$ & $(\neg P) \then
+    (C\land\neg C)$\\\hline\hline
+    \rowfive TTFFT
+    \rowfive TFFFT
+    \rowfive FTTFF
+    \rowfive FFTFF
+  \end{tabular}
+
+  \vfill
+
+  {\bf Outline for Proof by Contradiction}
+
+  \fbox{\parbox{2in}{
+      {\bf Proposition} $P$.\\
+      {\it Proof.}  Suppose $\neg P$.\\
+      $\vdots$\\
+      Therefore, $C \land \neg C$.\QED
+  }}
+\end{center}
+\end{frame}
+
+\bfr{Example Proof by Contradiction}
+
+{\bf Proposition}  If $a,b\in\ints$, then $a^2-4b\neq 2$.
+
+{\it Proof.}  Suppose this is false.
+\pause
+
+There exist $a,b\in\ints$ with $a^2-4b=2$.
+\pause
+
+Then $a^2 = 4b + 2 = 2(2b+1)$, is even.\\
+\pause
+So $a$ is even, so $a=2c$ for
+some $c\in\ints$.
+\pause
+\begin{align*}
+  (2c)^2 - 4b &= 2\\
+  4c^2 - 4b &= 2\\
+  2c^2 - 2b &= 1\\
+  2(c^2 - b) &= 1
+\end{align*}
+\pause
+But $c^2-b\in\ints$.
+\pause
+
+Which implies that 1 is even, which is a
+contradiction. \QED
+
+\end{frame}
+
+
+
+\bfr{Compare Contrapositive with Contradiction}
+\begin{center}
+  {\bf Outline for Contrapositive Proof}
+
+  \fbox{\parbox{2in}{
+      {\bf Proposition} If $P$, then $Q$.\\
+      {\it Proof.}  Suppose $\neg Q$.\\
+      $\vdots$\\
+      Therefore, $\neg P$.\QED
+  }}
+
+  \vfill
+
+  {\bf Outline for Proof by Contradiction}
+  \fbox{\parbox{2in}{
+      {\bf Proposition} $P$.\\
+      {\it Proof.}  Suppose $\neg P$.\\
+      $\vdots$\\
+      Therefore, $C \land \neg C$.\QED
+  }}
+\end{center}
+
+\end{frame}
+
+\bfr{Proving a Conditional Statement with Contradiction}
+
+\begin{center}
+  
+  \fbox{\parbox{2in}{
+      {\bf Proposition} If $P$, then $Q$.\\
+      {\it Proof.}  Suppose $P$ and $\neg Q$.\\
+      $\vdots$\\
+      Therefore, $C \land \neg C$.\QED
+  }}
+\end{center}
+\end{frame}
+
+\bfr{Example}
+
+{\bf Proposition}  Suppose $a\in\ints$.  If $a^2$ is even, then $a$ is
+even.
+
+{\it Proof.}  Suppose $a^2$ is even and $a$ is not even.
+
+Then $a$ is odd.
+
+Then $a=2c+1$ for some $c\in\ints$.
+
+Then \begin{align*}
+  a^2 &= (2c+1)^2 \\
+  &= 4c^2 + 4c + 1\\
+  &= 2(2c^2 + 2c) + 1 
+\end{align*}
+
+Then $a^2$ is odd.
+
+Thus $a^2$ is even and odd, which is a contradiciton. \QED
+
+\end{frame}
+
+
+\bfr{Example}
+
+{\bf Proposition}  If $a,b\in\ints$ and $a\geq 2$, then $a\nmid b$ or
+$a\nmid (b+1)$.
+
+{\it Proof.}  Suppose $a,b\in\ints$ with $a\geq 2$ and it is not true
+that $a\nmid b$ or
+$a\nmid (b+1)$.
+
+Then $a\mid b$ and $a\mid (b+1)$.
+
+Then there are $c,d\in\ints$ with $b=ac$ and $b+1=ad$.
+
+Subtracting the equations gives
+\begin{align*}
+  1 &= ad-ac\\
+  &= a(d-c)
+\end{align*}
+Since $a$ is positive, $d-c$ is positive.
+So
+\begin{align*}
+  a &= 1/(d-c) < 2
+\end{align*}
+Therefore $a\geq 2$ and $a<2$, a contradiction. \QED
+
+\end{frame}
+
+\bfr{Example}
+
+{\bf Proposition}  Every non-zero rational number can be expressed as
+a product of two irrational numbers.
+
+{\it Proof.}  Reword the proposition:
+If $r$ is a non-zero rational number, then $r$ is the product of two
+irrational numbers.
+
+Suppose $r$ is a non-zero rational number.
+
+Then $r=a/b$ for $a,b\in\ints$.  Also,
+$r = \sqrt{2}({r}/{\sqrt{2}})$.
+
+We know $\sqrt{2}$ is irrational, so we need to prove that
+$r/{\sqrt{2}}$ is irrational.
+
+To show this, assume $r/\sqrt{2}$ is rational.  Then
+${r}/{\sqrt{2}} = {c}/{d}$
+for some $c,d\in\ints$.
+
+So
+\[
+  \sqrt{2} = r\frac{d}{c}
+  = \frac{a}{b}\frac{d}{c}
+  = \frac{ad}{bc}
+\]
+Which means $\sqrt{2}$ is rational, which is a contradiction.
+
+Therefore $r/\sqrt{2}$ is irrational.
+
+Therefore $r=\sqrt{2}\cdot r/\sqrt{2}$ is a product of two irrational
+numbers. \QED
+
+\end{frame}
+
+\end{document}

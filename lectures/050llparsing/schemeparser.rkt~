@@ -1,0 +1,29 @@
+#lang racket
+
+(define parse-string
+  (lambda (s)
+    (parse-from s 0)))
+
+(define parse-from
+  (lambda (s i)
+    (let ((next-letter (string-ref s i)))
+      (cond ((char-whitespace? next-letter)
+             (parse-from s (+ i 1)))
+            ((eq? next-letter #\()
+             (parse-list s (+ i 1)))
+            ((char-numeric? (string-ref s i))
+             (parse-number s i))
+            (else
+             (parse-symbol s i))))))
+
+(define char->number
+  (lambda (c)
+    (- (char->integer c) (char->integer #\0))))
+
+(define parse-number
+  (lambda (s i)
+    (let loop ((n 0) (i i))
+      (cond ((char-numeric? (string-ref s i))
+             (loop (+ (* n 10) (char->number (string-ref s i)))
+                   (+ i 1)))
+            (else n)))))

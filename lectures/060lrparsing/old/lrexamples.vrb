@@ -1,0 +1,41 @@
+\frametitle {Part VII\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$} 
+\tiny
+
+\centerline{$S \Rightarrow bA \Rightarrow bbAA
+\Rightarrow bbAaS \Rightarrow bbAa
+\Rightarrow bbaSa \Rightarrow bbaa$}
+
+\begin{tabular}{lr}
+Stack & Input \\
+0     & b b a a \$\\
+0 b 6 &  b a a \$\\
+0 b 6 b 6 & a a \$\\
+0 b 6 b 6 a 7 & a \$\\
+0 b 6 b 6 a 7 S 8 & a \$\\
+0 b 6 b 6 A 9 & a \$\\
+0 b 6 b 6 A 9 a 7 & \$\\
+0 b 6 b 6 A 9 a 7 S 8 & \$\\
+0 b 6 b 6 A 9 A 11 & \$\\
+0 b 6 A 9 & \$\\
+0 S 5 & \$\\
+\end{tabular}\hfill\tiny
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+  & a & b & \$ & S & A & B \\\hline
+0 & 1 & 6 &    & 5  &   &   \\\hline
+1 & 1  & 2 &    &   &   & 4  \\\hline
+2 &   &\arrl{S}&\arrl{S}& 3  &   &   \\\hline
+3 &   &\arr{B}{bS}&\arr{B}{bS} &   &   &   \\\hline
+4 &   & 2  &\arr{S}{aB} &   &   &  10 \\\hline
+5 &   &   &  accept   &   &   &   \\\hline
+6 & 7 &   &    &   & 9 &   \\\hline
+7 & \arrl{S} &   &\arrl{S}& 8  &   &   \\\hline
+8 & \arr{A}{aS}  &   &\arr{A}{aS} &   &   &   \\\hline
+9 & 7  &   &\arr{S}{bA} &   &   &   \\\hline
+10 &   &   &\arr{B}{aBB} &   &   &   \\\hline
+11 &   &   & \arr{A}{bAA}  &   &   &   \\\hline
+\end{tabular}
+
+By symmetry:
+
+\myfigg{lrparseexamples11}
+

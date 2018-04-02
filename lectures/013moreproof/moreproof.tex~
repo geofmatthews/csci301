@@ -1,0 +1,137 @@
+\documentclass{beamer}
+\usetheme{Singapore}
+
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+
+\newcommand{\set}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\nats}{\ensuremath{\mathbb{N}}}
+\newcommand{\nni}{\ensuremath{\mathbb{N}^0}}
+\newcommand{\ints}{\ensuremath{\mathbb{Z}}}
+\newcommand{\power}{\ensuremath{\mathcal{P}}}
+\renewcommand{\neg}{\sim}
+\newcommand{\xor}{\oplus}
+\newcommand{\then}{\ensuremath{\Rightarrow}}
+\newcommand{\lcm}{\mbox{lcm}}
+\newcommand{\QED}{\hfill\ensuremath{\blacksquare}}
+
+\newcommand{\grf}[2]{\centerline{\includegraphics[width=#1\textwidth]{#2}}}
+\newcommand{\tw}{\textwidth}
+\newcommand{\bc}{\begin{columns}}
+\newcommand{\ec}{\end{columns}}
+\newcommand{\cc}[1]{\column{#1\textwidth}}
+
+\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{ #1 }}}
+\newcommand{\efr}{\end{frame}}
+
+\newcommand{\cola}[1]{\begin{columns}\begin{column}{#1\textwidth}}
+\newcommand{\colb}[1]{\end{column}\begin{column}{#1\textwidth}}
+\newcommand{\colc}{\end{column}\end{columns}}
+
+\title{Book of Proof: Part III, More on Proof}
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\begin{document}
+\begin{frame}
+\maketitle
+
+\end{frame}
+
+\bfr{If-and-Only-If Proof}
+
+\begin{center}
+
+  {\bf Outline for If-and-Only-If Proof}
+  \fbox{\parbox{0.8\textwidth}{
+      {\bf Proposition} $P$ if and only if $Q$.
+
+      {\it Proof.}
+\\\\
+      ``Only if''
+      
+      [Prove $P\then Q$ by whatever means you can.]
+\\\\
+      ``If''
+      
+      [Prove $Q\then P$ by whatever means you can.]
+    }
+  }
+\end{center}
+
+\end{frame}
+
+\bfr{Equivalent Statements}
+
+{\bf Theorem} Suppose $A$ is an $n\times n$ matrix.  The following
+statements are equivalent:
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{enumerate}
+\item $A$ is invertible.
+\item $Ax=b$ has a unique solution for every $b\in\mathbb{R}^n$.
+\item $Ax=0$ has only the trivial solution.
+\item The reduced row echelong form of $A$ is $I_n$.
+\item $\det(A)\neq 0$.
+\item The matrix $A$ does not have 0 as an eigenvector.
+\end{enumerate}
+
+\end{frame}
+
+\bfr{Equivalent Statements}
+\[
+\begin{array}{ccccc}
+  a & \Rightarrow & b & \Rightarrow & c\\
+  \Uparrow &&&&\Downarrow \\
+  f & \Leftarrow & e & \Leftarrow &  d
+\end{array}
+\]
+\pause\vfill
+\[
+\begin{array}{ccccc}
+  a & \Rightarrow & b & \Leftrightarrow & c\\
+  \Uparrow &&\Downarrow&&\\
+  f & \Leftarrow & e & \Leftrightarrow &  d
+\end{array}
+\]
+\pause\vfill
+\[
+\begin{array}{ccccc}
+  a & \Leftrightarrow & b & \Leftrightarrow & c\\
+   &&\Updownarrow  \\
+  f & \Leftrightarrow & e & \Leftrightarrow &  d
+\end{array}
+\]
+
+
+\end{frame}
+
+\bfr{Existence Proofs}
+
+{\bf Proposition} There exists and even prime number.
+\pause
+
+{\it Proof.} Two is an even prime number.
+
+\pause\vfill
+
+{\bf Proposition}  There exists an integer that can be expressed as
+the sum of two perfect cubes in two different ways.
+\pause
+
+{\it Proof.}
+\begin{align*}
+  1^3 + 12^3 &= 1729\\
+  9^3 + 10^3 &= 1729
+\end{align*}
+
+
+
+\end{frame}
+\end{document}

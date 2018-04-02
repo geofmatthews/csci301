@@ -1,0 +1,15 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+
+\psset{levelsep=1}
+\pstree{\Tcircle{S}} {
+  \pstree{\Tcircle{A}} {
+    \pstree{\Tcircle{A}}{\Tcircle{a}}
+    \pstree{\Tcircle{A}}{\Tcircle{a}}
+  }
+  \pstree{\Tcircle{S}} {
+  \Tcircle{$\lambda$}
+  }
+}

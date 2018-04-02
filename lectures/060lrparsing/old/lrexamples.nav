@@ -1,0 +1,63 @@
+\beamer@endinputifotherversion {3.10pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\sectionentry {1}{Left recursion: $ S \rightarrow Sa\ |\ a$}{2}{Left recursion: $ S \rightarrow Sa\ |\ a$}{0}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\slideentry {1}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {2}{Right recursion: $ S \rightarrow aS\ |\ a$}{3}{Right recursion: $ S \rightarrow aS\ |\ a$}{0}}
+\headcommand {\beamer@sectionpages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\slideentry {2}{0}{3}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\sectionentry {3}{Middle recursion: $S \rightarrow aSa\ |\ bSb\ |\ c$}{4}{Middle recursion: $S \rightarrow aSa\ |\ bSb\ |\ c$}{0}}
+\headcommand {\beamer@sectionpages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {3}{0}{4}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\sectionentry {4}{$S \rightarrow AB$\hfill $A \rightarrow aA\ |\ \Lambda $\hfill $B \rightarrow bB\ |\ b$}{5}{$S \rightarrow AB$\hfill $A \rightarrow aA\ |\ \Lambda $\hfill $B \rightarrow bB\ |\ b$}{0}}
+\headcommand {\beamer@sectionpages {4}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {4}{0}{5}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\sectionentry {5}{Part I\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{6}{Part I\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {5}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\slideentry {5}{0}{6}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\sectionentry {6}{Part II\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{7}{Part II\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {6}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\slideentry {6}{0}{7}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\sectionentry {7}{Part III\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{8}{Part III\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {7}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\slideentry {7}{0}{8}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\sectionentry {8}{Part IV\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{9}{Part IV\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {8}{0}{9}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\sectionentry {9}{Part V\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{10}{Part V\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {9}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\slideentry {9}{0}{10}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\sectionentry {10}{Part VI\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{11}{Part VI\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {10}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\slideentry {10}{0}{11}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\sectionentry {11}{Part VII\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{12}{Part VII\hfill $S \rightarrow \Lambda | aB | bA$\hfill $A \rightarrow aS | bAA$\hfill $B \rightarrow bS | aBB$}{0}}
+\headcommand {\beamer@sectionpages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {11}{0}{12}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@partpages {1}{12}}
+\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\beamer@sectionpages {12}{12}}
+\headcommand {\beamer@documentpages {12}}
+\headcommand {\def \inserttotalframenumber {12}}

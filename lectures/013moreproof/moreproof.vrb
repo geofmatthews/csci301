@@ -1,0 +1,35 @@
+\frametitle{ Smallest Counterexample }
+
+  {\bf Outline for Proof by Induction}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Prove that for $k\in\nats$, $S_k \Rightarrow S_{k+1}$ is true.
+      \QED
+  }}
+  \vfill
+
+  {\bf Outline for Proof by Smallest Counterexample}
+
+  \fbox{\parbox{\textwidth}{
+      {\bf Proposition}  The statements $S_1,S_2,S_3,\ldots$ are all true.
+
+      {\it Proof.}
+
+      (1) Prove that $S_1$ is true.
+
+      (2) Suppose that not every $S_n$ is true.
+
+      (3) Let $S_k$ be the smallest false one.
+
+      (4) Then $S_{k-1}$ is true and $S_k$ is false.
+
+      (5) Use this to get a contradiction.
+      \QED
+  }}
+

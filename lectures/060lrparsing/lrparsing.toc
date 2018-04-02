@@ -1,0 +1,26 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Readings}{2}{0}{1}
+\beamer@sectionintoc {2}{Bottom up parsing of CFGs}{3}{0}{2}
+\beamer@sectionintoc {3}{$LR(k)$ grammars}{4}{0}{3}
+\beamer@sectionintoc {4}{$LR$ parsing: Shift and Reduce}{5}{0}{4}
+\beamer@sectionintoc {5}{$LR$ parsing: Shift and Reduce}{6}{0}{5}
+\beamer@sectionintoc {6}{Another $LR$ parse}{7}{0}{6}
+\beamer@sectionintoc {7}{LR parsing arithmetic}{8}{0}{7}
+\beamer@sectionintoc {8}{LR(1) parsing}{9}{0}{8}
+\beamer@sectionintoc {9}{$LR(1)$ parsing}{10}{0}{9}
+\beamer@sectionintoc {10}{$LR(1)$ parsing}{11}{0}{10}
+\beamer@sectionintoc {11}{Left recursion: $ S \rightarrow Sa\ |\ a$}{12}{0}{11}
+\beamer@sectionintoc {12}{Right recursion: $ S \rightarrow aS\ |\ a$}{13}{0}{12}
+\beamer@sectionintoc {13}{Middle recursion: $S \rightarrow aSa\ |\ bSb\ |\ c$}{14}{0}{13}
+\beamer@sectionintoc {14}{LR(1) parsing, a more complex example}{15}{0}{14}
+\beamer@sectionintoc {15}{LR(1) parsing}{16}{0}{15}
+\beamer@sectionintoc {16}{LR(1) parsing}{17}{0}{16}
+\beamer@sectionintoc {17}{LR(1) parsing}{18}{0}{17}
+\beamer@sectionintoc {18}{DFA for LR parsing}{19}{0}{18}
+\beamer@sectionintoc {19}{Using the DFA in LR parsing}{20}{0}{19}
+\beamer@sectionintoc {20}{Using the DFA in LR parsing}{21}{0}{20}
+\beamer@sectionintoc {21}{More examples in notes on repo.}{22}{0}{21}
+\beamer@sectionintoc {22}{LR(k) languages, Knuth's theorem}{23}{0}{22}
+\beamer@sectionintoc {23}{LR parsing exercises}{24}{0}{23}
+\beamer@sectionintoc {24}{Lex and Yacc Style Parsers}{25}{0}{24}

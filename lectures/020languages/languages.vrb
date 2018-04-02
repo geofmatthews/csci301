@@ -1,0 +1,8 @@
+\frametitle{Rules can be recursive} 
+
+\begin{eqnarray*}
+S \arr S \mbox{~and~} S\\
+S \arr \mbox{the~} N \mbox{~sat on the~} N\\
+N\arr \mbox{cat}\ |\  \mbox{mat}
+\end{eqnarray*}
+

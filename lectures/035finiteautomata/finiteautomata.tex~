@@ -1,0 +1,121 @@
+\documentclass{beamer}
+\usetheme{Singapore}
+
+%\usepackage{pstricks,pst-node,pst-tree}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+
+
+\newcommand{\grf}[2]{\centerline{\includegraphics[width=#1\textwidth]{#2}}}
+\newcommand{\tw}{\textwidth}
+\newcommand{\bc}{\begin{columns}}
+\newcommand{\ec}{\end{columns}}
+\newcommand{\cc}[1]{\column{#1\textwidth}}
+
+\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{ #1 }}}
+\newcommand{\efr}{\end{frame}}
+
+\newcommand{\cola}[1]{\begin{columns}\begin{column}{#1\textwidth}}
+\newcommand{\colb}[1]{\end{column}\begin{column}{#1\textwidth}}
+\newcommand{\colc}{\end{column}\end{columns}}
+
+\title{Introduction to Theory of Computation}
+\author{Chapter 1}
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\begin{document}
+\begin{frame}
+\maketitle
+
+\end{frame}
+
+\bfr{Purpose of the Theory of Computation}
+
+Develop formal mathematical models of computation
+that reflect real-world computers.
+
+\bi
+\ii What are the mathematical properties of computer hardware and
+software? 
+\ii What is a computation and what is an algorithm? Can we give rigorous
+mathematical definitions of these notions?
+\ii What are the limitations of computers? Can “everything” be computed?
+\ei
+
+\end{frame}
+
+\bfr{Three areas of computer theory}
+\bi
+\ii Complexity Theory
+\ii Computability Theory
+\ii Automata Theory
+\ei
+\end{frame}
+
+\bfr{Complexity Theory}
+\bi
+\ii Classify problems according to their degree of ``difficulty.''
+Give a rigorous proof that problems that seem to be ``hard'' are
+really ``hard.''
+\ei
+\end{frame}
+
+\bfr{Computability Theory}
+\bi
+\ii In 1930's G\"odel, Turing and Church discovered that some
+fundamental mathematical problems cannot be solved by a computer.
+\ii Classify problems as being solvable or unsolvable.
+\ei
+\end{frame}
+
+\bfr{Automata Theory}
+\bi
+\ii Three models:
+\bi
+\ii Finite Automata.  These are used in text processing, compilers, and
+hardware design.
+\ii Context-Free Grammars. These are used to define programming lan-
+guages and in Artificial Intelligence.
+\ii Turing Machines. These form a simple abstract model of a “real”
+computer, such as your PC at home.
+\ei
+\ii Do these models have the same power, or can one model solve more
+problems than the other?
+\ei
+\end{frame}
+
+
+\bfr{This course}
+\bi
+\ii Start with Automata Theory, followed by Computability Theory.
+\ii Complexity is covered in algorithms courses.
+\ei
+\end{frame}
+\bfr{Practical applications}
+
+\begin{enumerate}
+\ii It is about mathematical properties of computer hardware and software.
+\ii This theory is very much relevant to practice, for example, in the design
+of new programming languages, compilers, string searching, pattern
+matching, computer security, artificial intelligence, {\em etc.}
+\ii This course helps you to learn problem solving skills. Theory teaches
+you how to think, prove, argue, solve problems, express, and abstract.
+\ii This theory simplifies the complex computers to an abstract and simple
+mathematical model, and helps you to understand them better.
+\ii This course is about rigorously analyzing capabilities and limitations
+of systems.
+\end{enumerate}
+
+\end{frame}
+
+
+
+\end{document}

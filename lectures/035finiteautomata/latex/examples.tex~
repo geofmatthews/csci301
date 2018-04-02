@@ -1,0 +1,65 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+
+\documentclass{article}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\begin{document}
+\begin{tikzpicture}[->,auto,node distance=1in]
+
+  \node[initial,state]     (0)               {$q$};
+  \node[state]             (1) [right of=0]  {$q_1$};
+  \node[state]            (10) [below of=1]  {$q_{10}$};
+  \node[state,accepting] (101) [right of=10] {$q_{101}$};
+
+  \path (0)   edge [loop above] node {0} (0)
+              edge              node {1} (1)
+        (1)   edge [loop above] node {1} (1)
+              edge              node {0} (10)
+        (10)  edge              node {0} (0)
+              edge              node {1} (101)
+        (101) edge [loop right] node {0,1} (101);
+\end{tikzpicture}
+
+\end{document}% Author: Till Tantau
+% Source: The PGF/TikZ manual
+
+\documentclass{article}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\begin{document}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,thick]
+
+  \node[initial,state]   (000)                    {$q_{000}$};
+  \node[state,accepting] (100) [right of=000]     {$q_{100}$};
+  \node[state]           (010) [right of=100]     {$q_{010}$};
+  \node[state,accepting] (110) [right of=010]     {$q_{110}$};
+  \node[state]           (001) [below of=000]     {$q_{001}$};
+  \node[state,accepting] (101) [right of=001]     {$q_{101}$};
+  \node[state]           (011) [right of=101]     {$q_{011}$};
+  \node[state,accepting] (111) [right of=011]     {$q_{111}$};
+
+  \path (000) edge [loop above]     node         {0} (000)
+              edge                  node         {1} (001)
+        (100) edge                  node         {0} (000)
+              edge                  node         {1} (001)
+        (010) edge                  node         {0} (100)
+              edge [out=-140,in=50] node [above] {1} (101)
+        (110) edge [bend right]     node [above] {0} (100)
+              edge                  node         {1} (101)
+        (001) edge                  node         {0} (010)
+              edge [bend right]     node [below] {1} (011)
+        (101) edge [out=40,in=-130] node [below] {0} (010)
+              edge                  node         {1} (011)
+        (011) edge                  node         {0} (110)
+              edge                  node         {1} (111)
+        (111) edge                  node         {0} (110)
+              edge [loop below]     node         {1} (111);
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,34 @@
+\frametitle{ Example }
+
+{\bf Proposition}  Every non-zero rational number can be expressed as
+a product of two irrational numbers.
+
+{\it Proof.}  Reword the proposition:
+If $r$ is a non-zero rational number, then $r$ is the product of two
+irrational numbers.
+
+Suppose $r$ is a non-zero rational number.
+
+Then $r=a/b$ for $a,b\in\ints$.  Also,
+$r = \sqrt{2}({r}/{\sqrt{2}})$.
+
+We know $\sqrt{2}$ is irrational, so we need to prove that
+$r/{\sqrt{2}}$ is irrational.
+
+To show this, assume $r/\sqrt{2}$ is rational.  Then
+${r}/{\sqrt{2}} = {c}/{d}$
+for some $c,d\in\ints$.
+
+So
+\[
+  \sqrt{2} = r\frac{d}{c}
+  = \frac{a}{b}\frac{d}{c}
+  = \frac{ad}{bc}
+\]
+Which means $\sqrt{2}$ is rational, which is a contradiction.
+
+Therefore $r/\sqrt{2}$ is irrational.
+
+Therefore $r=\sqrt{2}\cdot r/\sqrt{2}$ is a product of two irrational
+numbers. \QED
+
