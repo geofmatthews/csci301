@@ -131,7 +131,7 @@ We have limited use for the real numbers and the rational numbers
 
 \end{frame}
 
-\bfr{Ordered pairs, triples, $n$-tuples}
+\bfr{Ordered pairs, triples, $n$-tuples\\ (lists, sequences, strings)}
 \begin{align*}
   (2,4) &\not= (4,2)\\
   (2,2) &\not= (2)\\
@@ -157,6 +157,11 @@ If $A$ and $B$ are finite sets, then $|A\times B| = |A|\cdot|B|$.
   A\times B\times C &= \set{(a,b,c) : a\in A,b\in B, c\in C}\\
   A^n &= A\times A\times A \times... \times A\\
    &= \set{(x_1, x_2, x_3, ..., x_n) : x_1,x_2,x_3,...,x_n\in A}\\
+  \\
+  (a,3,z) &\in \set{a,b,c}\times \set{1,2,3,4}\times\set{u,v,w,x,y,z}\\
+  (b,3,z) &\in \set{a,b,c}\times \set{1,2,3,4}\times\set{u,v,w,x,y,z}\\
+  (a,1,w) &\in \set{a,b,c}\times \set{1,2,3,4}\times\set{u,v,w,x,y,z}\\
+  (a,2,x) &\in \set{a,b,c}\times \set{1,2,3,4}\times\set{u,v,w,x,y,z}\\
 \end{align*}
 \end{frame}
 
@@ -441,6 +446,7 @@ $\exists X\in\power( \nats), |X|=5$
   $R$  &:& $\forall x\in\mathbb{R}, x^2\geq 0$\\
   $\neg R$ &:&$\neg(\forall x\in\mathbb{R}, x^2\geq 0)$\\
   $\neg R$ &:&$\exists x\in\mathbb{R}, \neg(x^2\geq 0)$\\
+  $\neg R$ &:&$\exists x\in\mathbb{R}, (x^2\not\geq 0)$\\
   $\neg R$ &:&$\exists x\in\mathbb{R}, x^2 < 0$\\
   $\neg R$ &:& There exists a real number whose square is negative.\\
 \end{tabular}
