@@ -1,18 +1,25 @@
 \documentclass{article}
+% the following gives us one-inch margins:
 \usepackage[margin=1in]{geometry}
+% this allows us to insert .png, .gif, .jpg, etc.:
 \usepackage{graphicx}
+% this allows us to show verbatim stuff, like code,
+% and put fancy boxes around it:
 \usepackage{fancyvrb}
+% this allows us to insert links to the internet:
 \usepackage{hyperref}
+% this has a bunch of cool math stuff not part of the standard library:
 \usepackage{amsfonts,amssymb,amsmath}
+% this is a cool drawing package, and some libraries for automata:
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata}
 
+% new commands for frequently used stuff:
 \newcommand{\qed}{\hfill\ensuremath{\blacksquare}}
-
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 
-\title{Some \LaTeX{}  examples}
+\title{Some \LaTeX{} examples}
 \author{Geoffrey Matthews}
 
 \begin{document}
@@ -21,7 +28,7 @@
 \section{Mechanics}
 This file contains some examples to get you started using \LaTeX{} to
 typeset mathematics.  It is the premiere software for technical
-publications.  Good places to get started with tutorials:
+publications.  Good places to get started with tutorials: 
 \begin{itemize}
 \item \url{http://www.latex-tutorial.com/}
 \item \url{http://www.stdout.org/~winston/latex/latexsheet.pdf}
@@ -49,12 +56,12 @@ here is the same thing with display math:
 \sum_{i=1}^{n} i^2
 \]
 Here is a set of equations lined up nicely:
-\begin{eqnarray*}
-(a+b)^2 &=& (a+b)(a+b) \\
-        &=& a(a+b) + b(a+b) \\
-        &=& a^2 + ab + ba + b^2 \\
-        &=& a^2 + 2ab + b^2
-\end{eqnarray*}
+\begin{align*}
+(a+b)^2 &= (a+b)(a+b) \\
+        &= a(a+b) + b(a+b) \\
+        &= a^2 + ab + ba + b^2  & \mbox{Here is a comment on a line!}\\
+        &= a^2 + 2ab + b^2      & \mbox{Another comment}
+\end{align*}
 
 You can talk about the real numbers, $\R$, the integers $\mathbb{Z}$, the
 rational numbers $\mathbb{Q}$, and the natural numbers,
@@ -94,7 +101,7 @@ file, and imported it into this document.
 \end{figure}
 
 You can also include figures inline, like this:
-\includegraphics[scale=0.5]{sets.png} but it looks weird sometimes.
+\includegraphics[scale=0.25]{sets.png} but it looks weird sometimes.
 
 Later on, we'll see how to make spectacular diagrams using the {\tt tikz}
 package. 
@@ -299,12 +306,12 @@ solutions here to demonstrate how to typeset them in \LaTeX.}
 \section{Some examples typesetting finite automata in \LaTeX}
 
 Put the following in your preamble:
-\begin{verbatim}
+\begin{Verbatim}[frame=single]
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata}
-\end{verbatim}
+\end{Verbatim}
 \newpage
-\begin{verbatim}  
+\begin{Verbatim}[frame=single]  
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q1) {$q_1$};
     \node[state,accepting] (q2) [right of=q1] {$q_2$};
@@ -314,7 +321,7 @@ Put the following in your preamble:
     \path (q2) edge [bend left] node {0} (q3);
     \path (q3) edge [bend left] node {0,1} (q2);
   \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q1) {$q_1$};
     \node[state,accepting] (q2) [right of=q1] {$q_2$};
@@ -325,7 +332,7 @@ Put the following in your preamble:
     \path (q3) edge [bend left] node {0,1} (q2);
   \end{tikzpicture}
 
-\begin{verbatim}  
+\begin{Verbatim}[frame=single]  
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q1) {$q_1$};
     \node[state,accepting] (q2) [right of=q1] {$q_2$};
@@ -335,7 +342,7 @@ Put the following in your preamble:
           (q2) edge [bend left] node {0} (q3)
           (q3) edge [bend left] node {0,1} (q2);
   \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q1) {$q_1$};
     \node[state,accepting] (q2) [right of=q1] {$q_2$};
@@ -348,7 +355,7 @@ Put the following in your preamble:
 
   \newpage
   
-\begin{verbatim}  
+\begin{Verbatim}[frame=single]  
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (e) {$q_e$};
     \node[state,accepting] (o) [right of=e] {$q_o$};
@@ -357,7 +364,7 @@ Put the following in your preamble:
           (o) edge [bend left] node {1} (e)
           (o) edge [loop above] node {0} (e);
   \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
   
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (e) {$q_e$};
@@ -367,7 +374,7 @@ Put the following in your preamble:
           (o) edge [bend left] node {1} (e)
           (o) edge [loop above] node {0} (e);
   \end{tikzpicture}
-  \begin{verbatim}
+  \begin{Verbatim}[frame=single]
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q) {$q$};
     \node[state] (1) [right of=q] {$q_1$};
@@ -381,7 +388,7 @@ Put the following in your preamble:
           (10) edge node {1} (101)
           (101) edge [loop above] node {0,1} (101);
   \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
 \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
   \node[state,initial] (q) {$q$};
   \node[state] (1) [right of=q] {$q_1$};
@@ -397,7 +404,7 @@ Put the following in your preamble:
 \end{tikzpicture}
 
 \newpage
-\begin{verbatim}
+\begin{Verbatim}[frame=single]
 \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
   \node[state,initial] (000) {$q_{000}$};
   \node[state,accepting] (100) [right of=000] {$q_{100}$};
@@ -424,7 +431,7 @@ Put the following in your preamble:
   (111) edge node {0} (110)
   (111) edge [loop below] node {1} (111);
 \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
 \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
   \node[state,initial] (000) {$q_{000}$};
   \node[state,accepting] (100) [right of=000] {$q_{100}$};
@@ -455,7 +462,7 @@ Put the following in your preamble:
 \newpage
 The same thing with a matrix:
 
-\begin{verbatim}
+\begin{Verbatim}[frame=single]
 \begin{tikzpicture}[->,>=latex,thick,auto]
   \matrix[row sep=1.5cm,column sep=1.5cm]{
     \node[state,initial] (000) {$q_{000}$}; &
@@ -484,7 +491,7 @@ The same thing with a matrix:
   (111) edge node {0} (110)
   (111) edge [loop below] node {1} (111);
 \end{tikzpicture}
-\end{verbatim}
+\end{Verbatim}
 \begin{tikzpicture}[->,>=latex,thick,auto]
   \matrix[row sep=1.5cm,column sep=1.5cm]{
     \node[state,initial] (000) {$q_{000}$}; &
