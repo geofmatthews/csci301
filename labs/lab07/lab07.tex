@@ -1,0 +1,201 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 7}
+\author{Spring 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the fourth in a series of five labs that will
+build an interpreter for Scheme.  In this lab we will add the {\tt lambda}
+special form.
+
+\paragraph{Due:} Your program, named {\tt lab07.rkt}, must be submitted to
+Canvas before midnight, Monday, May 28.
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab07-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Lambda creates a closure:}
+
+If you consider a simple application of a {\tt lambda} form, it's a lot like
+{\tt let}, that you did last week:
+\begin{Verbatim}
+  ((lambda (x y) (+ x y)) 5 7)    <=>    (let ((x 5) (y 7)) (+ x y))
+\end{Verbatim}
+In each case, the list of variables, {\tt (x y)}, is bound to the list
+of values {\tt (5 7)}, this is used to extend the environment,
+and then the expression, {\tt (+ x y)}, is evaluated in the extended
+environment.
+If this were the only use of {\tt lambda}, then it would just be a different
+syntax for {\tt let}.
+
+However, the {\tt lambda} is actually more powerful.  A {\tt lambda}
+can be created in one environment, and applied in another.  Consider
+the following code:
+\begin{Verbatim}[frame=single]
+  (let ((a 10)
+        (f (let ((a 20)) (lambda (x) (+ x a)))))
+     (f 30))
+\end{Verbatim}  
+Is the answer $30+20$ or $30+10$?  You can check it out with Racket,
+but hopefully you can see that it {\em should} be $30+20$.  When the
+{\tt lambda} form was {\em evaluated}, {\tt a} was bound to 20.  When
+the resulting function, bound to {\tt f}, was {\em applied}, {\tt a}
+was 10.
+
+The solution to this is that a {\tt lambda} form creates a special
+data structure called a {\em  closure}.  The closure is what is bound
+to {\tt f}, in the above example.
+A closure consists of three things:
+\begin{enumerate}
+\item A list of symbols (the variables to be bound when it is called).
+\item An expression to be evaluated.
+\item A stored environment, the environment in which the closure was
+  {\em created}.
+\end{enumerate}
+The first two are easy to understand.  For example, in the {\tt lambda}
+form: {\tt (lambda (x y) (+ x y))}, the list of symbols is {\tt (x y)}
+and the expression is {\tt (+ x y)}.  The third thing is 
+the environment that was in effect when the closure was created.  In
+other words, when the {\tt lambda} form was {\em evaluated}.
+
+We will represent closures as {\em structures} containing the
+three items.  We declare such a structure in {\bf Racket} like this:
+\begin{Verbatim}[frame=single]
+  (struct closure (vars body env))
+\end{Verbatim}
+Note that structures do not print nicely in {\bf Racket}, but
+we can make a utility to see them like this:
+\begin{Verbatim}[frame=single]
+  (define closure->list
+    (lambda (cl)
+       (if (not (closure? cl))
+           (error "Not a closure:" cl)
+           (list 'closure
+                 (closure-vars cl)
+                 (closure-body cl)
+                 (closure-env cl)))))
+\end{Verbatim}
+For example, if the environment {\tt e1}
+is
+\begin{Verbatim}[commandchars=\\\{\}]
+  {\tt {\color{blue} ((x . 5) (y . 8) (z . 10))}}
+\end{Verbatim}
+then the following closures would look like this:
+\begin{Verbatim}[frame=single,commandchars=\\\{\}]
+(closure->list (evaluate  '(lambda (x) (+ x y)) e1))
+      =>  (closure (x) (+ x y) {\color{blue}((x . 5) (y . 8) (z . 10))})
+(closure->list (evaluate  '(lambda (a b c) (cons a (list b c))) e1))
+      =>  (closure (a b c) (cons a (list b c)) {\color{blue}((x . 5) (y . 8) (z . 10)})
+(closure->list (evaluate '(let ((x 10)) (lambda (foo) (+ foo foo)) e1))
+      =>  (closure (foo) (+ foo foo) ((x . 10) {\color{blue}(x . 5) (y . 8) (z . 10))})
+\end{Verbatim}
+Note that the closure remembers the environment in which it was
+created, even if that environment was a special environment, for
+example, like the one created by a {\tt let} form.
+
+\paragraph{Applying lambda to some arguments:}
+
+Now that we know how to evaluate a {\tt lambda} form, we need to know
+how to {\em apply} a lambda form to some arguments.  For example,
+consider the form
+\begin{Verbatim}[frame=single]
+  ((lambda (x y) (+ x y)) 10 20)
+\end{Verbatim}
+This is {\em not} a {\tt lambda} form.  It is the {\em application} of
+the {\tt lambda} form {\tt (lambda (x y) (+ x y))} to the arguments,
+{\tt (10 20)}.  If we follow our rules for evaluating things that are
+not special forms, we would evaluate each of the items in the list
+(the {\tt lambda} form, the 10 and the 20), getting this list
+(printing the closure as a list):\\
+\begin{tabular}{|rcccl|}\hline
+  {\tt (}&{\tt (lambda (x y) (+ x y))} & 10 & 20 & {\tt )}\\
+         &  \ensuremath{\Downarrow} & \ensuremath{\Downarrow} & \ensuremath{\Downarrow} &\\
+  {\tt (} & {\tt (closure (x y) (+ x y) {\color{blue}((x . 5) (y . 8) (z . 10))}) } & 10 &  20& {\tt )}\\\hline
+\end{tabular}\\
+And now we have to apply the closure to the list of arguments.  Up to
+now, we've only been applying Racket built-in functions to their
+arguments, using the Racket {\tt apply} function.  However, Racket
+doesn't understand our closures.  We have to figure out how to apply
+them ourselves.
+
+So, we will add a new {\tt apply-function} procedure to our
+interpreter.  When evaluating a normal (non-special-form) list, we
+evaluate each item in the list, and then call {\tt apply-function}
+with just two arguments: the {\tt car} and the {\tt cdr} of our
+evaluated list of items, the function and its arguments.
+
+{\tt apply-function} will look at its first argument.  If it is a {\tt
+  procedure?}, then it calls the Racket built-in {\tt apply}
+function.  If it is a {\tt closure?}, it calls {\tt apply-closure}.
+Otherwise it should throw an error, reporting an unknown function
+type.
+
+{\tt apply-closure} takes two arguments, a closure and a list of
+values.  The closure has three components: the variables, the
+expression, and a saved environment.  This procedure extends the {\em
+  saved} environment by appending the variables and their values to
+the front (just like {\tt let} did), and then evaluates the expression
+of the special form in this environment.
+
+Note that {\tt let} is not the only form that introduces a local
+environment, now {\tt lambda} does, too.  Consider the following
+code:
+\begin{Verbatim}[frame=single]
+(let ((f (lambda (a) (lambda (b) (+ a b)))))
+  (let ((g (f 10))
+        (h (f 20)))
+    (list (g 100) (h 100))))  
+\end{Verbatim}
+Here, the result of applying {\tt f} to 10 creates a closure in an
+environment in which {\tt a} is bound to 10.  When we apply {\tt f} to
+20, we create a closure in an environment in which {\tt a} is bound to
+20.  What should be the result of the call?  Does your interpreter get
+that result?
+
+Note also that we can't define recursive functions directly using {\tt
+  let}.  What would happen if we tried this?
+\begin{Verbatim}[frame=single]
+  (let ((f
+           (lambda (n)
+              (if (= n 0)
+                  1
+                  (* n (f (- n 1)))))))
+      (f 5))
+\end{Verbatim}
+Try this in the {\bf Racket} interpreter, and also in your
+interpreter.
+In our next (and final) lab, we will define the {\tt letrec} special
+form to remedy this.
+
+However, we don't really need to wait for that to define
+recursive functions.  We just have to be a little more clever.
+For example, what would the following do in {\bf Racket}?  What does
+it do in your interpreter?
+\begin{Verbatim}[frame=single]
+(let ((f
+       (lambda (f n)
+         (if (= n 0)
+             1
+             (* n (f f (- n 1)))))))
+  (f f 5))
+\end{Verbatim}
+\end{document}
+
+\end

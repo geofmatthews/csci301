@@ -1,0 +1,106 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\title{CSCI 301, Lab \# 2}
+\author{Spring 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+\begin{multicols}{2}
+
+
+\paragraph{Goal:} The purpose of this lab is write some  code in 
+  which functions are both passed as parameters, and returned as values. 
+
+\paragraph{Due:} Your program, named {\tt lab02.rkt}, must be submitted to
+  Canvas before midnight, Monday, Apr 23.
+
+  \paragraph{Unit tests:}
+  At a minimum, your program must pass the unit tests found in the
+  file {\tt lab02-test.rkt}.  Place this file in the same folder
+  as your program, and run it;  there should be no output.
+
+\paragraph{Program:} Write a {\sc Scheme} procedure called {\tt I} that
+  does approximate numeric integration, as a companion to the {\tt D}
+  procedure from the lecture notes:
+  \begin{Verbatim}[frame=single]
+(define D
+  (lambda (f)
+    (let* ((delta 0.00001)
+           (two-delta (* 2 delta)))
+      (lambda (x)
+         (/ (- (f (+ x delta))
+               (f (- x delta)))
+           two-delta)))))
+  \end{Verbatim}
+  This was found using the numeric approximation to the derivative:
+  \[
+  \frac{d}{dx} f(x) \approx \frac{f(x+\Delta x) - f(x)}{\Delta x}
+  \]
+  This can be made more accurate simply by making $\Delta x$ smaller,
+  so long as we don't get too small for our computer representation.
+  
+  We have a numeric approximation for the {\em definite} integral, as
+  follows:
+\begin{eqnarray}
+  \int_a^b f dx  &=&  \sum _{i=0}^{n} f(a+i\Delta x) \label{summation}
+\end{eqnarray}
+where $a+n\Delta x = b$.  This is the ``add up the skinny rectangles''
+definition of the definite integral.
+
+However, we don't have a simple definition of the {\em indefinite}
+integral, sometimes called the antiderivative, like we do for the
+derivative.  There's no way to give a simple numerical definition, for
+example, for $I$ in the following equation:
+\begin{eqnarray}
+\int f(x) dx = I(f)
+\end{eqnarray}
+The indefinite integral of a function,
+however, can be defined as a function which, when plugged into a {\em
+  definite} integral, with limits $a$ and $b$, will return a value.
+In fact, it's quite simple:
+\begin{eqnarray}
+\int_a^b f dx  =  I(b) - I(a)
+\end{eqnarray}
+
+This gives us our key.  We will define a Scheme function {\tt I}, for
+integrate, which, when given a function as an argument, {\tt (I f)},
+returns a function of two parameters, {\tt a} and {\tt b}.  When
+{\em this returned function} is given two numbers, it computes the definite
+integral of {\tt f} from {\tt a} to {\tt b}, using the summation of
+skinny rectangles technique.
+
+Here are some examples of how it should work.  Since
+\begin{eqnarray}
+  \int_2^4 2x\ dx = 4^2 - 2^2 = 12
+\end{eqnarray}
+then, approximately,
+\begin{Verbatim}
+  ((I (lambda (x) (* 2 x))) 2 4)
+      => 12
+  ((I (D (lambda (x) (* x x)))) 2 4)
+      => 12
+\end{Verbatim}
+
+Note that we can't give a tolerance for the error for our integral
+function, since we don't really know how big the error will be when we
+add up the skinny rectangles.  Further, greater accuracy can only be
+achieved with more terms in the summation, which (unlike the
+derivative) will make our integral slower and slower.  For this
+assignment, we'll make a decent compromise and let the number of
+rectangles be fixed at $n=100,000$, which should give us pretty good
+accuracy without taking too long.
+
+\paragraph{Hint:} It may be easier to first write and debug
+a definite integral
+function that takes three arguments:\\
+{\tt (define Idef (lambda (f a b) ...))}.
+\end{multicols}
+
+\end{document}
+
+\end

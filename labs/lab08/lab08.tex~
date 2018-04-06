@@ -1,0 +1,94 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 8}
+\author{Winter 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the last in a series of five labs that will
+build an interpreter for Scheme.  In this lab we will add the {\tt letrec}
+special form.
+
+\paragraph{Due:} Your program, named {\tt lab08.rkt}, must be submitted to
+Canvas before midnight, Monday, March 12.
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab08-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Letrec creates a closures that include their own definitions.}
+
+Consider a typical application of {\tt letrec}:
+\begin{Verbatim}[frame=single]
+  (letrec ((plus (lambda (a b) (if (= a 0) b (+ 1 (plus (- a 1) b)))))
+           (even? (lambda (n) (if (= n 0) (= 1 1) (odd? (- n 1)))))
+           (odd? (lambda (n) (if (= n 0) (= 1 2) (even? (- n 1))))))
+    (even? (plus 4 5)))
+\end{Verbatim}
+{\tt plus} is a straightforward recursive function.  {\tt even?} and
+{\tt odd?} are mutually recursive functions, each one requires the
+other.
+
+If we evaluate the {\tt lambda} forms in  the current environment,
+none of the three functions will be defined in that environment (or
+else they will have the {\em wrong} definitions).
+
+We want the closures to close over an environment in which {\tt plus},
+{\tt even?} and {\tt odd?} are defined.  To do this, we will follow
+this strategy:
+\begin{enumerate}
+\item Use a dummy environment (any one will do, even an empty one),
+  and create closures using this dummy environment.  In other words,
+  the saved environment in the closure is the dummy environment.
+\item Now create a new environment where the symbols (in this case,
+  {\tt plus}, {\tt even?} and {\tt odd?}) are bound to these closures.
+  This environment {\em will} include the definitions of the three
+  symbols, but those definitions will be wrong (the closures will
+  store an incorrect environment).  Let's call this environment {\tt
+    NewEnv}. 
+\item Now go through the closures you've just added to the
+  environment, and {\em change} the environment stored in each closure
+  to {\tt NewEnv}.  Make sure you only go through the newly created
+  closures in the {\tt letrec} form, and not through {\em all}
+  closures in the environment.  
+\end{enumerate}
+
+\paragraph{Mutable data structures.}  Unfortunately, lists in Racket
+are not mutable.  You cannot change, or assign new values to {\tt
+  car}s and {\tt cdr}s.  So, we will change the representation of
+closures to {\tt struct}s.  The creation and use of a simple struct is
+illustrated below:
+
+\begin{Verbatim}[frame=single]
+(struct foo (a b (c #:mutable)))
+
+(define print
+  (lambda (f)
+    (display (list 'foo (foo-a f) (foo-b f) (foo-c f)))))
+
+(define x (foo 1 2 3))
+(print x)
+(newline)
+
+(set-foo-c! x 99)
+(print x)
+(newline)
+\end{Verbatim}
+\end{document}
+
+\end

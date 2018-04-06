@@ -1,0 +1,125 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 8}
+\author{Spring 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the last in a series of five labs that will
+build an interpreter for Scheme.  In this lab we will add the {\tt letrec}
+special form.
+
+\paragraph{Due:} Your program, named {\tt lab08.rkt}, must be submitted to
+Canvas before midnight, Monday, June 4.
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab08-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Letrec creates closures that include their own definitions.}
+
+Consider a typical application of {\tt letrec}:
+\begin{Verbatim}[frame=single]
+  (letrec ((plus (lambda (a b) (if (= a 0) b (+ 1 (plus (- a 1) b)))))
+           (even? (lambda (n) (if (= n 0) true (odd? (- n 1)))))
+           (odd? (lambda (n) (if (= n 0) false (even? (- n 1))))))
+    (even? (plus 4 5)))
+\end{Verbatim}
+{\tt plus} is a straightforward recursive function.  {\tt even?} and
+{\tt odd?} are mutually recursive functions, each one requires the
+other.
+
+If we evaluate the {\tt lambda} forms in  the current environment,
+none of the three functions will be defined in that environment (or
+else they will have the {\em wrong} definitions).
+
+We want the closures to close over an environment in which {\tt plus},
+{\tt even?} and {\tt odd?} are defined.  To do this, we will follow
+this strategy.
+\begin{enumerate}
+  \item When we evaluate the {\tt letrec} special form, we do so in
+    the context of some environment.  Let's call this the {\tt
+      OldEnv}.
+  \item We now create a dummy environment (which can be an empty
+    list), to use in the next step.  Let's call this {\tt DummyEnv}.
+  \item We now create closures in the {\tt letrec} form
+    using {\tt DummyEnv}.  In other words,
+    the {\em saved} environment in each closure is {\tt DummyEnv}.
+  \item Now create a {\em new} environment where the symbols
+    in the {\tt letrec} form (in this case,
+    {\tt plus}, {\tt even?} and {\tt odd?}) are bound to these closures.
+
+    Do not add anything to this environment except what the
+    variable-value combinations from the {\tt letrec} form!
+
+    Let's call this environment the {\tt LetrecEnv}.
+
+  \item We now have three environments we're dealing with:
+    {\tt OldEnv}, {\tt DummyEnv}, and {\tt LetrecEnv}.  Make sure you
+    know what each of these is.
+
+  \item Create a fourth environment by appending {\tt LetrecEnv} to
+    the front of {\tt OldEnv}.  Let's call this one {\tt NewEnv}.
+
+\item Now go through the closures  in {\tt LetrecEnv}
+  and {\em change} the {\em saved} environment in each closure
+  to {\tt NewEnv}.  Make sure you only go through the newly created
+  closures in {\tt LetrecEnv}, and not through all the closures 
+  in {\tt OldEnv} or {\tt NewEnv}.  (Note that {\tt NewEnv} includes
+  {\tt OldEnv}, but {\tt LetrecEnv} does not.)
+
+Consult the {\bf Racket} documentation to see how to
+change a field of a structure.  You will have to change the
+structure definition to make a mutable field:
+\begin{Verbatim}[frame=single]
+  (struct closure (vars body (env #:mutable)))
+\end{Verbatim}
+
+\item We can now evaluate the body of the {\tt letrec} form, using
+  {\tt NewEnv}!
+  
+\end{enumerate}
+
+
+\paragraph{Some tricky examples.}
+
+\begin{Verbatim}[frame=single,numbers=left]
+  (letrec ((f
+              (lambda (x) (if (= 0 x) 1 (* x (f (- x 1))))))) ; f from line 1
+      (f                                                      ; f from line 1
+         (let ((f
+                  (lambda (x) (* 3 x))))
+             (let ((f
+                      (lambda (x) (f (f x)))))                ; f from line 4
+                 (f 2)))))                                    ; f from line 6
+\end{Verbatim}
+
+\begin{Verbatim}[frame=single,numbers=left]
+  (letrec ((f
+              (lambda (x) (if (= 0 x) 1 (+ x (f (- x 1))))))) ; f from line 1
+      (f                                                      ; f from line 1
+         (let ((f 
+                  (lambda (x) (f (+ x 2)))))                  ; f from line 1
+            (f                                                ; f from line 4
+               (let ((f 
+                        (lambda (x) (f (+ x 3)))))            ; f from line 4
+                  (f 3))))))                                  ; f from line 6
+\end{Verbatim}
+
+\end{document}
+
