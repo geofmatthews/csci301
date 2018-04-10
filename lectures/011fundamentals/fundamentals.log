@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  4 APR 2018 08:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  10 APR 2018 08:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1103,32 +1103,37 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 ]
 \openout4 = `fundamentals.vrb'.
 
- (./fundamentals.vrb
-<listchoicetree.png, id=817, 560.0925pt x 371.13657pt>
-File: listchoicetree.png Graphic file (type png)
-
-<use listchoicetree.png>
-Package pdftex.def Info: listchoicetree.png used on input line 8.
-(pdftex.def)             Requested size: 245.83282pt x 162.8985pt.
-) [32
-
- <./listchoicetree.png (PNG copy)>]
-\openout4 = `fundamentals.vrb'.
-
-
-(./fundamentals.vrb) [33
+ (./fundamentals.vrb) [32
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb
-<choiceswithreps.png, id=868, 243.15843pt x 134.00063pt>
+<listchoicetree.png, id=843, 560.0925pt x 371.13657pt>
+File: listchoicetree.png Graphic file (type png)
+
+<use listchoicetree.png>
+Package pdftex.def Info: listchoicetree.png used on input line 8.
+(pdftex.def)             Requested size: 245.83282pt x 162.8985pt.
+) [33
+
+ <./listchoicetree.png (PNG copy)>]
+\openout4 = `fundamentals.vrb'.
+
+
+(./fundamentals.vrb) [34
+
+]
+\openout4 = `fundamentals.vrb'.
+
+ (./fundamentals.vrb
+<choiceswithreps.png, id=895, 243.15843pt x 134.00063pt>
 File: choiceswithreps.png Graphic file (type png)
 
 <use choiceswithreps.png>
 Package pdftex.def Info: choiceswithreps.png used on input line 7.
 (pdftex.def)             Requested size: 121.57892pt x 67.00014pt.
-) [34
+) [35
 
  <./choiceswithreps.png (PNG copy)>]
 (./fundamentals.vrb
@@ -1136,7 +1141,7 @@ File: choiceswithreps.png Graphic file (type png)
  <use choiceswithreps.png>
 Package pdftex.def Info: choiceswithreps.png used on input line 7.
 (pdftex.def)             Requested size: 121.57892pt x 67.00014pt.
-) [35
+) [36
 
 ] (./fundamentals.vrb
 File: choiceswithreps.png Graphic file (type png)
@@ -1144,19 +1149,19 @@ File: choiceswithreps.png Graphic file (type png)
 <use choiceswithreps.png>
 Package pdftex.def Info: choiceswithreps.png used on input line 7.
 (pdftex.def)             Requested size: 121.57892pt x 67.00014pt.
-) [36
+) [37
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb
-<choiceswithoutreps.png, id=945, 239.39438pt x 134.75343pt>
+<choiceswithoutreps.png, id=972, 239.39438pt x 134.75343pt>
 File: choiceswithoutreps.png Graphic file (type png)
 
 <use choiceswithoutreps.png>
 Package pdftex.def Info: choiceswithoutreps.png used on input line 6.
 (pdftex.def)             Requested size: 119.69688pt x 67.37654pt.
-) [37
+) [38
 
  <./choiceswithoutreps.png (PNG copy)>]
 (./fundamentals.vrb
@@ -1164,7 +1169,7 @@ File: choiceswithoutreps.png Graphic file (type png)
  <use choiceswithoutreps.png>
 Package pdftex.def Info: choiceswithoutreps.png used on input line 6.
 (pdftex.def)             Requested size: 119.69688pt x 67.37654pt.
-) [38
+) [39
 
 ] (./fundamentals.vrb
 File: choiceswithoutreps.png Graphic file (type png)
@@ -1172,29 +1177,21 @@ File: choiceswithoutreps.png Graphic file (type png)
 <use choiceswithoutreps.png>
 Package pdftex.def Info: choiceswithoutreps.png used on input line 6.
 (pdftex.def)             Requested size: 119.69688pt x 67.37654pt.
-) [39
+) [40
+
+] (./fundamentals.vrb
+File: choiceswithoutreps.png Graphic file (type png)
+
+<use choiceswithoutreps.png>
+Package pdftex.def Info: choiceswithoutreps.png used on input line 6.
+(pdftex.def)             Requested size: 119.69688pt x 67.37654pt.
+) [41
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb
-<choiceswithe.png, id=1023, 789.70032pt x 167.87718pt>
-File: choiceswithe.png Graphic file (type png)
- <use choiceswithe.png>
-Package pdftex.def Info: choiceswithe.png used on input line 7.
-(pdftex.def)             Requested size: 307.28987pt x 65.32326pt.
-)
-[40
-
- <./choiceswithe.png (PNG copy)>] (./fundamentals.vrb
-File: choiceswithe.png Graphic file (type png)
-
-<use choiceswithe.png>
-Package pdftex.def Info: choiceswithe.png used on input line 7.
-(pdftex.def)             Requested size: 307.28987pt x 65.32326pt.
-) [41
-
-] (./fundamentals.vrb
+<choiceswithe.png, id=1074, 789.70032pt x 167.87718pt>
 File: choiceswithe.png Graphic file (type png)
  <use choiceswithe.png>
 Package pdftex.def Info: choiceswithe.png used on input line 7.
@@ -1202,59 +1199,75 @@ Package pdftex.def Info: choiceswithe.png used on input line 7.
 )
 [42
 
+ <./choiceswithe.png (PNG copy)>] (./fundamentals.vrb
+File: choiceswithe.png Graphic file (type png)
+
+<use choiceswithe.png>
+Package pdftex.def Info: choiceswithe.png used on input line 7.
+(pdftex.def)             Requested size: 307.28987pt x 65.32326pt.
+) [43
+
+] (./fundamentals.vrb
+File: choiceswithe.png Graphic file (type png)
+ <use choiceswithe.png>
+Package pdftex.def Info: choiceswithe.png used on input line 7.
+(pdftex.def)             Requested size: 307.28987pt x 65.32326pt.
+)
+[44
+
 ]
 \openout4 = `fundamentals.vrb'.
 
- (./fundamentals.vrb) [43
-
-] (./fundamentals.vrb) [44
-
-] (./fundamentals.vrb)
-[45
+ (./fundamentals.vrb) [45
 
 ] (./fundamentals.vrb) [46
 
+] (./fundamentals.vrb)
+[47
+
+] (./fundamentals.vrb) [48
+
 ]
 \openout4 = `fundamentals.vrb'.
 
- (./fundamentals.vrb) [47
+ (./fundamentals.vrb) [49
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb)
-[48
+[50
 
-] (./fundamentals.vrb) [49
-
-] (./fundamentals.vrb) [50
-
-] (./fundamentals.vrb)
-[51
+] (./fundamentals.vrb) [51
 
 ] (./fundamentals.vrb) [52
+
+] (./fundamentals.vrb)
+[53
+
+] (./fundamentals.vrb) [54
 
 ]
 \openout4 = `fundamentals.vrb'.
 
- (./fundamentals.vrb) [53
+ (./fundamentals.vrb) [55
 
 ] (./fundamentals.vrb)
-[54
+[56
 
-] (./fundamentals.vrb) [55
+] (./fundamentals.vrb) [57
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb
-<permstocombs.png, id=1431, 824.32968pt x 300.3722pt>
+<permstocombs.png, id=1482, 824.32968pt x 300.3722pt>
 File: permstocombs.png Graphic file (type png)
  <use permstocombs.png>
 Package pdftex.def Info: permstocombs.png used on input line 6.
 (pdftex.def)             Requested size: 307.28987pt x 111.97012pt.
 )
-[56
+[58
 
  <./permstocombs.png (PNG copy)>] (./fundamentals.vrb
 File: permstocombs.png Graphic file (type png)
@@ -1262,25 +1275,25 @@ File: permstocombs.png Graphic file (type png)
 <use permstocombs.png>
 Package pdftex.def Info: permstocombs.png used on input line 6.
 (pdftex.def)             Requested size: 307.28987pt x 111.97012pt.
-) [57
-
-]
-\openout4 = `fundamentals.vrb'.
-
- (./fundamentals.vrb) [58
-
-] (./fundamentals.vrb)
-[59
+) [59
 
 ]
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb) [60
 
+] (./fundamentals.vrb)
+[61
+
 ]
 \openout4 = `fundamentals.vrb'.
 
- (./fundamentals.vrb) [61
+ (./fundamentals.vrb) [62
+
+]
+\openout4 = `fundamentals.vrb'.
+
+ (./fundamentals.vrb) [63
 
 ]
 \tf@nav=\write7
@@ -1292,11 +1305,11 @@ Package pdftex.def Info: permstocombs.png used on input line 6.
 \tf@snm=\write9
 \openout9 = `fundamentals.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 686.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 686.
  (./fundamentals.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 672.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 686.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 686.
 Package rerunfilecheck Info: File `fundamentals.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1307,13 +1320,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 686.
  ) 
 Here is how much of TeX's memory you used:
- 17282 strings out of 494827
- 327475 string characters out of 6176977
+ 17292 strings out of 494827
+ 327597 string characters out of 6176977
  398633 words of memory out of 5000000
- 19943 multiletter control sequences out of 15000+600000
+ 19945 multiletter control sequences out of 15000+600000
  15160 words of font info for 60 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  48i,15n,51p,408b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1327,11 +1340,12 @@ nts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on fundamentals.pdf (61 pages, 383519 bytes).
+nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on fundamentals.pdf (63 pages, 394711 bytes).
 PDF statistics:
- 1648 PDF objects out of 1728 (max. 8388607)
- 1545 compressed objects within 16 object streams
- 123 named destinations out of 1000 (max. 500000)
+ 1703 PDF objects out of 1728 (max. 8388607)
+ 1597 compressed objects within 16 object streams
+ 127 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 

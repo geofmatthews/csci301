@@ -484,6 +484,19 @@ numbers $y$.
 \end{align*}
 \end{frame}
 
+\bfr{Strings}
+
+If $\Sigma=\{a,b,c,...,z\}$ is our alphabet, then the set
+of all strings of length $n$ is
+\[
+\Sigma^n = \Sigma \times\Sigma \times\Sigma \times...\times\Sigma
+\]
+and the set of all strings is
+\[
+\bigcup_{i=0}^\infty \Sigma^i
+\]
+\end{frame}
+
 \bfr{Counting Tuples: Multiplication Principle}
 How many different lists of length 3 are there, where\\
 the first entry must be an element of \set{a,b,c},\\
@@ -524,9 +537,10 @@ where repetition is not allowed?
 \centerline{\includegraphics[scale=0.5]{choiceswithoutreps.png}}
 \pause
 
-\[ 7\cdot 6 \cdot 5\cdot 4 = 7^{\underline{4}}\]
-
-
+\begin{eqnarray*}
+  7\cdot 6 \cdot 5\cdot 4 &=& 7^{\underline{4}}\\\pause
+  &=& \frac{7!}{(7-4)!}
+  \end{eqnarray*}
 
 \end{frame}
 
@@ -576,7 +590,7 @@ There are $6^4$ lists that do not contain $E$.
 \end{align*}
 \end{frame}
 
-\bfr{Permutations}
+\bfr{Permutations (review)}
 How many lists with repetitions of length $k$
 can be made from $n$ symbols? \hfill $AAAA, BBBB, BABA, EBAB, CABC, ...$
 \pause
@@ -628,7 +642,7 @@ But these contain set-equivalent pairs, such as $abc$ and $cba$.
 \]
 
 \end{frame}
-\bfr{Counting subsets}
+\bfr{Counting subsets (review)}
 How many subsets of size $k$ can be made by selecting elements from a
 set of size $n$?
 \pause
