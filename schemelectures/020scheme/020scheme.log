@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  19 JAN 2018 09:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  13 APR 2018 08:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,15 +1043,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 (./020scheme.vrb) [9
 
-]
-\openout4 = `020scheme.vrb'.
+] (./020scheme.vrb) [10
 
- (./020scheme.vrb) [10
-
-]
-\openout4 = `020scheme.vrb'.
-
- (./020scheme.vrb) [11
+] (./020scheme.vrb) [11
 
 ]
 \openout4 = `020scheme.vrb'.
@@ -1078,17 +1072,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 \openout4 = `020scheme.vrb'.
 
+ (./020scheme.vrb) [16
+
+]
+\openout4 = `020scheme.vrb'.
+
  (./020scheme.vrb
 Overfull \hbox (12.37762pt too wide) in paragraph at lines 7--18
 [][] 
  []
 
-) [16
+) [17
 
 ]
 \openout4 = `020scheme.vrb'.
 
- (./020scheme.vrb) [17
+ (./020scheme.vrb) [18
 
 ]
 \openout4 = `020scheme.vrb'.
@@ -1099,7 +1098,7 @@ Overfull \hbox (8.88795pt too wide) in paragraph at lines 10--10
  
  []
 
-) [18
+) [19
 
 ]
 \tf@nav=\write7
@@ -1111,28 +1110,28 @@ Overfull \hbox (8.88795pt too wide) in paragraph at lines 10--10
 \tf@snm=\write9
 \openout9 = `020scheme.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
  (./020scheme.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
 Package rerunfilecheck Info: File `020scheme.out' has not changed.
-(rerunfilecheck)             Checksum: 346E176639585AC5856D6E9F9C4A60CF;1165.
+(rerunfilecheck)             Checksum: 39ADA69C988FEC193B911D47BE25AF3C;1098.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
- 20039 strings out of 494827
- 392047 string characters out of 6176977
+ 20037 strings out of 494827
+ 392041 string characters out of 6176977
  459292 words of memory out of 5000000
- 22807 multiletter control sequences out of 15000+600000
+ 22802 multiletter control sequences out of 15000+600000
  13956 words of font info for 53 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 48i,14n,54p,385b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,14n,54p,385b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
@@ -1144,10 +1143,10 @@ e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt8.pfb>
-Output written on 020scheme.pdf (18 pages, 138888 bytes).
+Output written on 020scheme.pdf (19 pages, 141077 bytes).
 PDF statistics:
- 600 PDF objects out of 1000 (max. 8388607)
- 557 compressed objects within 6 object streams
- 54 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 579 compressed objects within 6 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 

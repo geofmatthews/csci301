@@ -39,55 +39,50 @@
 \headcommand {\sectionentry {8}{Better notation for summations}{9}{Better notation for summations}{0}}
 \headcommand {\beamer@sectionpages {8}{8}}
 \headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {8}{0}{1}{9/9}{}{0}}
-\headcommand {\beamer@framepages {9}{9}}
-\headcommand {\sectionentry {9}{Better notation for summations}{10}{Better notation for summations}{0}}
-\headcommand {\beamer@sectionpages {9}{9}}
-\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\slideentry {9}{0}{1}{10/10}{}{0}}
-\headcommand {\beamer@framepages {10}{10}}
-\headcommand {\sectionentry {10}{Matches Scheme Code Better, Too}{11}{Matches Scheme Code Better, Too}{0}}
-\headcommand {\beamer@sectionpages {10}{10}}
-\headcommand {\beamer@subsectionpages {10}{10}}
-\headcommand {\slideentry {10}{0}{1}{11/11}{}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\sectionentry {11}{We have the same problem with derivatives}{12}{We have the same problem with derivatives}{0}}
-\headcommand {\beamer@sectionpages {11}{11}}
-\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\slideentry {11}{0}{1}{12/12}{}{0}}
+\headcommand {\slideentry {8}{0}{1}{9/11}{}{0}}
+\headcommand {\beamer@framepages {9}{11}}
+\headcommand {\sectionentry {9}{Matches Scheme Code Better, Too}{12}{Matches Scheme Code Better, Too}{0}}
+\headcommand {\beamer@sectionpages {9}{11}}
+\headcommand {\beamer@subsectionpages {9}{11}}
+\headcommand {\slideentry {9}{0}{1}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\sectionentry {12}{The chain rule}{13}{The chain rule}{0}}
+\headcommand {\sectionentry {10}{We have the same problem with derivatives}{13}{We have the same problem with derivatives}{0}}
 \headcommand {\beamer@sectionpages {12}{12}}
 \headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\slideentry {12}{0}{1}{13/13}{}{0}}
+\headcommand {\slideentry {10}{0}{1}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\sectionentry {13}{Finding fixed points}{14}{Finding fixed points}{0}}
+\headcommand {\sectionentry {11}{The chain rule}{14}{The chain rule}{0}}
 \headcommand {\beamer@sectionpages {13}{13}}
 \headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\slideentry {13}{0}{1}{14/14}{}{0}}
+\headcommand {\slideentry {11}{0}{1}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\sectionentry {14}{Fixed points in scheme:}{15}{Fixed points in scheme:}{0}}
+\headcommand {\sectionentry {12}{Finding fixed points}{15}{Finding fixed points}{0}}
 \headcommand {\beamer@sectionpages {14}{14}}
 \headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\slideentry {14}{0}{1}{15/15}{}{0}}
+\headcommand {\slideentry {12}{0}{1}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\sectionentry {15}{Remember Newton's Method?}{16}{Remember Newton's Method?}{0}}
+\headcommand {\sectionentry {13}{Fixed points in scheme:}{16}{Fixed points in scheme:}{0}}
 \headcommand {\beamer@sectionpages {15}{15}}
 \headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\slideentry {15}{0}{1}{16/16}{}{0}}
+\headcommand {\slideentry {13}{0}{1}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\sectionentry {16}{Newton's Method Using Functional Programming}{17}{Newton's Method Using Functional Programming}{0}}
+\headcommand {\sectionentry {14}{Remember Newton's Method?}{17}{Remember Newton's Method?}{0}}
 \headcommand {\beamer@sectionpages {16}{16}}
 \headcommand {\beamer@subsectionpages {16}{16}}
-\headcommand {\slideentry {16}{0}{1}{17/17}{}{0}}
+\headcommand {\slideentry {14}{0}{1}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\sectionentry {17}{Procedures as Returned Values: Newton's Method Again}{18}{Procedures as Returned Values: Newton's Method Again}{0}}
+\headcommand {\sectionentry {15}{Newton's Method Using Functional Programming}{18}{Newton's Method Using Functional Programming}{0}}
 \headcommand {\beamer@sectionpages {17}{17}}
 \headcommand {\beamer@subsectionpages {17}{17}}
-\headcommand {\slideentry {17}{0}{1}{18/18}{}{0}}
+\headcommand {\slideentry {15}{0}{1}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {18}{18}}
+\headcommand {\sectionentry {16}{Procedures as Returned Values: Newton's Method Again}{19}{Procedures as Returned Values: Newton's Method Again}{0}}
 \headcommand {\beamer@sectionpages {18}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\def \inserttotalframenumber {18}}
+\headcommand {\beamer@subsectionpages {18}{18}}
+\headcommand {\slideentry {16}{0}{1}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\beamer@sectionpages {19}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\def \inserttotalframenumber {17}}

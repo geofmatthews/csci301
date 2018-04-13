@@ -6,12 +6,11 @@
 \BOOKMARK [2][]{Outline0.6}{Procedures as Returned Values: Procedures as Data}{}% 6
 \BOOKMARK [2][]{Outline0.7}{Procedures as parameters}{}% 7
 \BOOKMARK [2][]{Outline0.8}{Better notation for summations}{}% 8
-\BOOKMARK [2][]{Outline0.9}{Better notation for summations}{}% 9
-\BOOKMARK [2][]{Outline0.10}{Matches Scheme Code Better, Too}{}% 10
-\BOOKMARK [2][]{Outline0.11}{We have the same problem with derivatives}{}% 11
-\BOOKMARK [2][]{Outline0.12}{The chain rule}{}% 12
-\BOOKMARK [2][]{Outline0.13}{Finding fixed points}{}% 13
-\BOOKMARK [2][]{Outline0.14}{Fixed points in scheme:}{}% 14
-\BOOKMARK [2][]{Outline0.15}{Remember Newton's Method?}{}% 15
-\BOOKMARK [2][]{Outline0.16}{Newton's Method Using Functional Programming}{}% 16
-\BOOKMARK [2][]{Outline0.17}{Procedures as Returned Values: Newton's Method Again}{}% 17
+\BOOKMARK [2][]{Outline0.9}{Matches Scheme Code Better, Too}{}% 9
+\BOOKMARK [2][]{Outline0.10}{We have the same problem with derivatives}{}% 10
+\BOOKMARK [2][]{Outline0.11}{The chain rule}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Finding fixed points}{}% 12
+\BOOKMARK [2][]{Outline0.13}{Fixed points in scheme:}{}% 13
+\BOOKMARK [2][]{Outline0.14}{Remember Newton's Method?}{}% 14
+\BOOKMARK [2][]{Outline0.15}{Newton's Method Using Functional Programming}{}% 15
+\BOOKMARK [2][]{Outline0.16}{Procedures as Returned Values: Newton's Method Again}{}% 16
