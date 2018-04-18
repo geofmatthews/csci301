@@ -245,51 +245,9 @@ $f\subseteq A\times B$, satisfying the property that for each $a\in
 A$, the relation $f$ contains exactly one ordered pair of the form
 $(a,b)$.  The statement $(a,b)\in f$ is abbreviated $f(a)=b$.
 
-\end{frame}
+\vfill
 
-\bfr{Relations that are functions}
-
-\begin{tikzpicture}[>=latex,thick]
-\draw (1,2) ellipse (.5 and 2);
-\draw (3,2) ellipse (.5 and 2);
-\node (A) at (1,3) {A};
-\node (B) at (1,2) {B};
-\node (C) at (1,1) {C};
-\node (D) at (3,3) {D};
-\node (E) at (3,2) {E};
-\node (F) at (3,1) {F};
-\draw[->] (A) -- (E);
-\draw[->] (B) -- (E);
-\draw[->] (C) -- (F);
-\end{tikzpicture}\hfill
-\begin{tikzpicture}[>=latex,thick]
-\draw (1,2) ellipse (.5 and 2);
-\draw (3,2) ellipse (.5 and 2);
-\node (A) at (1,3) {A};
-\node (B) at (1,2) {B};
-\node (C) at (1,1) {C};
-\node (D) at (3,3) {D};
-\node (E) at (3,2) {E};
-\node (F) at (3,1) {F};
-\draw[->] (A) -- (D);
-\draw[->] (B) -- (D);
-\draw[->] (C) -- (D);
-\end{tikzpicture}\hfill
-\begin{tikzpicture}[>=latex,thick]
-\draw (1,2) ellipse (.5 and 2);
-\draw (3,2) ellipse (.5 and 2);
-\node (A) at (1,3) {A};
-\node (B) at (1,2) {B};
-\node (C) at (1,1) {C};
-\node (D) at (3,3) {D};
-\node (E) at (3,2) {E};
-\node (F) at (3,1) {F};
-\draw[->] (A) -- (D);
-\draw[->] (B) -- (E);
-\draw[->] (C) -- (F);
-\end{tikzpicture}
-
-
+For each $a\in A$, there is exactly one $f(a)\in B$.
 
 \end{frame}
 
@@ -340,6 +298,54 @@ $(a,b)$.  The statement $(a,b)\in f$ is abbreviated $f(a)=b$.
 
 
 \end{frame}
+
+\bfr{Relations that are functions}
+
+\begin{tikzpicture}[>=latex,thick]
+\draw (1,2) ellipse (.5 and 2);
+\draw (3,2) ellipse (.5 and 2);
+\node (A) at (1,3) {A};
+\node (B) at (1,2) {B};
+\node (C) at (1,1) {C};
+\node (D) at (3,3) {D};
+\node (E) at (3,2) {E};
+\node (F) at (3,1) {F};
+\draw[->] (A) -- (E);
+\draw[->] (B) -- (E);
+\draw[->] (C) -- (F);
+\end{tikzpicture}\hfill
+\begin{tikzpicture}[>=latex,thick]
+\draw (1,2) ellipse (.5 and 2);
+\draw (3,2) ellipse (.5 and 2);
+\node (A) at (1,3) {A};
+\node (B) at (1,2) {B};
+\node (C) at (1,1) {C};
+\node (D) at (3,3) {D};
+\node (E) at (3,2) {E};
+\node (F) at (3,1) {F};
+\draw[->] (A) -- (D);
+\draw[->] (B) -- (D);
+\draw[->] (C) -- (D);
+\end{tikzpicture}\hfill
+\begin{tikzpicture}[>=latex,thick]
+\draw (1,2) ellipse (.5 and 2);
+\draw (3,2) ellipse (.5 and 2);
+\node (A) at (1,3) {A};
+\node (B) at (1,2) {B};
+\node (C) at (1,1) {C};
+\node (D) at (3,3) {D};
+\node (E) at (3,2) {E};
+\node (F) at (3,1) {F};
+\draw[->] (A) -- (D);
+\draw[->] (B) -- (E);
+\draw[->] (C) -- (F);
+\end{tikzpicture}
+
+
+
+\end{frame}
+
+
 \bfr{Domain, Codomain, Range}
 
 {\bf Definition 12.2}
@@ -772,6 +778,8 @@ elements can be arranged in an infinite list $a_1, a_2, a_3, a_4,
 \item $|A| = |B|$ means there is a bijection $A\rightarrow B$.
 \item $|A| < |B|$ means there is an injection $A\rightarrow B$
   but no surjection.
+\item If there is a surjection $A\rightarrow B$ but no injection,
+  then $|B| < |A|$.
 \item $|A| \leq |B|$ means $|A| < |B|$ or $|A| = |B||$.
 \end{enumerate}
 \vfill
@@ -854,10 +862,10 @@ $g:B\rightarrow A$, then there is a bijection $h:A\rightarrow B$.
 
 \bfr{Computer Programs}
 \begin{itemize}
-\item You know how to compute $\pi$ to any precision.
+\item $\pi$ is {\bf computable}, {\em i.e.} there is a program
+  which, given $n$, will return the $n$th digit of $\pi$.
   \pause
-\item Given any real number, $x\in\mathbb{R}$, is there a computer
-  program to compute it to any precision?
+\item Given any real number, $x\in\mathbb{R}$, is it computable?
   \pause
 \item How many computer programs are there?
 \item Let $\mathbb{P} = \{ x : \mbox{$x$ is a computer program in Scheme}\}$.

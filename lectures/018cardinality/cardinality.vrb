@@ -1,9 +1,9 @@
 \frametitle{ Computer Programs }
 \begin{itemize}
-\item You know how to compute $\pi$ to any precision.
+\item $\pi$ is {\bf computable}, {\em i.e.} there is a program
+  which, given $n$, will return the $n$th digit of $\pi$.
   \pause
-\item Given any real number, $x\in\mathbb{R}$, is there a computer
-  program to compute it to any precision?
+\item Given any real number, $x\in\mathbb{R}$, is it computable?
   \pause
 \item How many computer programs are there?
 \item Let $\mathbb{P} = \{ x : \mbox{$x$ is a computer program in Scheme}\}$.

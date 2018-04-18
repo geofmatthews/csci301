@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage[margin=1in]{geometry}
+
+\title{CSCI 301, Winter 2018\\Math Exercises \#5}
+\author{YOUR NAME HERE}
+\date{Due date:  Monday, February 12, midnight.}
+
+\newcommand{\nats}{\ensuremath{\mathbb{N}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item Consider the relation $\mid$ (divides) on the set $\mathbb{Z}$.
+  \begin{enumerate}
+  \item Prove or disprove: $\mid$ is reflexive.
+  \item Prove or disprove: $\mid$ is symmetric.
+  \item Prove or disprove: $\mid$ is transitive.
+  \end{enumerate}
+
+\item Prove or disprove: If $R$ and $S$ are two equivalence relations on a
+  set $A$, then $R\cup S$ is also an equivalence relation on $A$.
+
+\item Consider the function
+  $\theta : \{0,1\}\times\mathbb{N} \rightarrow \mathbb{Z}$
+  defined as  $\theta(a,b) = a -2ab + b$
+
+    \begin{enumerate}
+    \item     Prove or disprove: $\theta$ is injective.
+      \item     Prove or disprove: $\theta$ is surjective.
+    \end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}
