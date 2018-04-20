@@ -61,7 +61,10 @@ A_0 \cup A_1 & \mbox{otherwise}
 \end{array}\right.
 \]
 where $A_0$ are all the subsets of a set without one of the elements
-of $A$, and $A_1$ are all the subsets with that element.
+of $A$, and $A_1$ are all the subsets with that element.  But remember,
+$A_1$ is just $A_0$ with the one element added back to each subset,
+so both sets
+are defined in terms of $A_0$.
 
 \paragraph{Program:} We'll use the above ideas to write a Scheme
 program to create sublists of a list.

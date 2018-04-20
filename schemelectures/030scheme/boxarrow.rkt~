@@ -45,10 +45,9 @@
 
 (define text-field   
   (instantiate text-field% ()    
-    (label #f)    
+    (label "Expression:")    
     (parent control-panel)    
-    (style '(multiple vertical-label))
-    (font (make-object font% 18 'default))
+    (style '(multiple vertical-label))    
     (callback (lambda (tf e)                
                 (when (eq? 'text-field-enter (send e get-event-type))                  
                   (send canvas set-sexpr                        
