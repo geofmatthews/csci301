@@ -39,10 +39,16 @@ function calls (procedure applications), for example
 The process follows three simple rules:
 \begin{enumerate}
 \item Numbers evaluate to themselves.
+
+  To check whether something
+  is a number in scheme, use the {\tt number?} predicate.
 \item Symbols, such as {\tt cons}, {\tt +}, and {\tt x},
   are looked up in a table
   called the {\em environment}.  We will use a list for our
-  environment. 
+  environment.
+
+  To check whether something is a symbol in scheme, use the
+  {\tt symbol?} predicate.  (See a pattern here?)
 \item Lists are evaluated recursively.  First,
   each element of the list is evaluated, and then the first argument
   (which should be a procedure at this point), is applied to the
