@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsfonts,amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{CSCI 301, Math Exercises \# 4}
+\author{YOUR NAME HERE}
+\date{Due date:  Midnight, May 14}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+  \item
+Build deterministic finite automata
+for each of the following languages.
+\item
+Create simple, meaningful automata
+(rather than, {\em e.g.}, using the algorithm to create
+a DFA from an NFA, which can be quite complex and confusing)
+and explain how they work.
+\item
+In all
+cases the alphabet is $\Sigma = \{0,1\}$.
+\item
+  Typeset your answers as neatly as possible with \LaTeX\ and
+  Ti\textit{k}Z.
+\end{itemize}
+
+\begin{enumerate}
+
+  \item   The language $\{100, 10, 011\}$. 
+
+\item The set of 
+  all strings that begin or end with a doubled digit, either 11 or 00.
+  
+\item
+The set of all strings that have exactly one doubled digit in them.
+  In other words, either 11 or 00 occurs in the string, but not both,
+  and it only occurs once.
+
+\item The set of all strings such that every block of four consecutive
+  digits has at least two 0's in it.
+
+\item The set of all strings beginning with a 1 such
+  that, interpreted as a binary representation of an integer, it has a
+  remainder of 1 when divided by 3.  For example, the binary number
+  $1010_b$ is decimal $10$.  When you divide 10 by 3 you get a
+  remainder of 1, so $1010$ is in the language.  However, the binary
+  number $1111_b$ is decimal $15$.  When you divide 15 by 3 you get a
+  remainder of 0, so $1111$ is not in the language.
+
+  Hint: if you have a binary string, such as $1100_b$, which is
+  $12$ in decimal, what happens if you add a 0 to the right end?
+  You get $11000_b$ which in decimal is $24$.  What happens if
+  you add a 1 to the right end?  You get $11001_b$ which is decimal
+  $25$.  Think carefully about all cases:  What happens to the remainder
+  when you add a 0?  What happens when you add a 1?
+
+\end{enumerate}
+
+
+\end{document}
