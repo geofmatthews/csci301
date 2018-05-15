@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{amsfonts,amssymb}
+\usepackage[margin=1in]{geometry}
+
+\title{CSCI 301, Winter 2018\\Math Exercises \# 7}
+\author{YOUR NAME HERE}
+\date{Due date:  Midnight, Wednesday, Feb 28}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+Use the pumping lemma to prove that each of the following languages is
+not regular.
+
+\begin{enumerate}
+\item
+  $\{a^ib^j\mid i \geq j \geq 0\}$
+
+\item
+  $\{a^{4n+5}b^{3n+2}: n\geq 0\}$
+
+\item
+  $\{a^ib^jc^k \mid i = j \mbox{ or } j = k\}$
+
+
+\end{enumerate}
+
+
+\end{document}
