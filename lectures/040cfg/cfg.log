@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  26 FEB 2018 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  16 MAY 2018 10:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1119,7 +1119,7 @@ Overfull \hbox (12.59636pt too wide) detected at line 16
 T1/cmss/m/it/10.95 aa
  []
 
-<figures/derivationtree.png, id=538, 372.39125pt x 402.50375pt>
+<figures/derivationtree.png, id=542, 372.39125pt x 402.50375pt>
 File: figures/derivationtree.png Graphic file (type png)
 
 <use figures/derivationtree.png>
@@ -1378,7 +1378,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \openout4 = `cfg.vrb'.
 
  (./cfg.vrb
-<pda.png, id=1284, 543.53062pt x 455.45157pt>
+<pda.png, id=1288, 543.53062pt x 455.45157pt>
 File: pda.png Graphic file (type png)
  <use pda.png>
 Package pdftex.def Info: pda.png used on input line 2.
@@ -1388,7 +1388,7 @@ Package pdftex.def Info: pda.png used on input line 2.
  <./pda.png (PNG copy)>]
 \openout4 = `cfg.vrb'.
 
- (./cfg.vrb <tapedrives.jpg, id=1311, 4047.12pt x 3035.34pt>
+ (./cfg.vrb <tapedrives.jpg, id=1315, 4047.12pt x 3035.34pt>
 File: tapedrives.jpg Graphic file (type jpg)
 
 <use tapedrives.jpg>
@@ -1410,7 +1410,7 @@ Package pdftex.def Info: tapedrives.jpg used on input line 2.
 ]
 \openout4 = `cfg.vrb'.
 
- (./cfg.vrb <nestedparens.png, id=1388, 795.72281pt x 438.8897pt>
+ (./cfg.vrb <nestedparens.png, id=1392, 795.72281pt x 438.8897pt>
 File: nestedparens.png Graphic file (type png)
 
 <use nestedparens.png>
@@ -1437,7 +1437,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 \openout4 = `cfg.vrb'.
 
-(./cfg.vrb <0n1n.png, id=1413, 694.84593pt x 388.45125pt>
+(./cfg.vrb <0n1n.png, id=1418, 694.84593pt x 388.45125pt>
 File: 0n1n.png Graphic file (type png)
  <use 0n1n.png>
 Package pdftex.def Info: 0n1n.png used on input line 2.
@@ -1456,7 +1456,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 \openout4 = `cfg.vrb'.
 
-(./cfg.vrb <middleb.png, id=1438, 744.53156pt x 505.13719pt>
+(./cfg.vrb <middleb.png, id=1443, 744.53156pt x 505.13719pt>
 File: middleb.png Graphic file (type png)
  <use middleb.png>
 Package pdftex.def Info: middleb.png used on input line 2.
@@ -1478,15 +1478,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 881.
  (./cfg.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 881.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 881.
+Package rerunfilecheck Info: File `cfg.out' has not changed.
+(rerunfilecheck)             Checksum: C1DD0818F534532E7C6B101EB9A8FF29;2933.
 
-
-Package rerunfilecheck Warning: File `cfg.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cfg.out':
-(rerunfilecheck)             Before: DBDCCE248E7F3070D8B44893EB3307A8;2881
-(rerunfilecheck)             After:  C1DD0818F534532E7C6B101EB9A8FF29;2933.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1497,10 +1491,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 881.
  ) 
 Here is how much of TeX's memory you used:
- 21895 strings out of 494827
- 436262 string characters out of 6176977
+ 21901 strings out of 494827
+ 436320 string characters out of 6176977
  517760 words of memory out of 5000000
- 24480 multiletter control sequences out of 15000+600000
+ 24486 multiletter control sequences out of 15000+600000
  17903 words of font info for 67 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  48i,14n,73p,400b,910s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1522,10 +1516,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on cfg.pdf (49 pages, 2627061 bytes).
+Output written on cfg.pdf (49 pages, 2627051 bytes).
 PDF statistics:
- 1561 PDF objects out of 1728 (max. 8388607)
- 1464 compressed objects within 15 object streams
+ 1564 PDF objects out of 1728 (max. 8388607)
+ 1467 compressed objects within 15 object streams
  143 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 words of extra memory for PDF output out of 10000 (max. 10000000)
 
