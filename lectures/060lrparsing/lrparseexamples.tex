@@ -321,7 +321,7 @@ $S \deriv{S\ar aSc} aSc
 \hfill
 \begin{tabular}{|c|c|c|c|c|c|c|} \hline
     & a & b & c & \$ &S&B \\\hline
-  0 &   & 3 &   & $B\ar\mt$ &2&1  \\\hline
+  0 & 6 & 3 &   & $B\ar\mt$ &2&1  \\\hline
   1 &   &   &   & $S\ar B$  && \\\hline
   2 &    &   &   & accept  && \\\hline
   3 &    & 3  & $B\ar \mt$   &  &&4  \\\hline
@@ -400,7 +400,7 @@ $
 \hfill
 \begin{tabular}{|c|c|c|c|c|c|c|} \hline
     & a & b & c & \$ &S&B \\\hline
-  0 &   & 3 &   & $B\ar\mt$ &2&1  \\\hline
+  0 & 6 & 3 &   & $B\ar\mt$ &2&1  \\\hline
   1 &   &   &   & $S\ar B$  && \\\hline
   2 &    &    &   & accept  && \\\hline
   3 &    & 3  & $B\ar \mt$   &  &&4  \\\hline
@@ -410,7 +410,7 @@ $
   7 &    &    & $S\ar B$   &    &    &   \\\hline
   8 &    &    &  9  &    &    &   \\\hline
   9 &    &    &   $S\ar aSc$  &  $S\ar aSc$  &    &   \\\hline
-10 &     & 10 &     &     &     & 11    \\\hline
+10 &     & 10 & $B\ar\mt$    &     &     & 11    \\\hline
 11 &     &    &  12   &     &     &   \\\hline
 12 &     &    &  $B\ar bBc$   &     &     &   \\\hline
 \end{tabular}
@@ -427,7 +427,7 @@ $
   \node[state,accepting] (6) {6}; &
   \node[state,accepting] (7) {7}; \\
   &&
-  \node[state] (10) {10}; &
+  \node[state,accepting] (10) {10}; &
   \node[state] (8) {8}; &
   \node[state,accepting] (9) {9};\\
   &&
@@ -453,6 +453,9 @@ $
 
 }
 
+   Note that $(6,b)$ could jump to 3 instead of 10 and the graph
+   would be simpler.
+   
 \newpage
 
 \item[Same number of $a$s and $b$s, Part I]\mbox{}\\
