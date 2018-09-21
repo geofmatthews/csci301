@@ -11,14 +11,14 @@
 
 \begin{document}
 \centerline{\Large\bf CSCI 301: Formal Languages and Functional Programming}
-\centerline{\large\bf Syllabus, Spring, 2018}
+\centerline{\large\bf Syllabus, Fall, 2018}
 
 \paragraph{Instructor:} Geoffrey Matthews\\
 {\em Email:} {\tt geoffrey dot matthews at wwu dot edu}\\
-{\em Office hours:} MTWF 10:00-10:50, CF 469
+{\em Office hours:} MTWF 9:00-9:50, CF 469
 
-\paragraph{TA:} Zach McGrew\\
-{\em Office hours:} R 10:00-11:50, CF 163
+\paragraph{TA:} Evan Ricks
+%\\{\em Office hours:} R 10:00-11:50, CF 163
 
 \paragraph{Meeting times:} \mbox{}
 
@@ -26,15 +26,14 @@
     CRN & \multicolumn{3}{l|}{Lecture}
     & \multicolumn{3}{|l}{Lab}
     \\\hline
-    21331 & 9:00-9:50& MTWF & CF225&  W & CF167& 12:00-12:50
+    41773 & 8:00-8:50& MTWF & CF225 &  M & CF164 & 12:00-1:50
     \\
-    22526 & 9:00-9:50& MTWF & CF225&  T & CF167&  10:00-11:50 
+    41774 & 8:00-8:50& MTWF & CF225 &  W & CF164 & 12:00-1:50 
     \\\hline
     \end{tabular}
 	
-  You  may attend a
-  lab session you did not sign up for on a space available
-  basis (you may not bump someone who has registered for
+  You may attend a lab session you did not sign up for on a space
+  available basis (you may not bump someone who has registered for
   that section).  There are no labs the first week of class.
 
 \paragraph{Catalog copy:} Introduction to discrete structures important to
@@ -49,71 +48,72 @@
 \paragraph{Goals:}  On completion of this course, students will demonstrate:
 \begin{enumerate}
 \item
-Thorough understanding of the mathematical definitions of concepts
-important to computer science, including sets, tuples, lists, strings,
-languages, graphs, trees, functions and relations
+  Thorough understanding of the mathematical definitions of concepts
+  important to computer science, including sets, tuples, lists, strings,
+  languages, graphs, trees, functions and relations
 \item
-The ability to prove basic theorems involving these
-mathematical concepts
+  The ability to prove basic theorems involving these
+  mathematical concepts
 \item
-The ability to employ effectively the functional programming style in a
-functional programming language
+  The ability to employ effectively the functional programming style in a
+  functional programming language
 \item
-Solid understanding of fundamental classes of languages, including
-regular and context free, and their corresponding machines
+  Solid understanding of fundamental classes of languages, including
+  regular and context free, and their corresponding machines
 \item
-Basic understanding of Turing machines and computability
+  Basic understanding of Turing machines and computability
 \item
-Basic understanding of important algorithms, including conversion of
-finite automata to different forms, conversion of grammars to machines
+  Basic understanding of important algorithms, including conversion of
+  finite automata to different forms, conversion of grammars to machines
 \item
-Basic understanding of LL(k) and LR(K) grammars and the parsing
-techniques used for those grammars
+  Basic understanding of LL(k) and LR(K) grammars and the parsing
+  techniques used for those grammars
 \end{enumerate}
 
 \paragraph{Websites:}
 \begin{itemize}
-  \item For class materials: \url{https://github.com/geofmatthews/csci301}
-  \item For turning in homework and
-    grading: \url{https://wwu.instructure.com/} 
+\item For class materials:
+  \url{https://github.com/geofmatthews/csci301}
+\item For turning in homework and
+  grading: \url{https://wwu.instructure.com/} 
 \end{itemize}
 
 
 \paragraph{Goals:} This class is an introduction to computer science {\em
-    theory}.  This is exactly parallel to the distinction between
-  theoretical physics and applied physics.  We will use simplified,
-  abstract, ideal mathematical models of computers, so that we can
-  study the theoretical limits of what they can accomplish.  We will
-  begin studying the basic mathematics we need, and then study
-  mathematical models of computers of increasing complexity and power.
-  Two classes of computers, finite state automata and push-down
-  automata, also form the basis of powerful programming paradigms
-  useful in a variety of situations.
+  theory}.  This is exactly parallel to the distinction between
+theoretical physics and applied physics.  We will use simplified,
+abstract, ideal mathematical models of computers, so that we can study
+the theoretical limits of what they can accomplish.  We will begin
+studying the basic mathematics we need, and then study mathematical
+models of computers of increasing complexity and power.  Two classes
+of computers, finite state automata and push-down automata, also form
+the basis of powerful programming paradigms useful in a variety of
+situations.
 
-  We will also study the functional programming language {\em Scheme}.
-  Its simplicity, power, and mathematical elegance will inform our
-  study of computers in the abstract, and also teach us new styles of
-  programming.
+We will also study the functional programming language {\em Scheme}.
+Its simplicity, power, and mathematical elegance will inform our
+study of computers in the abstract, and also teach us new styles of
+programming.
 
 
-  \paragraph{Math texts:} \mbox{}
+\paragraph{Math texts:} \mbox{}
 
-  Required:
+Required:
 \begin{itemize}
 \item \url{http://www.people.vcu.edu/~rhammack/BookOfProof/}
 \item \url{http://cg.scs.carleton.ca/~michiel/TheoryOfComputation/}
 \end{itemize}
- Optional:
+Optional:
 \begin{itemize}
 \item {\tiny \url{http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/lecture-notes/}}
 \item
- \url{https://www.tutorialspoint.com/automata_theory/}
+  \url{https://www.tutorialspoint.com/automata_theory/}
 \item
- \url{https://www.geeksforgeeks.org/theory-of-computation-automata-tutorials/}
+  \url{https://www.geeksforgeeks.org/theory-of-computation-automata-tutorials/}
 \item
- \url{http://users.utu.fi/jkari/automata/}
+  \url{http://users.utu.fi/jkari/automata/}
 \item
- \url{http://maths.mq.edu.au/~chris/notes/second_langmach.html}
+  \url{http://maths.mq.edu.au/~chris/notes/second_langmach.html}
 \end{itemize} 
 \paragraph{Programming texts:} \mbox{}
 
@@ -121,19 +121,19 @@ Required:
 \begin{itemize}
 \item
       \url{http://ds26gte.github.io/tyscheme/} 
-\item
-  \url{http://www.scheme.com/tspl3/}  Note: Use the 3rd edition
-  and do {\em not} use the
-  4th edition of this book.  Our software is based on R5RS scheme and
-  the 3rd edition covers this.  The 4th edition is based on R6RS scheme.
-\item
- The {\em help desk} within Racket leads to documentation on
-    the implementation.
+    \item
+      \url{http://www.scheme.com/tspl3/}  Note: Use the 3rd edition
+      and do {\em not} use the
+      4th edition of this book.  Our software is based on R5RS scheme and
+      the 3rd edition covers this.  The 4th edition is based on R6RS scheme.
+    \item
+      The {\em help desk} within Racket leads to documentation on
+      the implementation.
 \end{itemize}
-    Optional:
+Optional:
 \begin{itemize}
 \item
-    \url{http://mitpress.mit.edu/sicp/}
+  \url{http://mitpress.mit.edu/sicp/}
 \item
   \url{http://www.shido.info/lisp/idx_scm_e.html}
 \item
@@ -156,39 +156,36 @@ consult two pieces of paper during the exam.  You may write or print
 whatever you wish on both sides.
 
 \paragraph{Laboratory exercises:}
-Laboratory exercises will be handed out every week except
-the first and last weeks of class.  They will involve
-programming in {\em Scheme}.
-Each lab is due by midnight Monday of the following week.
-Note that the last lab will be due Monday of dead week.
-No late work will be accepted.
+Laboratory exercises will be handed out every week except the first
+and last weeks of class and Thanksgiving week (no classes Wednesdays).
+They will involve programming in {\em Scheme}.  Each lab is due by
+midnight Monday of the following week.  Note that the last lab will be
+due Monday of dead week.  No late work will be accepted.
 
 \paragraph{Homework problems:}
-Math assignments must be formatted 
-using the \LaTeX\ technical typesetting system and
-submitted online.  Turn in both the {\tt .tex} file
-and the {\tt .pdf} file.  Do not zip or combine them into one file.
+Math assignments must be formatted using the \LaTeX\ technical
+typesetting system and submitted online.  Turn in both the {\tt .tex}
+file and the {\tt .pdf} file.  Do not zip or combine them into one
+file.
 
-Points will be awarded to each assignment
-based on its difficulty.  Note that there may be an assignment due
-during dead week.
+Points will be awarded to each assignment based on its difficulty.
+Note that there may be an assignment due during dead week.
 
-Ample time to complete the assignments will be allowed.
-Late work will not be accepted.  
+Ample time to complete the assignments will be allowed.  Late work
+will not be accepted.
 
 Pedagogically, it is important that you do as much independent work as
 possible.  The assigned homework represents a minimum, but there are
 many exercises in the books and online to get more practice at the
 math involved.
 
-We will attempt to grade the homework in a timely
-fashion; this may necessitate grading only a sample of the problems
-submitted.
+We will attempt to grade the homework in a timely fashion; this may
+necessitate grading only a sample of the problems submitted.
 
 \paragraph{Assessment and grades:}
 
-Your grade will be based on the math homework, labs, quizzes, and the two
-exams. Weights are as follows.
+Your grade will be based on the math homework, labs, quizzes, and the
+two exams. Weights are as follows.
 
 Grades will be assigned based on scores as shown.  At the discretion
 of the instructor, scores may be scaled.  Awarding $\pm$ is also at
@@ -208,20 +205,21 @@ Grade & A & B & C & D & F\\\hline
 \paragraph{Schedule:}
 
   \begin{center}
-\begin{tabular}{r|cccc|l}                      
- & \multicolumn{4}{c|}{\bf Readings} &  \\
-{\bf Week} &\em TYS & \em TSPL &\em BoP&\em ITC & {\bf Notes} \\\hline  
-Apr 2  & 1 & 1 & I   &   \\
-Apr 9 & 2,3,4 & 2 & II\&III  & & \\
-Apr 16 & 5,6,7 & 3 & IV  & 1 \\
-Apr 23 &  &   &     & 2 \\
-Apr 30 &  &   &     & 2 \\
-May 7 &  &   &     & 3 & Midterm Wednesday \\
-May 14 &  &   &     & 3 &\\
-May 21 &  &   &     & 4\\
-May 28 &  &   &     & 5 & Monday holiday\\
-June 4 &  & \multicolumn{3}{c|}{Review} & \\                 
-June 11 &  &   &     &   & Final Exam, Wed, June 13, 8:00am \\
+\begin{tabular}{lr|cccc|l}                      
+& & \multicolumn{4}{c|}{\bf Readings} &  \\
+\multicolumn{2}{c|}{\bf Week} &\em TYS & \em TSPL &\em BoP&\em ITC & {\bf Notes} \\\hline  
+Sep & 24  & 1 & 1 & I   &   \\
+Oct & 1 & 2,3,4 & 2 & II \& III  & & \\
+Oct & 8 & 5,6,7 & 3 & IV  & 1 \\
+Oct & 15 &  &   &    & 2 \\
+Oct & 22 &  &   &     & 2 \\
+Oct & 29 &  &   &     & 3 & \\
+Nov & 5 &  &   &     & 3 & Midterm Friday, Nov 2 \\
+Nov & 12 &  &   &     & 4\\
+Nov & 19 &  &   &     & 5 & Holiday Monday\\
+Nov & 26 &  &  &      &  & Holiday Wed-Fri \\                 
+Dec & 3   &  \multicolumn{4}{c|}{Review} & \\                 
+Dec & 10  &  &   &     &   & Final Exam, Mon, Dec 10, 1:00-3:00pm \\
 \end{tabular}
 
 \begin{tabular}{ll}

@@ -1,2 +1,2 @@
 # csci301
-Resource files for csci301, Spring 2018, WWU
+Resource files for csci301, Fall 2018, WWU
