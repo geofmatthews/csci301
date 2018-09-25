@@ -1,0 +1,5 @@
+#lang racket
+
+; The first time you start DrRacket, it asks what language
+; you want.  Select the Racket language.
+

@@ -87,134 +87,41 @@ edition and not the 4th)
 \end{frame}
 
 
-\sect{Every powerful language has}
 
+
+\sect{There are two types of expressions:}
 
 \bi
-\ii primitive expressions: the simplest entities, such as \verb|3| and \verb|+|
 \ii
-means of combination: buidling compound elements from simpler ones such as 
+   {\bf Primitive expressions:}  no parentheses.
 
-\verb|(+ 3 4)|
-\bi
-\ii In Scheme combinations are always parentheses, with the operator
-first and the operands following.
-\ei
-\ii
-means of abstraction: a way for naming compound elements and then manipulating them as units such as 
+\blue{Constants:}
 
-\verb|(define pi 3.14159)|
+ \verb|4   3.141592   #t   #f    "Hello world!"|
 
-\verb|(define square (lambda (x) (* x x)))|
+\blue{Variables:}
+
+ \verb|x    long-variable-name      a21|
+
+ \vfill
+
+\ii {\bf Compound expressions:}  with parentheses.
+
+  \blue{Special forms:}
+
+  \verb|(define x 99)|
+
+  \verb|(if (> x y) x y)|
+  
+\blue{Function calls:}
+
+\verb|(+ 1 2 3)|
+
+\verb|(list (list 1 2) (list 3 4))|
 \ei
 
 \end{frame}
 
-\sect{The REPL does the following three things:}
-
-\bi
-\ii Reads an expression
-\ii Evaluates it to produce a value
-\ii Prints the value
-\ei
-
-The returned value has a small set of types, including number, boolean and procedure. (Later, we'll see symbol, pair, vector, and promise (stream).)
-
-\end{frame}
-
-
-
-\sect{There are 4 types of expressions:}
-\bi
-\ii Constants: numbers, booleans. Examples: \verb|4 3.141592 #t #f|
-\ii Variables: names for values. We create these using the special form \verb|define|
-\ii Special forms: have special rules for evaluation.
-\bi \ii {\tt if} and {\tt define} are special forms. \ei
-\ii Combinations: \verb|(<operator> <operands>)|. These are sometimes called "function calls" or "procedure applications."
-\ei 
-
-The first two types of expressions (constants and variables) are
-primitive expressions -- they have no parentheses. The second two
-types are called compound expressions -- they have parentheses.
-
-\end{frame}
-
-\sect{Mantras}
-\bi
-\ii Every expression has a value
-\bi\ii(except for errors, infinite loops and the 
-\verb|define| special form)\ei
-\ii To find the value of a combination:
-\bi
-\ii Find values of all subexpressions in any order
-\ii Apply the value of the first to the values of the rest
-\ei
-\ii The value of a \verb|lambda| expression is a procedure
-\ei
-\end{frame}
-
-\sect{Finding the value of a combination}
-\bi
-\ii Find values of all subexpressions in any order
-\ii Apply the value of the first to the values of the rest
-\begin{alltt}
-    (+ (* 2 3) \fbox{(- 8 2)})
-
-    (+ \fbox{(* 2 3)}    6   )
-
-   \fbox{(+    6       6   )}
-
-            12
-\end{alltt}
-\ei
-\end{frame}
-
-
-
-
-
-
-
-
-
-
-
-
-
-\sect{\large Program Evaluation In Lisp}
-
-A process of {\em tree accumulation.}
-\begin{alltt}
-(* (+ 2 (* 4 6))
-   (+ 3 5 7))
-\end{alltt}
-
-\begin{tikzpicture}
-  \Tree
-      [.390
-        [.* ]
-        [.26
-          [.+ ]
-          [.2 ]
-          [.24
-            [.* ]
-            [.4 ]
-            [.6 ]
-          ]
-        ]
-        [.15
-          [.+ ]
-          [.3 ]
-          [.5 ]
-          [.7 ]
-        ]
-      ]
-\end{tikzpicture}
-
-
-
-
-\end{frame}
 \sect{Introducing Local Variables}
 
 \begin{alltt}
@@ -449,4 +356,246 @@ Note:  NO GLOBAL VARIABLES!
 \end{alltt}
 
 \end{frame}
+
+
+\sect{Procedures in Scheme}
+\begin{alltt}
+(define f
+  \blue{(lambda (x) (* x x))}
+  )
+
+
+(\blue{f} 3) => 9
+(\blue{f} 4) => 16
+  
+(\blue{(lambda (x) (* x x))} 3) => 9
+(\blue{(lambda (x) (* x x))} 4) => 16
+
+\end{alltt}
+\end{frame}
+
+\sect{Local Variables in Procedures: Closures}
+
+\begin{alltt}
+(define counter
+  (let ((\red{n} 0))
+    \blue{(lambda ()
+      (set! \red{n} (+ \red{n} 1))
+      \red{n}
+    )}
+  )
+)
+
+(counter)   =>  1
+(counter)   =>  2
+(counter)   =>  3
+\end{alltt}
+\end{frame}
+
+\sect{A Procedure that Returns a Procedure}
+
+\begin{alltt}
+  (define curry
+    (lambda (\red{a})
+      \blue{(lambda (b)
+        (+ \red{a} b)
+      )}
+    )
+  )
+
+
+  \blue{(curry 3)}       =>  #<procedure>
+
+  (\blue{(curry 3)} 4)   =>  7
+
+\end{alltt}
+\end{frame}
+\sect{A Procedure that Returns a Counter}
+
+\begin{alltt}
+(define new-counter
+  (lambda ()
+    (let ((\red{n} 0))
+      \blue{(lambda ()
+        (set! \red{n} (+ \red{n} 1))
+        \red{n})}    )  )  )
+
+(define x (new-counter))
+(define y (new-counter))
+
+(x)  => 1
+(x)  => 2
+(x)  => 3
+(y)  => 1
+(y)  => 2
+(x)  => 4
+\end{alltt}
+\end{frame}
+
+\sect{Procedures as Returned Values: Derivatives}
+\begin{alltt}
+(define d
+  (lambda (f)
+    (let* ((delta 0.00001)
+           (two-delta (* 2 delta)))
+      \blue{(lambda (x)
+        (/ (- (f (+ x delta)) (f (- x delta)))
+           two-delta))})))
+
+
+
+((d (lambda (x) (* x x x)))  5)    => ?
+((d sin) 0.0)                      => ?
+           
+\end{alltt}
+\end{frame}
+
+\sect{Procedures as Returned Values: Procedures as Data}
+\begin{alltt}
+
+(define make-pair
+  (lambda (a b)
+    \blue{(lambda (i)
+      (cond ((= i 0) a)
+            ((= i 1) b)
+            (else (error 'bad-index))))}
+  ))
+
+(define x (make-pair 4 8))
+(define y (make-pair 100 200))
+(define z (make-pair x y))  
+
+(x 0)       => ?
+(y 1)       => ?
+((z 1) 0)   => ?
+\end{alltt}
+\end{frame}
+
+
+\sect{Procedures as parameters}
+
+Summation notation: \[\sum_{i=a}^{b} f(i) = f(a) + \ldots + f(b)\]
+
+In scheme:
+\begin{alltt}
+(define sum
+  (lambda (a b \blue{f})
+    (if (> a b)
+        0
+        (+ (\blue{f} a) (sum (+ a 1) b \blue{f})))))
+
+(sum 1 10 \blue{square}) => 385
+(sum 1 10 \blue{(lambda (x) (* x x x))}) => 3025
+\end{alltt}
+
+\end{frame}
+
+\sect{Better notation for summations}
+
+Instead of
+\[\sum_{i=a}^{b} f(i) = f(a) + \ldots + f(b)\]
+use
+\[\sum_{a}^{b} f = f(a) + \ldots + f(b)\]
+Why don't we use that?
+\pause
+
+Because then you have problems with
+\[\sum_{i=a}^{b} i^2 = a^2 + \ldots + b^2\]
+\[\sum_{a}^{b} \fbox{?} = a^2 + \ldots + b^2\]
+\pause
+\[\sum_{a}^{b} \lambda i . i^2 = a^2 + \ldots + b^2\]
+
+\end{frame}
+
+\sect{Matches Scheme Code Better, Too}
+
+
+\[\sum_{a}^{b} f = f(a) + \ldots + f(b)\]
+
+\begin{alltt}
+(define sum
+  (lambda (a b \blue{f})
+    (if (> a b)
+        0
+        (+ (\blue{f} a) (sum (+ a 1) b \blue{f})))))
+\end{alltt}
+
+\end{frame}
+
+\sect{Finding fixed points}
+
+$x$ is a {\sl fixed point} of $f$ if $x = f(x)$
+
+For some functions you can find fixed points by iterating:
+\\
+$x, f(x), f(f(x)), f(f(f(x))), \ldots$
+
+\end{frame}
+\sect{Fixed points in scheme:}
+{\scriptsize
+\begin{alltt}
+(define fixed-point
+  (lambda (f)
+    (let 
+        ((tolerance 0.0001)
+         (max-iterations 10000))
+      (letrec 
+          ((close-enough? 
+            (lambda (a b) (< (abs (- a b)) tolerance)))
+           (try 
+            (lambda (guess iterations)
+              (let ((next (f guess)))
+                (cond ((close-enough? guess next) next)
+                      ((> iterations max-iterations) #f)
+                      (else (try next (+ iterations 1)))))))
+           )
+        (try 1.0 0)))))
+
+(fixed-point cos)  => 0.7390547907469174
+(fixed-point sin)  => 0.08420937654137994
+(fixed-point (lambda (x) x)) => 1.0
+(fixed-point (lambda (x) (+ x 1))) => #f
+\end{alltt}
+}
+
+\end{frame}
+\sect{Remember Newton's Method?}
+{\small
+Newton's method: \\
+If $y$ is a guess for $\sqrt{x}$, then 
+the average of $y$ and $x/y$ is an even better guess.
+
+\begin{tabular}{cccc}
+$x$ & guess & quotient & average\\
+2 & 1.0 & 2.0 & 1.5\\
+2 & 1.5 & 1.3333333333333333 & 1.4166666666666665\\
+2 & 1.4166666666666665 & 1.411764705882353 & 1.4142156862745097\\
+2 & 1.4142156862745097 & 1.41421143847487 & 1.4142135623746899\\
+...
+\end{tabular}
+Evidently, we want to iterate, and keep recomputing
+these things until we find a value that's close enough.
+}
+
+\end{frame}
+\sect{Newton's Method Using Functional Programming}
+
+\begin{alltt}
+(define sqrt
+  (lambda (x)
+    (fixed-point
+      (lambda (y)
+        (/ 
+           (+ y (/ x y)) 
+           2
+        )))))
+\end{alltt}
+
+\end{frame}
+
+
+
+
+
+
 \end{document}

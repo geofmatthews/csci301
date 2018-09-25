@@ -3,22 +3,30 @@
 \beamer@sectionintoc {2}{Running the textbook examples}{3}{0}{2}
 \beamer@sectionintoc {3}{Simple Scheme Program}{4}{0}{3}
 \beamer@sectionintoc {4}{Simple Scheme Program Unit Tests}{5}{0}{4}
-\beamer@sectionintoc {5}{Every powerful language has}{6}{0}{5}
-\beamer@sectionintoc {6}{The REPL does the following three things:}{7}{0}{6}
-\beamer@sectionintoc {7}{There are 4 types of expressions:}{8}{0}{7}
-\beamer@sectionintoc {8}{Mantras}{9}{0}{8}
-\beamer@sectionintoc {9}{Finding the value of a combination}{10}{0}{9}
-\beamer@sectionintoc {10}{\relax \fontsize {12}{14}\selectfont Program Evaluation In Lisp}{11}{0}{10}
-\beamer@sectionintoc {11}{Introducing Local Variables}{12}{0}{11}
-\beamer@sectionintoc {12}{Beware! This will NOT work.}{13}{0}{12}
-\beamer@sectionintoc {13}{But this will.}{14}{0}{13}
-\beamer@sectionintoc {14}{Defining Procedures}{15}{0}{14}
-\beamer@sectionintoc {15}{Defining Procedures}{16}{0}{15}
-\beamer@sectionintoc {16}{Defining Procedures}{17}{0}{16}
-\beamer@sectionintoc {17}{Procedures always return a value}{18}{0}{17}
-\beamer@sectionintoc {18}{Solving problems}{19}{0}{18}
-\beamer@sectionintoc {19}{Newton's Method in Scheme}{20}{0}{19}
-\beamer@sectionintoc {20}{Newton's Method in Scheme}{21}{0}{20}
-\beamer@sectionintoc {21}{Definitions can be nested}{22}{0}{21}
-\beamer@sectionintoc {22}{Parameters need not be repeated}{23}{0}{22}
-\beamer@sectionintoc {23}{Introducing local functions with {\tt letrec} }{24}{0}{23}
+\beamer@sectionintoc {5}{There are two types of expressions:}{6}{0}{5}
+\beamer@sectionintoc {6}{Introducing Local Variables}{7}{0}{6}
+\beamer@sectionintoc {7}{Beware! This will NOT work.}{8}{0}{7}
+\beamer@sectionintoc {8}{But this will.}{9}{0}{8}
+\beamer@sectionintoc {9}{Defining Procedures}{10}{0}{9}
+\beamer@sectionintoc {10}{Defining Procedures}{11}{0}{10}
+\beamer@sectionintoc {11}{Defining Procedures}{12}{0}{11}
+\beamer@sectionintoc {12}{Procedures always return a value}{13}{0}{12}
+\beamer@sectionintoc {13}{Solving problems}{14}{0}{13}
+\beamer@sectionintoc {14}{Newton's Method in Scheme}{15}{0}{14}
+\beamer@sectionintoc {15}{Newton's Method in Scheme}{16}{0}{15}
+\beamer@sectionintoc {16}{Definitions can be nested}{17}{0}{16}
+\beamer@sectionintoc {17}{Parameters need not be repeated}{18}{0}{17}
+\beamer@sectionintoc {18}{Introducing local functions with {\tt letrec} }{19}{0}{18}
+\beamer@sectionintoc {19}{Procedures in Scheme}{20}{0}{19}
+\beamer@sectionintoc {20}{Local Variables in Procedures: Closures}{21}{0}{20}
+\beamer@sectionintoc {21}{A Procedure that Returns a Procedure}{22}{0}{21}
+\beamer@sectionintoc {22}{A Procedure that Returns a Counter}{23}{0}{22}
+\beamer@sectionintoc {23}{Procedures as Returned Values: Derivatives}{24}{0}{23}
+\beamer@sectionintoc {24}{Procedures as Returned Values: Procedures as Data}{25}{0}{24}
+\beamer@sectionintoc {25}{Procedures as parameters}{26}{0}{25}
+\beamer@sectionintoc {26}{Better notation for summations}{27}{0}{26}
+\beamer@sectionintoc {27}{Matches Scheme Code Better, Too}{30}{0}{27}
+\beamer@sectionintoc {28}{Finding fixed points}{31}{0}{28}
+\beamer@sectionintoc {29}{Fixed points in scheme:}{32}{0}{29}
+\beamer@sectionintoc {30}{Remember Newton's Method?}{33}{0}{30}
+\beamer@sectionintoc {31}{Newton's Method Using Functional Programming}{34}{0}{31}

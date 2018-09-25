@@ -1,19 +1,13 @@
-\frametitle{Introducing local functions with {\tt letrec} } 
+\frametitle{Newton's Method Using Functional Programming} 
+
 \begin{alltt}
 (define sqrt
   (lambda (x)
-    (letrec ((good-enough?
-              (lambda (guess)
-                (< (abs (- (square guess) x)) 0.001)))
-             (improve
-              (lambda (guess)
-                (average guess (/ x guess))))
-             (sqrt-iter
-              (lambda (guess)
-                (if (good-enough? guess)
-                    guess
-                    (sqrt-iter (improve guess)))))
-             )
-             (sqrt-iter 1.0))))
+    (fixed-point
+      (lambda (y)
+        (/
+           (+ y (/ x y))
+           2
+        )))))
 \end{alltt}
 
