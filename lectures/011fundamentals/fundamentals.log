@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  10 APR 2018 08:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.8.29)  25 SEP 2018 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,7 +996,7 @@ Package pdftex.def Info: powersettree.png used on input line 3.
 \openout4 = `fundamentals.vrb'.
 
  (./fundamentals.vrb)
-Overfull \vbox (0.12146pt too high) detected at line 232
+Overfull \vbox (16.72147pt too high) detected at line 233
  []
 
 [16
@@ -1305,11 +1305,11 @@ Package pdftex.def Info: permstocombs.png used on input line 6.
 \tf@snm=\write9
 \openout9 = `fundamentals.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 686.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 686.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 689.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 689.
  (./fundamentals.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 686.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 686.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 689.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 689.
 Package rerunfilecheck Info: File `fundamentals.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1320,11 +1320,11 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 686.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 689.
  ) 
 Here is how much of TeX's memory you used:
  17292 strings out of 494827
- 327597 string characters out of 6176977
+ 327605 string characters out of 6176976
  398633 words of memory out of 5000000
  19945 multiletter control sequences out of 15000+600000
  15160 words of font info for 60 fonts, out of 8000000 for 9000
@@ -1342,7 +1342,7 @@ public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on fundamentals.pdf (63 pages, 394711 bytes).
+Output written on fundamentals.pdf (63 pages, 394914 bytes).
 PDF statistics:
  1703 PDF objects out of 1728 (max. 8388607)
  1597 compressed objects within 16 object streams
