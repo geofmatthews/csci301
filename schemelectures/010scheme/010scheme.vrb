@@ -1,13 +1,27 @@
-\frametitle{Newton's Method Using Functional Programming} 
+\frametitle{General instructions for functional programming} 
+\centerline{\fbox{\fbox{\Large \bf Use lots of functions!}}}
+\vfill
 
-\begin{alltt}
-(define sqrt
-  (lambda (x)
-    (fixed-point
-      (lambda (y)
-        (/
-           (+ y (/ x y))
-           2
-        )))))
-\end{alltt}
+
+Unless specified otherwise:
+\begin{itemize}
+\item {\bf NO} assignment statements.
+  \begin{itemize}
+  \item Use {\tt let} or parameters in function calls
+  \item Exception: implementing objects with closures.
+  \end{itemize}
+\item {\bf NO} {\tt for} loops.
+  \begin{itemize}
+  \item Use function calls.
+  \end{itemize}
+\item {\bf NO} {\tt while} loops.
+  \begin{itemize}
+  \item Use function calls.
+  \end{itemize}
+\item {\bf NO} nested {\tt if} statements.
+  \begin{itemize}
+  \item Use {\tt cond}
+  \end{itemize}
+\end{itemize}
+
 

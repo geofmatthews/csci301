@@ -30,3 +30,4 @@
 \beamer@sectionintoc {29}{Fixed points in scheme:}{32}{0}{29}
 \beamer@sectionintoc {30}{Remember Newton's Method?}{33}{0}{30}
 \beamer@sectionintoc {31}{Newton's Method Using Functional Programming}{34}{0}{31}
+\beamer@sectionintoc {32}{General instructions for functional programming}{35}{0}{32}
