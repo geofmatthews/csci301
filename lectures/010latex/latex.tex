@@ -12,6 +12,9 @@
 \usepackage{amsfonts,amssymb,amsmath}
 % this is a cool drawing package, and some libraries for automata:
 \usepackage{tikz}
+\usepackage{xspace}
+\newcommand{\TikZ}{Ti\textit{k}Z\xspace}
+
 \usetikzlibrary{arrows,automata}
 
 % new commands for frequently used stuff:
@@ -42,7 +45,7 @@ pdflatex myfile.tex
 \end{Verbatim}
 or use a GUI such as TexWorks or TexStudio.
 
-You can also get your \LaTeX\ processed online at
+You can also get your \LaTeX{} processed online at
 \url{https://www.overleaf.com/}.
 
 \section{Some example text}
@@ -99,7 +102,7 @@ file, and imported it into this document.
 You can also include figures inline, like this:
 \includegraphics[scale=0.25]{sets.png} but it looks weird sometimes.
 
-Later on, we'll see how to make spectacular diagrams using the {\tt tikz}
+Later on, we'll see how to make spectacular diagrams using the \TikZ
 package. 
 
 \section{Solutions to Some Exercises From the Book of Proof}
@@ -299,7 +302,7 @@ solutions here to demonstrate how to typeset them in \LaTeX.}
 
 
 
-\section{Some examples typesetting finite automata in \LaTeX}
+\section{Some examples typesetting finite automata in \LaTeX{} and \TikZ}
 
 Put the following in your preamble:
 \begin{Verbatim}[frame=single]
@@ -307,6 +310,9 @@ Put the following in your preamble:
 \usetikzlibrary{arrows,automata}
 \end{Verbatim}
 \newpage
+Example figure from the text:\\
+\centerline{\includegraphics[scale=0.6]{textdfa}}
+We can do {\em much} better with TiKz
 \begin{Verbatim}[frame=single]  
   \begin{tikzpicture}[->,>=latex,thick,auto,node distance=2.5cm]
     \node[state,initial] (q1) {$q_1$};
