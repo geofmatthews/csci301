@@ -230,88 +230,139 @@ Scheme uses:
 \end{frame}
 
 \sect{length}
+\begin{Verbatim}
+(length '(1 2 3))               =>    3
+(length '())                    =>    0
+(length '(a (b c d) e (f g)))   =>    4
+\end{Verbatim}
+\vfill
+
 \pause
 \begin{Verbatim}
 (define (length lst)
-  (if (empty? lst)
-      0
-      (+ 1 (length (cdr lst)))))
+  (cond ((empty? lst) 0)
+        (else (+ 1 (length (cdr lst))))))
 \end{Verbatim}
 \end{frame}
+
 \sect{nth}
+
+\begin{Verbatim}
+(nth '(a b c d) 0)        =>  a
+(nth '(a b c d) 3)        =>  d
+(nth '(a b c d) 8)        =>  (error 'nth "Not defined")
+\end{Verbatim}
+\vfill
+
 \pause
 \begin{Verbatim}
 (define (nth lst n)
-  (cond ((empty? lst) '())
-        ((= n 0) "Not defined")
-        ((= n 1) (car lst))
+  (cond ((empty? lst) (error 'nth "Not defined"))
+        ((= n 0) (car lst))
         (else (nth (cdr lst) (- n 1)))))
 \end{Verbatim}
 \end{frame}
+
 \sect{last}
+
+\begin{Verbatim}
+(last '(a b c d))        =>  d
+(last '())               =>  (error 'last "Not defined")
+\end{Verbatim}
+\vfill
+
+
 \pause
 \begin{Verbatim}
 (define (last lst)
-  (cond ((empty? lst) '())
+  (cond ((empty? lst) (error 'last "Not defined"))
         ((empty? (cdr lst)) (car lst))
         (else (last (cdr lst)))))
 \end{Verbatim}
 \end{frame}
 \sect{scale-list}
+\begin{Verbatim}
+(scale-list '(1 2 3) 2)  =>  (2 4 6)
+(scale-list '(1 2 3) 3)  =>  (3 6 9)
+\end{Verbatim}
+\vfill
+
 \pause
 \begin{Verbatim}
 (define (scale-list lst n)
-  (if (empty? lst)
-      '()
-      (cons (* n (car lst))
-            (scale-list (cdr lst) n))))
+  (cond ((empty? lst) '())
+        (else
+             (cons (* n (car lst))
+                   (scale-list (cdr lst) n)))))
 \end{Verbatim}
 \end{frame}
 \sect{increment-list}
+\begin{Verbatim}
+(increment-list '(1 3 99))   =>  (2 4 100)
+(increment-list '(8 3 0 1))  =>  (9 4 1 2)
+\end{Verbatim}
+\vfill
+
 \pause
 \begin{Verbatim}
 (define (increment-list lst)
-  (if (empty? lst)
-      '()
-      (cons (+ 1 (car lst))
-            (increment-list (cdr lst)))))
+  (cond ((empty? lst) '())
+        (else 
+            (cons (+ 1 (car lst))
+                  (increment-list (cdr lst))))))
 \end{Verbatim}
 \end{frame}
 \sect{map}
+\begin{Verbatim}
+(map (lambda (x) (* 2 x))
+     '(1 2 3))               =>  (2 4 6)
+(map (lambda (x) (list x x))
+     '(1 2 3))               =>  ((1 1) (2 2) (3 3))
+\end{Verbatim}
+\vfill
+
 \pause
 \begin{Verbatim}
-(define (map lst op)
-  (if (empty? lst)
-      '()
-      (cons (op (car lst))
-            (map (cdr lst) op))))
+(define (map op lst)
+  (cond ((empty? lst) '())
+        (else
+            (cons (op (car lst))
+                  (map (cdr lst) op))))
 \end{Verbatim}
 \end{frame}
 \sect{scale-list using map}
 \pause
 \begin{Verbatim}
 (define (scale-list lst n)
-  (map lst (lambda (x) (* n x))))
+  (map (lambda (x) (* n x)) lst))
 \end{Verbatim}
 \end{frame}
 \sect{increment-list using map}
 \pause
 \begin{Verbatim}
 (define (increment-list lst)
-  (map lst (lambda (x) (+ x 1))))
+  (map (lambda (x) (+ x 1)) lst))
 \end{Verbatim}
 \end{frame}
 \sect{append}
+\begin{Verbatim}
+(append '(1 2 3) '(a b c))    =>  (1 2 3 a b c))
+\end{Verbatim}
+\vfill
 \pause
 \begin{Verbatim}
 (define (append lst1 lst2)
-  (if (empty? lst1)
-      lst2
-      (cons (car lst1)
-            (append (cdr lst1) lst2))))
+  (cond ((empty? lst1) lst2)
+        (else 
+            (cons (car lst1)
+                  (append (cdr lst1) lst2)))))
 \end{Verbatim}
 \end{frame}
 \sect{remove}
+\begin{Verbatim}
+(remove 3 '(1 2 3 4 5 4 3 2 1))  =>  (1 2 4 5 4 2 1)
+\end{Verbatim}
+\vfill
 \pause
 \begin{Verbatim}
 (define (remove n lst)
