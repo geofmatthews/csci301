@@ -1,6 +1,6 @@
 #lang racket
 
-(require rackunit "lab03.rkt")
+(require rackunit "lab02.rkt")
 
 (check eq?
        #t
@@ -18,6 +18,11 @@
        (sort (distribute '0 '((1) (2) (3 4)))
              length-ordered?)
        '((0 1) (0 2) (0 3 4)))
+
+(check equal?
+       (sort '((1 1 1 1) (3 2 1) (1 2 3) (5 5))
+             length-ordered?)
+       '((5 5) (1 2 3) (3 2 1) (1 1 1 1)))
 
 (check equal?
        (subsets '(1 2))
