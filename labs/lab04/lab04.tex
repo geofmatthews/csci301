@@ -1,0 +1,116 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 4}
+\author{Fall 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the second in a series of five labs that will
+build an interpreter for Scheme.  In this lab we process some special forms. 
+
+\paragraph{Due:} Your program, {\tt lab04.rkt}, must be submitted to
+Canvas before midnight, Monday, October 29.
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab04-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Special forms:}
+Special forms are signalled by certain keywords.  Ultimately we
+will process the special forms {\tt if}, {\tt cond}, {\tt let},
+{\tt lambda}, and {\tt letrec}.  For this lab, however, we will only
+do the two conditionals, {\tt if} and {\tt cond}.
+
+You will add another case to your {\tt evaluate} function that will
+check for special forms. So your {\tt evaluate} function, adding in
+what you did last week, will be able to handle numbers, symbols,
+special forms, and lists that are not special forms.  (It will help if
+you check for them in that order.)
+
+For this week, a special form is a list
+where the {\tt car} of the list is one of the two symbols, {\tt if} or
+{\tt cond}.  
+Write a procedure to determine if an expression is a special form.
+Examples:
+\begin{Verbatim}[frame=single]
+> (special-form? '(if 1 2 3))
+#t
+> (special-form? '(cond 1 2 3))
+#t
+> (special-form? '(+ 1 2 3))
+#f
+> (special-form? 99)
+#f
+> (special-form? 'if)
+#f
+\end{Verbatim}
+Note that {\tt special-form?} only checks to see if its argument is a
+list, and if the {\tt car} of the list is {\tt if} or {\tt cond}.  It
+doesn't check any more of the syntax of the form (but it could).
+
+If your evaluation function finds a special form, it hands the whole
+form off to the {\tt evaluate-special-form} function, which acts like
+this:
+\begin{Verbatim}[frame=single]
+> (evaluate-special-form '(if (= 1 2) 3 4) e2)
+4  
+\end{Verbatim}
+The {\tt evaluate-special-form} function checks to see if the {\tt
+  car} of the list is either {\tt if} or {\tt cond} (otherwise it
+should raise an error), and then does the appropriate thing.
+
+\paragraph{If:}
+The special form {\tt if} is clearly not a function, because functions
+evaluate {\em all} their arguments.  So, for instance, this:
+\begin{Verbatim}[frame=single]
+  (if (= 1 1) (print "Hello") (print "Goodbye"))
+\end{Verbatim}
+would print {\em both} {\tt Hello} {\em and} {\tt Goodbye} if {\tt if}
+had been defined as a function.  Clearly, the {\tt if} special form
+evaluates only its {\em first argument}, and, on the basis of whether
+or not that argument evaluates to \verb|#f| (any value other than
+\verb|#f| acts as {\em true}), evaluates {\em either} the second
+argument {\em or} the third, not both, accordingly.
+The provided environment is used to evaluate the subform.
+The one it chooses to evaluate
+is the value of the special form.
+
+\paragraph{Cond:}
+Once you've figured out how to do {\tt if}, you can tackle {\tt
+  cond}.  Consider a typical {\tt cond} special form:
+\begin{Verbatim}[frame=single]
+  (cond ((= 1 2) 3) ((= 4 5) 6) ((= 7 7) 8) (else 9))
+\end{Verbatim}
+The {\tt cdr} of this list is clearly a list of alternatives.  You
+will write a recursive procedure to go through this list, and evaluate
+each of the tests in the items.  For example, the test in the item
+\fbox{\tt ((= 4 5) 6)} is \fbox{\tt (= 4 5)}.  As soon as a test
+evaluates to \verb|#t|, the other item in the list is evaluated, and
+it is returned as the value of the special form.  Again, use the
+provided environment to evaluate the selected forms.
+
+But what about {\tt else}?  This is easier than it looks.  {\tt else}
+is just a symbol with preset value of \verb|#t|, so put that in the
+environment. 
+  
+
+
+
+
+\end{document}
+
+\end
