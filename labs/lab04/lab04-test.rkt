@@ -8,7 +8,7 @@
           ((list? a) (append a b))
           (else (error "unable to add" a b)))))
 
-(define e1  (map cons
+(define e1  (map list
                  '(     x  y  z ls + - * cons car cdr nil list add = nil? else)
                  (list 10 20 30 (list 1 2) + - * cons car cdr '() list add = empty? #t)))
 
