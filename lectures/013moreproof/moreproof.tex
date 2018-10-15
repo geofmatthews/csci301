@@ -192,18 +192,21 @@ $A=\set{ax+by : x,y\in\ints}$.
 
 Show that $d \mid a$.
 
-Use division algorithm: $a = qd + r$.
+Use division algorithm: $a = qd + r$, where $0\leq r < d$.
 \begin{align*}
   r &= a - qd\\
   &= a - q(ak+b\ell)\\
-  &= a(1-qk) + b(-q\ell)
+  &= a(1-qk) + b(-q\ell)  \in A
 \end{align*}
-So $r\in A$, $0\leq r< d$, so $r=0$.
+But $d$ is the smallest element of $A$, and
+$0\leq r< d$, so $r=0$.
 
 So $a = qd + r = qd$ and so $d\mid a$.
 \pause
 
 A similar argument shows $d\mid b$.
+
+So $d \leq \gcd(a,b)$.
 \end{frame}
 
 \bfr{Example}
@@ -213,15 +216,17 @@ $k,\ell\in\ints$ for which $\gcd(a,b)=ak+b\ell$.
 
 \vfill
 {\it Proof (continued).}  $d=ak+b\ell$ is the smallest positive element of
-$A=\set{ax+by : x,y\in\ints}$, and $d \mid a$ and $d \mid b$.
+$A=\set{ax+by : x,y\in\ints}$, and $d \mid a$ and $d \mid b$
+so $d \leq \gcd(a,b)$.
 
 \begin{align*}
-a &=   \gcd(a,b) \cdot m\\
-b &= \gcd(a,b)\cdot n\\
+a &=   \gcd(a,b) \cdot m & m > 0\\
+b &= \gcd(a,b)\cdot n & n > 0\\
 d &= ak + b\ell \\
 &= \gcd(a,b)\cdot mk + \gcd(a,b)\cdot n\ell\\
-&= \gcd(a,b)(mk+n\ell)\\
+&= \gcd(a,b)(mk+n\ell) > 0\\
 d &\geq \gcd(a,b)\\
+d &\leq \gcd(a,b) & d \mid a \mbox{ and }  d \mid b\\
 d &= \gcd(a,b)  
 \end{align*}
 \QED
@@ -558,7 +563,7 @@ For some help with large algebraic expressions:
 \begin{Verbatim}[frame=single]
 >>> from sympy import *
 >>> k = symbols('k')
->>> expr = (k+1)^5 - (k + 1)
+>>> expr = (k+1)**5 - (k + 1)
 >>> expand(expr)
 k**5 + 5*k**4 + 10*k**3 + 10*k**2 + 4*k
 >>> expand(expr - (k**5 - k))
