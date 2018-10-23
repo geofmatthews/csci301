@@ -1,0 +1,103 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 5}
+\author{Fall 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the third in a series of labs that will
+build an interpreter for Scheme.  In this lab we will add the {\tt let}
+special form.
+
+\paragraph{Due:} Your program, named {\tt lab05.rkt}, must be submitted to
+Canvas before midnight, Monday, Nov 5.
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab05-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Let:}
+
+The special form {\tt let} has the following syntax, with a typical
+example shown at right.  It consists of a list beginning with the
+symbol {\tt let}, then a list of symbol-value lists, and finally a
+single expression.  You will expand your {\tt evaluate-special-form}
+function to handle this case, and also add code to the {\tt
+  special-form?} boolean to recognize a {\tt let} form.  No other
+changes need be made to your interpreter.
+\begin{multicols}{2}
+\begin{Verbatim}[frame=single]
+  (let ((sym1  exp1)
+        (sym2  exp2)
+        ...         )
+     expr)
+\end{Verbatim}
+\begin{Verbatim}[frame=single]
+  (let ((x  (+ 2 2))
+        (y  x)
+        (z  (* 3 3)))
+     (+ a x y z))
+\end{Verbatim}
+\end{multicols}
+To evaluate this form, in an environment {\tt e1}, we evaluate
+all the forms, {\tt exp1}, {\tt exp2}, ... in the environment {\tt
+  e1}.   Note that this means {\tt y} will get the value {\tt x} had
+in {\tt e1}, not 4.  Let's say that in {\tt e1} {\tt x} had the value
+10 and {\tt a} had the value 20.
+
+We now have a list of variables, {\tt (x y z)}, and a list of values,
+{\tt (4 10 9)}.  We make a new environment by appending these
+variables and their values to the {\em front} of {\tt e1}.
+
+The single expression at the end of a {\t let} form is now evaluated
+in this {\em new, extended} environment.  Thus, the final value will
+be  {\tt (+ a x y z) => (+ 20 4 10 9) => 43}.  Make sure you
+understand this example before proceeding.
+
+It is also important to understand that this new, extended
+environment, is {\em only } used to evaluate the {\tt expr} embedded
+in the {\tt let } form.  After the {\tt let} form is evaluated, you go
+back to using the old environment.  For example:
+\begin{Verbatim}[frame=single]
+  (let ((x 10)) (+ (let ((x 20)) (+ x x)) x))  =>  50
+\end{Verbatim}
+    In this
+example, we bind {\tt x} to 10, then create a local environment in
+which {\tt x } is bound to 20, in this new environment we evaluate
+{\tt (+ x x)} to get 40, and then, outside of the new environment we
+evaluate {\tt x} again, getting 10, which is added to 40 to get 50.
+
+A slightly trickier example is this:
+\begin{Verbatim}[frame=single]
+  (let ((x 10)) (+ (let ((x (+ x x))) (+ x x)) x))
+\end{Verbatim}
+  What do you
+think this will evaluate to?  Enter it into the Racket interpreter to
+see if you really understand.  Your interpreter should get the same
+result. 
+
+In your implementation, all this tricky scoping will be handled by the
+fact that the extended environment in the {\tt let} form is {\em only}
+used to evaluate the included {\tt expr}.  It should not be visible
+outside of handling the {\tt let} form.
+
+
+
+
+\end{document}
+
+\end
