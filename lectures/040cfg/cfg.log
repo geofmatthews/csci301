@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  16 MAY 2018 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.13)  5 NOV 2018 07:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,15 +1225,15 @@ Overfull \hbox (5.98051pt too wide) in alignment at lines 10--18
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
+(hyperref)                removing `math shift' on input line 482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\epsilon' on input line 479.
+(hyperref)                removing `\epsilon' on input line 482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
+(hyperref)                removing `math shift' on input line 482.
 
 \openout4 = `cfg.vrb'.
 
@@ -1242,15 +1242,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 498.
+(hyperref)                removing `math shift' on input line 501.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\epsilon' on input line 498.
+(hyperref)                removing `\epsilon' on input line 501.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 498.
+(hyperref)                removing `math shift' on input line 501.
 
 \openout4 = `cfg.vrb'.
 
@@ -1327,23 +1327,23 @@ Overfull \hbox (30.3664pt too wide) in alignment at lines 23--28
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 741.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 738.
+(hyperref)                removing `superscript' on input line 741.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 738.
+(hyperref)                removing `superscript' on input line 741.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 738.
+(hyperref)                removing `superscript' on input line 741.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 738.
+(hyperref)                removing `math shift' on input line 741.
 
 \openout4 = `cfg.vrb'.
 
@@ -1421,19 +1421,19 @@ Package pdftex.def Info: nestedparens.png used on input line 2.
  <./nestedparens.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 873.
+(hyperref)                removing `math shift' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 873.
+(hyperref)                removing `superscript' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 873.
+(hyperref)                removing `superscript' on input line 876.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 873.
+(hyperref)                removing `math shift' on input line 876.
 
 \openout4 = `cfg.vrb'.
 
@@ -1448,11 +1448,11 @@ Package pdftex.def Info: 0n1n.png used on input line 2.
  <./0n1n.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 877.
+(hyperref)                removing `math shift' on input line 880.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 877.
+(hyperref)                removing `math shift' on input line 880.
 
 \openout4 = `cfg.vrb'.
 
@@ -1473,11 +1473,11 @@ Package pdftex.def Info: middleb.png used on input line 2.
 \tf@snm=\write9
 \openout9 = `cfg.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 881.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 881.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 884.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 884.
  (./cfg.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 881.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 881.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 884.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 884.
 Package rerunfilecheck Info: File `cfg.out' has not changed.
 (rerunfilecheck)             Checksum: C1DD0818F534532E7C6B101EB9A8FF29;2933.
 
@@ -1488,12 +1488,12 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 881.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 884.
  ) 
 Here is how much of TeX's memory you used:
  21901 strings out of 494827
- 436320 string characters out of 6176977
- 517760 words of memory out of 5000000
+ 436320 string characters out of 6176975
+ 517759 words of memory out of 5000000
  24486 multiletter control sequences out of 15000+600000
  17903 words of font info for 67 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1516,7 +1516,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on cfg.pdf (49 pages, 2627051 bytes).
+Output written on cfg.pdf (49 pages, 2627165 bytes).
 PDF statistics:
  1564 PDF objects out of 1728 (max. 8388607)
  1467 compressed objects within 15 object streams
