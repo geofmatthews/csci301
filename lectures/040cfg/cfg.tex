@@ -357,6 +357,22 @@ Rightmost:\\
 
 \end{frame}
 
+\sect{CFG problems}
+\bi
+\li Any regular language.
+\li $a^nb^n$
+\li $a^nb^{2n}$
+\li $a^nb^{3n}$
+\li $a^{4n+5}b^{3n+2}$
+\li $a^nb^ma^n$
+\li Even length palindromes
+\li Odd length palindromes
+\li All palindromes
+\li All strings with the same number of $a$'s and $b$'s
+\li $\{a^ib^jc^k\ \mid\ i \not = j \mbox{~or~} j \not = k\}$
+\ei
+\end{frame}
+
 \sect{All regular languages are context free languages}
 \begin{tikzpicture}[->,>=latex,thick,node distance=3cm,auto,every node/.style={scale=0.75}]
   \node[state,initial] (1) {$S$};
@@ -460,22 +476,8 @@ S \darr bAc \dar baAc \dar bac\\
 Given a grammar $G$, is there an algorithm to find out if $s\in L(G)$?
 \pause\vfill
 Almost, but not quite.
-\end{frame}
-
-\sect{CFG problems}
-\bi
-\li Any regular language.
-\li $a^nb^n$
-\li $a^nb^{2n}$
-\li $a^nb^{3n}$
-\li $a^{4n+5}b^{3n+2}$
-\li $a^nb^ma^n$
-\li Even length palindromes
-\li Odd length palindromes
-\li All palindromes
-\li All strings with the same number of $a$'s and $b$'s
-\li $\{a^ib^jc^k\ \mid\ i \not = j \mbox{~or~} j \not = k\}$
-\ei
+\pause\vfill
+We can tell if $s\in L(G)$ but what if $s\not\in L(G)$?
 \end{frame}
 
 
@@ -547,8 +549,8 @@ S \arr \emptystring
 \li $A$, $B$ and $C$ are nonterminals, $a$ is a single terminal, and
 $S$ is the start symbol. 
 \li The last rule is necessary only if the language contains $\emptystring$.
-\li If a grammar is in CNF, what do we know about the tree?
-\li If a grammar is in CNF, how long is a derivation?
+%\li If a grammar is in CNF, what do we know about the tree?
+%\li If a grammar is in CNF, how long is a derivation?
 \ei
 \end{frame}
 
@@ -657,14 +659,26 @@ A \Rightarrow FGH
 \end{frame}
 
 \sect{Consequences of Chomsky Normal Form}
+
 \bi
 \li What do all trees look like?
+\pause
+\bi\li Binary trees \ei
+\pause
 \li What do all derivations look like?
+\pause
+\bi\li
+$S \dar AB \dar ABC \dar ABCD \dar aBCD \dar abCD \dar abcD \dar abcd$
+\ei
+\pause
 \li How long are the derivations?
 \pause
-\li There are finitely many derivations for a given string.
-\li To find a parse we can exhaustively search all derivations
-of this length or less.
+\bi\li $2n-1$\ei
+\pause
+\li Any derivation of a string of length $n$ must take $2n-1$ steps.
+\li To find a parse we can search all derivations
+of this length.
+\li Guaranteed to say ``yes'' or ``no'' in a finite amount of time.
 \ei
 \end{frame}
 
@@ -709,6 +723,56 @@ length $n$ or less.
 
 
 \sect{Pumping Lemma for CF Languages}
+
+\bi
+\li If a tree has maximum branching factor $b$ and is of height $h$,
+what is the maximum number of leaves?
+
+\pause
+\centerline{$ b^h $}
+\pause
+
+\li If there are $n$ symbols in a grammar, and the maximum length of
+a rule's RHS is $b$, and a parsed
+string is longer than $b^n$, what does that
+say about the height of the parse tree?
+
+\pause
+\centerline{$ h > n $}
+\pause
+
+\li What does the pigeonhole principle say about a tree where each node
+in the tree
+is labeled with a symbol from the grammar, but the height of the tree
+is greater than the number of symbols?
+
+\pause
+
+\centerline{There must be a path with a repeated symbol.}
+
+\ei
+\end{frame}
+
+\sect{Pumping Lemma for CF Languages}
+
+\parbox[b]{1in}{
+  $A_j = A_k$
+
+  \vspace{0.5in}
+  
+  \begin{eqnarray*}
+&    uxz& \\
+&  uvxyz& \\
+&  uvvxyyz& \\
+&  uvvvxyyyz& \\
+&    uv^ixy^ iz&
+  \end{eqnarray*}
+  \vspace{0.5in}
+
+  }\includegraphics[scale=0.35]{figures/pumpingtree}
+\end{frame}
+
+\sect{Pumping Lemma for CF Languages}
 \bi
 \li If a CFL is infinite, it must have recursion in it somewhere:
 \bee
@@ -718,9 +782,11 @@ N \arr vNx \mid w
 \li This means derivations like this are possible:
 
 \hspace{-1cm}\mbox{$S\dar uNy \dar uvNxy \dar uvvNxxy \dar \ldots \dar uv^4Nx^4y \dar uv^4wx^4y $}
-
+\pause
+\li Similar arguments can be made for indirect recursion.
 \ei
 \end{frame}
+
 \sect{Pumping Lemma for CF Languages}
 \begin{theo}
 If a language $L$ is context-free, then there exists some $p\geq 1$
@@ -728,10 +794,10 @@ such that any string $s$ in $L$ with $|s| \geq p$ can be written as
 \[
 s = abcde
 \]
-with substrings $a,b,c,d,e\in (V\cup\Sigma)^*$,  such that
+such that
 \begin{enumerate}
-\item $|bcd| \leq p$
-\item $|bd| \geq 1$
+\item $|bd| \geq 1$ 
+\item $|bcd| \leq p$ 
 \item $ab^ncd^ne$ is in $L$ for all $n\geq 0$
 \end{enumerate}
 \end{theo}
@@ -746,13 +812,14 @@ with substrings $a,b,c,d,e\in (V\cup\Sigma)^*$,  such that
 but we don't know which parts are where.
 \li Case 1: $b$ or $d$ contains two different digits.
 \bi
-\li Then $ab^2cd^2e$ must have letters out of numerical order.
+\li Then $ab^2cd^2e$ must have digitss out of numerical order.
 \li Then $ab^2cd^2e \not \in L$, contradiction.
 \ei
 \li Case 2: $b$ and $d$ each contain only one kind of digit.
 \bi 
 \li Then  $ab^2cd^2e$ contains more of 1 or 2 kinds of
-digit, not all three.
+digit.
+\li Then there can't be the same number for all 3 kinds of digits.
 \li Then $ab^2cd^2e \not \in L$, contradiction.
 \ei
 \ei

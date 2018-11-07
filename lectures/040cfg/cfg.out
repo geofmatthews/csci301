@@ -12,11 +12,11 @@
 \BOOKMARK [2][]{Outline0.12}{Context Free Grammar for Programming Language}{}% 12
 \BOOKMARK [2][]{Outline0.13}{Derivations}{}% 13
 \BOOKMARK [2][]{Outline0.14}{Derivations}{}% 14
-\BOOKMARK [2][]{Outline0.15}{All regular languages are context free languages}{}% 15
-\BOOKMARK [2][]{Outline0.16}{Generate All Possible Sentences from a CF grammar}{}% 16
+\BOOKMARK [2][]{Outline0.15}{CFG problems}{}% 15
+\BOOKMARK [2][]{Outline0.16}{All regular languages are context free languages}{}% 16
 \BOOKMARK [2][]{Outline0.17}{Generate All Possible Sentences from a CF grammar}{}% 17
 \BOOKMARK [2][]{Outline0.18}{Generate All Possible Sentences from a CF grammar}{}% 18
-\BOOKMARK [2][]{Outline0.19}{CFG problems}{}% 19
+\BOOKMARK [2][]{Outline0.19}{Generate All Possible Sentences from a CF grammar}{}% 19
 \BOOKMARK [2][]{Outline0.20}{Removing \040from grammars}{}% 20
 \BOOKMARK [2][]{Outline0.21}{Removing \040from grammars}{}% 21
 \BOOKMARK [2][]{Outline0.22}{Chomsky Normal Form}{}% 22
@@ -29,16 +29,18 @@
 \BOOKMARK [2][]{Outline0.29}{Consequences of Greibach Normal Form}{}% 29
 \BOOKMARK [2][]{Outline0.30}{Pumping Lemma for CF Languages}{}% 30
 \BOOKMARK [2][]{Outline0.31}{Pumping Lemma for CF Languages}{}% 31
-\BOOKMARK [2][]{Outline0.32}{Proof that L = 0n1n2n is not CF}{}% 32
-\BOOKMARK [2][]{Outline0.33}{Pumping Lemma exercises \(some are hard\)}{}% 33
-\BOOKMARK [2][]{Outline0.34}{CF Languages are closed under union, product, and closure}{}% 34
-\BOOKMARK [2][]{Outline0.35}{CF languages are NOT closed under complement}{}% 35
-\BOOKMARK [2][]{Outline0.36}{CF languages are NOT closed under intersection}{}% 36
-\BOOKMARK [2][]{Outline0.37}{The intersection of a CF language and a regular language is CF}{}% 37
-\BOOKMARK [2][]{Outline0.38}{Pushdown automata}{}% 38
-\BOOKMARK [2][]{Outline0.39}{Tape drives}{}% 39
-\BOOKMARK [2][]{Outline0.40}{Deterministic pushdown automata}{}% 40
-\BOOKMARK [2][]{Outline0.41}{Computation and Termination}{}% 41
-\BOOKMARK [2][]{Outline0.42}{Properly nested parentheses}{}% 42
-\BOOKMARK [2][]{Outline0.43}{0n1n}{}% 43
-\BOOKMARK [2][]{Outline0.44}{b in the middle}{}% 44
+\BOOKMARK [2][]{Outline0.32}{Pumping Lemma for CF Languages}{}% 32
+\BOOKMARK [2][]{Outline0.33}{Pumping Lemma for CF Languages}{}% 33
+\BOOKMARK [2][]{Outline0.34}{Proof that L = 0n1n2n is not CF}{}% 34
+\BOOKMARK [2][]{Outline0.35}{Pumping Lemma exercises \(some are hard\)}{}% 35
+\BOOKMARK [2][]{Outline0.36}{CF Languages are closed under union, product, and closure}{}% 36
+\BOOKMARK [2][]{Outline0.37}{CF languages are NOT closed under complement}{}% 37
+\BOOKMARK [2][]{Outline0.38}{CF languages are NOT closed under intersection}{}% 38
+\BOOKMARK [2][]{Outline0.39}{The intersection of a CF language and a regular language is CF}{}% 39
+\BOOKMARK [2][]{Outline0.40}{Pushdown automata}{}% 40
+\BOOKMARK [2][]{Outline0.41}{Tape drives}{}% 41
+\BOOKMARK [2][]{Outline0.42}{Deterministic pushdown automata}{}% 42
+\BOOKMARK [2][]{Outline0.43}{Computation and Termination}{}% 43
+\BOOKMARK [2][]{Outline0.44}{Properly nested parentheses}{}% 44
+\BOOKMARK [2][]{Outline0.45}{0n1n}{}% 45
+\BOOKMARK [2][]{Outline0.46}{b in the middle}{}% 46
