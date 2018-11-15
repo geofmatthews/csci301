@@ -1,0 +1,28 @@
+\frametitle{Expressing arithmetic trees} 
+\begin{tikzpicture}
+  \Tree [.$*$
+    [.$+$
+      [.2 ]
+      [.3 ]
+    ]
+    [.$\div$
+      [.$-$
+        [.20 ]
+        [.5 ]
+      ]
+      [.3 ]
+    ]
+  ]
+\end{tikzpicture}\hfill
+\begin{minipage}[b]{2.5in}\footnotesize
+\begin{verbatim}
+  ((2 + 3) * ((20 - 5) / 3))
+
+  2 + 3 * 20 - 5 / 3
+
+  * + 2 3 / - 20 5 3
+
+  2 3 + 20 5 - 3 / *
+\end{verbatim}
+\end{minipage}
+

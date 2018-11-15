@@ -68,7 +68,7 @@
           ((char-numeric? (current-char))
            (parse-number 0))
           (else
-           (error "Cannot handle input." (list->string *the-input*))))))
+           (error "Cannot handle input." *the-input*)))))
 
 (define char->number
   (lambda (c)
