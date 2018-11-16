@@ -2,3 +2,6 @@
 \select@language {english}
 \beamer@sectionintoc {1}{Expressing arithmetic trees}{2}{0}{1}
 \beamer@sectionintoc {2}{Expressing arithmetic trees}{3}{0}{2}
+\beamer@sectionintoc {3}{Parsing postfix arithmetic expressions}{4}{0}{3}
+\beamer@sectionintoc {4}{Evaluating arithmetic trees}{5}{0}{4}
+\beamer@sectionintoc {5}{Evaluating arithmetic trees}{6}{0}{5}

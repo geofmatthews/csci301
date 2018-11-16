@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  15 NOV 2018 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  16 NOV 2018 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1034,6 +1034,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./rpncalculator.vrb) [3
 
 ]
+\openout4 = `rpncalculator.vrb'.
+
+ (./rpncalculator.vrb) [4
+
+]
+\openout4 = `rpncalculator.vrb'.
+
+ (./rpncalculator.vrb)
+[5
+
+]
+\openout4 = `rpncalculator.vrb'.
+
+ (./rpncalculator.vrb) [6
+
+] (./rpncalculator.vrb) [7
+
+]
 \tf@nav=\write7
 \openout7 = `rpncalculator.nav'.
 
@@ -1043,37 +1061,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write9
 \openout9 = `rpncalculator.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (./rpncalculator.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `rpncalculator.out' has not changed.
-(rerunfilecheck)             Checksum: 22942208E805BAD2340A78577C37CF45;124.
+(rerunfilecheck)             Checksum: ABC30E068D35392074BC5C870DA783C5;321.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
  ) 
 Here is how much of TeX's memory you used:
- 20539 strings out of 494827
- 400607 string characters out of 6176975
- 485140 words of memory out of 5000000
- 23370 multiletter control sequences out of 15000+600000
- 10731 words of font info for 40 fonts, out of 8000000 for 9000
+ 21163 strings out of 494827
+ 412816 string characters out of 6176975
+ 496273 words of memory out of 5000000
+ 23972 multiletter control sequences out of 15000+600000
+ 12200 words of font info for 46 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 51i,14n,57p,410b,783s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on rpncalculator.pdf (3 pages, 53231 bytes).
+ 51i,25n,58p,410b,783s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msam7.pfb>
+Output written on rpncalculator.pdf (7 pages, 133985 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 9 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

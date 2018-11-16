@@ -15,10 +15,12 @@
 (define push
   (lambda (n) (set! *the-stack* (cons n *the-stack*))))
 (define pop
-  ;; might want to raise an error on empty stack?
-  (lambda () (let ((item (car *the-stack*)))
-               (set! *the-stack* (cdr *the-stack*))
-               item)))
+  (lambda () 
+    (when (null? *the-stack*)
+      (error "Empty stack!"))
+    (let ((item (car *the-stack*)))
+      (set! *the-stack* (cdr *the-stack*))
+      item)))
 (define add
   (lambda ()
     (push (+ (pop) (pop)))))
@@ -29,17 +31,24 @@
 
 ;; Another global for the input
 (define *the-input* '())
-(define set-input (lambda (s) (set! *the-input*
-                                   (string->list s))))
+(define set-input!
+  (lambda (s)
+    (when (not (string? s))
+      (error "Invalid input:" s))
+    (set! *the-input*
+          (string->list s))))
 (define empty-input? (lambda () (null? *the-input*)))
-(define current-char (lambda () (car *the-input*)))
+(define current-char (lambda ()
+                       (when (empty? *the-input*)
+                         (error "Empty input!"))
+                       (car *the-input*)))
 (define skip-char (lambda () (set! *the-input* (cdr *the-input*))))
 ;; End of the input object
 
 (define calc
   (lambda ()
     (let loop ()
-      (set-input (read-line))
+      (set-input! (read-line))
       (display "Result: ")
       (display (calc-list))
       (newline)
@@ -47,7 +56,7 @@
 
 (define calc-string
   (lambda (s)
-    (set-input s)
+    (set-input! s)
     (calc-list)))
 
 (define calc-list
@@ -84,6 +93,7 @@
        (push n)
        (calc-list))
       (else
-       (let ((new-n (+ (* n 10) (char->number (current-char)))))
+       (let ((new-n (char->number (current-char))))
          (skip-char)
-         (parse-number new-n))))))
+         (parse-number (+ (* n 10) new-n)))))))
+

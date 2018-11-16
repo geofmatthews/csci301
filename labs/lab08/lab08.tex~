@@ -1,0 +1,151 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 7}
+\author{Fall 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the fifth in a series of labs that will
+build an interpreter for Scheme.  In this lab we will add the {\tt letrec}
+special form.
+
+\paragraph{Due:} Your program, named {\tt lab07.rkt}, must be submitted to
+Canvas before midnight, Monday, November 26 (after Thanksgiving).
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab07-test.rkt}.  Place this file in the same folder
+as your program, and run it;  there should be no output.  Include
+your unit tests in your submission.
+
+\paragraph{Letrec creates closures that include their own definitions.}
+
+Consider a typical application of {\tt letrec}:
+\begin{Verbatim}[frame=single]
+  (letrec ((plus (lambda (a b) (if (= a 0) b (+ 1 (plus (- a 1) b)))))
+           (even? (lambda (n) (if (= n 0) true (odd? (- n 1)))))
+           (odd? (lambda (n) (if (= n 0) false (even? (- n 1))))))
+    (even? (plus 4 5)))
+\end{Verbatim}
+{\tt plus} is a straightforward recursive function.  {\tt even?} and
+{\tt odd?} are mutually recursive functions, each one requires the
+other.
+
+If we use {\tt let} instead of {\tt letrec}, we will evaluate the {\tt
+  lambda} forms in the current environment, and none of the three
+functions will be defined in that environment.  Each of the closures
+will contain a pointer to an environment in which the recursive
+functions are {\em not} defined.  Thus, we cannot simply
+use {\tt let}.
+
+We want the closures to close over an environment in which {\tt plus},
+{\tt even?} and {\tt odd?} {\em are} defined.  To do this, we will follow
+this strategy.
+\begin{enumerate}
+\item To evaluate a {\tt letrec} special form,
+  we first run through the variable-value pairs in the {\tt letrec}
+    expresion as if it was a simple {\tt let}.  In other words, we go
+    ahead and create the closures with the {\em wrong} environment.
+    We will fix this later.
+  \item Anything else in a {\tt letrec} is also handled in the {\tt
+    let} fashion, for example
+\begin{Verbatim}
+(let ((a 2))
+   (letrec ((x (+ a a)))
+      (+ x x)))
+\end{Verbatim}
+will just return 8.
+You can reuse your old {\tt let} code from  previous
+labs for this part.
+\item In the course of evaluating a {\tt let} expression,
+  you created a mini-environment, and appended that to the current
+  environment, to get a new environment.  We will need pointers to all
+  three of these in what follows.  For this writeup, I'm going to call
+  them the {\tt OldEnvironment}, the {\tt MiniEnvironment}, and
+  the {\tt NewEnvironment}.  They are illustrated as follows:
+\begin{Verbatim}
+((x 5) (y 10) ...)                                     <= OldEnvironment
+((plus ...) (even? ...) (odd? ...))                    <= MiniEnvironment
+((plus ...) (even? ...) (odd? ...) (x 5) (y 10) ...)   <= NewEnvironment
+\end{Verbatim}
+\item At this point, the closures in {\tt MiniEnvironment}
+  contain pointers to {\tt OldEnvironment}.  We need to change these
+  to point to {\tt NewEnvironment}.
+\item If there are any closures in {\tt OldEnvironment}, however, they
+  are already correct, so we don't want to change them!
+
+\item So, we need to loop through just the variable-value pairs in {\tt
+  MiniEnvironment}.  If any variables are bound to {\em closures}, we
+  change the {\em saved} environment pointer inside the closure to
+  point to {\tt NewEnvironment}.
+
+ Make sure you loop through only the variable-value pairs in {\tt
+  MiniEnviroment}. Note that {\tt NewEnvironment} includes both {\tt
+  MiniEnvironment} and {\tt OldEnvironment}. So we {\em don't } want
+  to loop through all the closures in {\tt NewEnvironment}.
+
+\item Since we need to change a data structure that already exists,
+  this is definitely {\em not} functional style programming.  In fact,
+  lists in {\bf Racket} are immutable!  So we {\em cannot} use lists
+  any more to represent closures.
+
+ Look up the documentation in {\bf Racket} on mutable lists.
+  You'll find procedures such as {\tt mcar}, {\tt mcdr}, and {\tt
+    mcons}, which handle mutable lists just the way {\tt car}, {\tt
+    cdr} and {\tt cons} handle immutable lists.
+
+  But you will also find procedures such as {\tt set-mcar!} and
+  {\tt set-mcdr!} for changing existing lists into new ones.
+
+  Using mutable lists allows us to change the implementation of
+  closures so that we can change the environment inside:
+
+\begin{Verbatim}[frame=single,label=Mutable Closures]
+(define closure
+  (lambda (vars body env)
+    (mcons 'closure (mcons env (mcons vars body)))))
+(define closure?
+  (lambda (clos) (and (mpair? clos) (eq? (mcar clos) 'closure))))
+(define closure-vars
+  (lambda (clos) (mcar (mcdr (mcdr clos)))))
+(define closure-body
+  (lambda (clos) (mcdr (mcdr (mcdr clos)))))
+(define closure-env
+  (lambda (clos) (mcar (mcdr clos))))
+(define set-closure-env!
+  (lambda (clos new-env) (set-mcar! (mcdr clos) new-env)))
+\end{Verbatim}
+
+
+If you take the previous lab and replace the old closure
+implementation with this one, everything should work as before.  Now
+aren't you glad you respected the interface in the last lab?
+
+ If your previous lab doesn't work with this new implementation
+  of closures, fix it!
+
+\item After we replace all the closures in {\tt MiniEnvironment} with
+  pointers to {\tt NewEnvironment}, we can now evaluate the body of
+  the {\tt letrec} form, using {\tt NewEnvironment}.  Yay!  Recursive
+  functions! 
+
+\item Check the unit test file for some tricky examples!  
+
+  Can you believe you've written an interpreter for such a complex language? 
+\end{enumerate}
+
+\end{document}
+

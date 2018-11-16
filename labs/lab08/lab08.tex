@@ -1,0 +1,183 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb,amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\newcommand{\set}[1]{\ensuremath{\{#1\}}}
+\newcommand{\power}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+\title{CSCI 301, Lab \# 8}
+\author{Fall 2018}
+\date{}
+\begin{document}
+
+\maketitle
+%\setlength{\columnsep}{2em}
+%\begin{multicols}{2}
+
+
+\paragraph{Goal:} This is the last in a series of labs that will
+build an interpreter for Scheme.  In this lab we will build our own
+parser for Scheme expressions using a simple LL(1) grammar to guide
+us. 
+
+\paragraph{Due:} Your program, {\tt lab08.rkt}, must be submitted to
+Canvas before midnight, Monday, December 3.
+\centerline{\large \bf Submit both {\tt lab07.rkt} and {\tt lab08.rkt} with this
+  assignment!} 
+
+\paragraph{Unit tests:}
+At a minimum, your program must pass the unit tests found in the
+file {\tt lab08-test.rkt}.  Place this file in the same folder
+as {\tt lab08.rkt}, and also {\tt lab07.rkt},
+and run it;  there should be no output.  Include
+your unit tests and both labs in your submission.
+
+\paragraph{From strings to expressions.}
+
+Up until now we let {\bf Racket} handle the conversion from characters
+to lists, that is, changing the characters you typed into a file,
+for example, \verb|'(+ 1 2)|, into an actual Scheme list
+structure with {\tt car}s and {\tt cdr}s.  {\bf Racket} has a builtin
+expression reader which does this automatically.
+
+Now we're going to do that part ourselves.  Our unit test file, for
+example, can look like this:
+\begin{Verbatim}[frame=single]
+(require rackunit "lab08.rkt" "lab07.rkt")
+(define e2 (list (list '+ +)))
+(check equal?
+       (parse "(+ 1 2)")
+       '(+ 1 2))
+(check equal?
+       (evaluate (parse "(+ 1 2)") e2)
+       3)
+\end{Verbatim}
+Note that your interpreter will be the one defined in {\tt lab07.rkt},
+and will provide {\tt evaluate}, and the parser will be defined
+in {\tt lab08.rkt} and provide {\tt parse}.  The parser and the evaluator
+should be completely independent.
+
+
+\paragraph{Input}
+We will use the same strategy for input that we used in the {\tt
+  rpncalculator.rkt}.  Thus, a string will be converted to a list of
+characters, which will be stored in the global variable {\tt
+  *the-input*},
+and will be accessed {\em only} by the procedure
+that takes a string as a parameter, {\tt set-input!},
+and the three procedures (which take no
+parameters) {\tt end-of-input?}, {\tt current-char},
+and {\tt skip-char}.  This will ensure we're doing LL(1) parsing,
+since we never look at more than the one character at the front of the
+input, we never put characters back on the input to back up and start
+over, {\em etc.}
+
+Note: in my RPNcalculator I also used {\tt *the-input*} for meaningful
+error messages.  We can allow this, since it is only used in errors
+which stop all processing.
+
+\paragraph{LL(1) parsing for Scheme}
+
+The grammar for our Scheme is incredibly simple:
+\begin{align*}
+  D &\rightarrow 0 \mid 1 \mid 2 \mid 3 \mid ... &\mbox{Digit}\\
+  N &\rightarrow DN \mid D &\mbox{Number}\\
+  A &\rightarrow a \mid b \mid c \mid d \mid ... &\mbox{Symbolic}\\
+  S &\rightarrow AS \mid A &\mbox{Symbol}\\
+  E &\rightarrow N \mid S \mid (\ L\ ) &\mbox{Expression}\\
+  L &\rightarrow E\ L \mid \epsilon&\mbox{List of expressions}
+\end{align*}
+Note that, as in our RPNcalculator,
+we can use some builtin Scheme procedures
+to avoid parts.  For example, {\tt char-numeric?} will identify
+digits,
+{\tt char-whitespace?} will identify whitespace.
+
+For identifying characters we can use in a symbol (called
+``Symbolic'' in the grammar above), we want to include
+just about everything except whitespace and the two parentheses.  This
+is easy to define:
+\begin{Verbatim}[frame=single]
+(define char-symbolic?
+  (lambda (char)
+    (and (not (char-whitespace? char))
+         (not (eq? char #\())
+         (not (eq? char #\))))))  
+\end{Verbatim}
+
+\paragraph{Recursive descent procedures}
+
+We will define four recursive descent procedures to parse Scheme:
+\begin{enumerate}
+
+\item{\tt parse-expression} is the top-level procedure, and gets the ball
+rolling. From the grammar we know there will be only three kinds of
+expressions.  The LL(1) character of the grammar tells us how
+to do the processing:
+\begin{itemize}
+\item If we find a digit, call {\tt parse-number}.
+\item If we find a symbolic character, call {\tt parse-symbol}.
+\item
+  If we find a left parenthesis, remove that character from the
+  input and call {\tt parse-list}.
+\item
+  Anything else should be an error.
+\end{itemize}
+
+\item{\tt parse-number} is handled
+ just as in the RPNcalculator: keep scanning digits until
+you find something not a digit, multiplying by 10 and adding along the
+way.  When you get to the end of a number, though, don't push it on a
+stack, return it as the value of the expression.  We are not building
+an interpreter here (like the RPNcalculator), we're building  a
+parser.  A properly parsed number is ... the number itself!
+
+\item{\tt parse-symbol} is handled very similarly to numbers:  keep
+scanning as long as the input is symbolic, and concatenate all the
+characters into a symbol when you're done.  You may find the builtin
+{\bf Racket} routine {\tt string->symbol} helpful.  Return the symbol
+as the value of the procedure.
+
+\item{\tt parse-list} is a bit tricky, but
+  the grammar tells us we only need to
+handle two cases:
+  \begin{itemize}
+    \item
+ If the input is a right
+ parenthesis, the return \verb|'()|.  We found the end of the list.
+\item
+ Otherwise, call {\tt
+  parse-expression}, then call {\tt parse-list}, {\tt cons}
+the two results together and return that.
+\end{itemize}
+\end{enumerate}
+That wasn't so hard, was it?  Note:  I left out discussing the
+handling of whitespace, but that's not hard.  Look at what we did in
+the RPNcalculator.
+
+
+\paragraph{Parse}
+The {\tt parse} procedure is a simple interface to the grammar:
+\begin{Verbatim}[frame=single]
+(define parse
+  (lambda (str)
+    (set-input! str)
+    (parse-expression)))
+\end{Verbatim}
+It is usually the case that when you have a complex recursive descent
+parser, you need one more ``top-level'' routine to get everything
+rolling. 
+
+\paragraph{Program files}
+
+Note that our parser only handles strings typed in, but that we
+usually want an interpreter to interpret program files, not strings.
+The solution is pretty trivial:
+check out the {\bf Racket} procedure {\tt file->string}.
+
+
+\end{document}
+
