@@ -171,12 +171,14 @@ It is usually the case that when you have a complex recursive descent
 parser, you need one more ``top-level'' routine to get everything
 rolling. 
 
-\paragraph{Program files}
+\paragraph{Program files: optional}
 
 Note that our parser only handles strings typed in, but that we
 usually want an interpreter to interpret program files, not strings.
 The solution is pretty trivial:
 check out the {\bf Racket} procedure {\tt file->string}.
+
+With a little work you could get your interpreter to interpret itself...
 
 
 \end{document}

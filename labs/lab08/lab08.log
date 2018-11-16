@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  16 NOV 2018 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  16 NOV 2018 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**lab08.tex
+**lab08
 (./lab08.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 10 language(s) loaded.
@@ -283,7 +283,7 @@ Here is how much of TeX's memory you used:
  6351 multiletter control sequences out of 15000+600000
  9101 words of font info for 34 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 27i,8n,35p,222b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,8n,35p,218b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
@@ -294,7 +294,7 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on lab08.pdf (3 pages, 116534 bytes).
+Output written on lab08.pdf (3 pages, 116602 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
