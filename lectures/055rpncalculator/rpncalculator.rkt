@@ -27,6 +27,13 @@
 (define mul
   (lambda ()
     (push (* (pop) (pop)))))
+(define sub
+  (lambda ()
+    (push (+ (- (pop)) (pop)))))
+(define div
+  (lambda ()
+    (let* ((a (pop)) (b (pop)))
+      (push (/ b a)))))
 ;; End of abstract object *the-stack*
 
 ;; Another global for the input
@@ -73,6 +80,14 @@
           ((eq? (current-char) #\*)
            (skip-char)
            (mul)
+           (calc-list))
+          ((eq? (current-char) #\-)
+           (skip-char)
+           (sub)
+           (calc-list))
+          ((eq? (current-char) #\/)
+           (skip-char)
+           (div)
            (calc-list))
           ((char-numeric? (current-char))
            (parse-number 0))
