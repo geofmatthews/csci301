@@ -161,6 +161,12 @@ left to right, and have to lookahead at most $k$ symbols.
 \end{frame}
 
 \sect{$LR$ parsing:  Shift and Reduce}
+
+\begin{description}
+\li[Shift:] move character from input to stack
+\li[Reduce:] if stack holds RHS of a rule, replace with LHS
+\end{description}
+
 \begin{columns}
 \column{0.5\textwidth}
 \bee
@@ -188,11 +194,8 @@ $S\deriv{S\ar AB} AB \deriv{B\ar b} Ab \deriv{A\ar a} ab$
 \end{columns}
 \bigskip
 
-
-\bi\li Note: 
-\bi\li At all times, stack+input=derivation string
-    \li String changes only on reduce
-\ei\ei
+\bi\li Note: At all times, stack+input=derivation string
+\ei
 
 \end{frame}
 
@@ -327,9 +330,14 @@ Stack & Input & Rule \\\hline
 \li Hopefully by looking at {\bf only one} symbol of the input.
 \li Everything on the stack has already been examined.
 \li We can use the entire stack to determine actions.
-\li We do this by using an DFA to keep track of stack state.
+\li We do this by using a DFA to keep track of stack state.
 \li We note each time a RHS appears on top of the stack.
 \li If a RHS is on top of the stack, a reduction is {\em possible}.
+\bi
+\li We can then choose whether to shift or reduce.
+\li Otherwise you must shift.
+\ei
+
 \ei
 
 \end{frame}

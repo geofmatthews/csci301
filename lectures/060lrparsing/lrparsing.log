@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  2 MAR 2018 09:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  19 NOV 2018 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,18 +964,18 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 File: figures/simplelrtree.png Graphic file (type png)
 
 <use figures/simplelrtree.png>
-Package pdftex.def Info: figures/simplelrtree.png used on input line 9.
+Package pdftex.def Info: figures/simplelrtree.png used on input line 15.
 (pdftex.def)             Requested size: 57.21361pt x 74.27731pt.
 ) [5
 
  <./figures/simplelrtree.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 202.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -989,15 +989,15 @@ Package pdftex.def Info: figures/derivationtreelr.png used on input line 9.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 239.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 239.
 
 \openout4 = `lrparsing.vrb'.
 
-(./lrparsing.vrb <figures/lrtree.png, id=288, 521.95pt x 409.53pt>
+(./lrparsing.vrb <figures/lrtree.png, id=287, 521.95pt x 409.53pt>
 File: figures/lrtree.png Graphic file (type png)
 
 <use figures/lrtree.png>
@@ -1018,7 +1018,7 @@ Overfull \hbox (10.3561pt too wide) in paragraph at lines 21--39
 [][]  
  []
 
-<figures/arithmetictree.png, id=315, 538.01pt x 521.95pt>
+<figures/arithmetictree.png, id=314, 538.01pt x 521.95pt>
 File: figures/arithmetictree.png Graphic file (type png)
 
 <use figures/arithmetictree.png>
@@ -1035,11 +1035,11 @@ Package pdftex.def Info: figures/arithmetictree.png used on input line 40.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 337.
+(hyperref)                removing `math shift' on input line 345.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 337.
+(hyperref)                removing `math shift' on input line 345.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1060,11 +1060,11 @@ Package pdftex.def Info: figures/simplelrfsa.png used on input line 28.
  <./figures/simplelrfsa.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 380.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1087,15 +1087,15 @@ Package pdftex.def Info: figures/simplelrfsa.png used on input line 43.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 420.
+(hyperref)                removing `math shift' on input line 428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 420.
+(hyperref)                removing `\rightarrow' on input line 428.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 420.
+(hyperref)                removing `math shift' on input line 428.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1110,15 +1110,15 @@ Package pdftex.def Info: figures/lrparseexamples01.png used on input line 25.
  <./figures/lrparseexamples01.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 449.
+(hyperref)                removing `math shift' on input line 457.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 449.
+(hyperref)                removing `\rightarrow' on input line 457.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 449.
+(hyperref)                removing `math shift' on input line 457.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1133,15 +1133,15 @@ Package pdftex.def Info: figures/lrparseexamples02.png used on input line 25.
  <./figures/lrparseexamples02.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 477.
+(hyperref)                removing `math shift' on input line 485.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 477.
+(hyperref)                removing `\rightarrow' on input line 485.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 477.
+(hyperref)                removing `math shift' on input line 485.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1157,7 +1157,7 @@ File: figures/lrparseexamples03.png Graphic file (type png)
 Package pdftex.def Info: figures/lrparseexamples03.png used on input line 33.
 (pdftex.def)             Requested size: 237.87848pt x 124.05814pt.
 )
-Overfull \vbox (5.58495pt too high) detected at line 510
+Overfull \vbox (5.58495pt too high) detected at line 518
  []
 
 [14
@@ -1272,11 +1272,11 @@ Package pdftex.def Info: figures/lrdfa.png used on input line 25.
 \tf@snm=\write9
 \openout9 = `lrparsing.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 775.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 775.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 783.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 783.
  (./lrparsing.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 775.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 775.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 783.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 783.
 Package rerunfilecheck Info: File `lrparsing.out' has not changed.
 (rerunfilecheck)             Checksum: 01495FFDC3F31DC7C7CF1125CE287D21;1414.
 
@@ -1284,13 +1284,13 @@ Package rerunfilecheck Info: File `lrparsing.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 775.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 783.
  ) 
 Here is how much of TeX's memory you used:
- 17623 strings out of 494827
- 330875 string characters out of 6176977
+ 17632 strings out of 494827
+ 331148 string characters out of 6176975
  417560 words of memory out of 5000000
- 20387 multiletter control sequences out of 15000+600000
+ 20396 multiletter control sequences out of 15000+600000
  18071 words of font info for 68 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  48i,14n,51p,406b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1311,7 +1311,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on lrparsing.pdf (25 pages, 344962 bytes).
+Output written on lrparsing.pdf (25 pages, 345320 bytes).
 PDF statistics:
  862 PDF objects out of 1000 (max. 8388607)
  792 compressed objects within 8 object streams
