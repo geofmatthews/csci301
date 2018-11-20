@@ -1,0 +1,18 @@
+
+
+\newcommand{\tree}[3]{\pstree{\Tcircle{#1}\ncput*{#2}}{{#3}}}
+\newcommand{\nd}[2]{\Tcircle{#1}\ncput*{#2}}
+\newcommand{\ndd}[2]{\Tcircle[doubleline=true]{#1}\ncput*{#2}}
+
+\psset{treemode=R,arrows=->}
+
+\tree{0}{}
+{
+  \ndd{1}{a}
+  \tree{2}{A}
+  {
+    \ndd{3}{b}
+    \ndd{4}{B}
+  }
+  \ndd{5}{S}
+}

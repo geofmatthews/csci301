@@ -1,0 +1,24 @@
+\BOOKMARK [2][]{Outline0.1}{Readings}{}% 1
+\BOOKMARK [2][]{Outline0.2}{Bottom up parsing of CFGs}{}% 2
+\BOOKMARK [2][]{Outline0.3}{LR\(k\) grammars}{}% 3
+\BOOKMARK [2][]{Outline0.4}{LR parsing: Shift and Reduce}{}% 4
+\BOOKMARK [2][]{Outline0.5}{LR parsing: Shift and Reduce}{}% 5
+\BOOKMARK [2][]{Outline0.6}{Another LR parse}{}% 6
+\BOOKMARK [2][]{Outline0.7}{LR parsing arithmetic}{}% 7
+\BOOKMARK [2][]{Outline0.8}{LR\(1\) parsing}{}% 8
+\BOOKMARK [2][]{Outline0.9}{LR\(1\) parsing}{}% 9
+\BOOKMARK [2][]{Outline0.10}{LR\(1\) parsing}{}% 10
+\BOOKMARK [2][]{Outline0.11}{Left recursion: \040S Sa | a}{}% 11
+\BOOKMARK [2][]{Outline0.12}{Right recursion: \040S aS | a}{}% 12
+\BOOKMARK [2][]{Outline0.13}{Middle recursion: S aSa | bSb | c}{}% 13
+\BOOKMARK [2][]{Outline0.14}{LR\(1\) parsing, a more complex example}{}% 14
+\BOOKMARK [2][]{Outline0.15}{LR\(1\) parsing}{}% 15
+\BOOKMARK [2][]{Outline0.16}{LR\(1\) parsing}{}% 16
+\BOOKMARK [2][]{Outline0.17}{LR\(1\) parsing}{}% 17
+\BOOKMARK [2][]{Outline0.18}{DFA for LR parsing}{}% 18
+\BOOKMARK [2][]{Outline0.19}{Using the DFA in LR parsing}{}% 19
+\BOOKMARK [2][]{Outline0.20}{Using the DFA in LR parsing}{}% 20
+\BOOKMARK [2][]{Outline0.21}{More examples in notes on repo.}{}% 21
+\BOOKMARK [2][]{Outline0.22}{LR\(k\) languages, Knuth's theorem}{}% 22
+\BOOKMARK [2][]{Outline0.23}{LR parsing exercises}{}% 23
+\BOOKMARK [2][]{Outline0.24}{Lex and Yacc Style Parsers}{}% 24

@@ -1,0 +1,24 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\psset{arrows=->,arrowscale=2}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{Start}{~}}
+
+\begin{psmatrix}[colsep=1.7]
+\start  \\
+\nd{0} & \nd{1} & \nd{4} & \nd{2} &\ndd{3}
+\ncline{Start}{0} 
+\ncline 01 \myput{a,\$}{A}
+\ncline 23 \myput{\lambda,\$}{nop}
+\nccurve[angleA=-45,angleB=-135] 03 \myput{\lambda,\$}{nop}
+\nccircle 1{0.5} \myput{a,A}{A}
+
+\ncline 14 \myput{b,A}{pop}
+\nccurve[angleA=45,angleB=135] 42 \myput{\lambda,A}{pop}
+\nccurve[angleA=-135,angleB=-45] 24 \myput{b,A}{pop}
+
+\end{psmatrix}
+
+

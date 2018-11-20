@@ -1,0 +1,22 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{start}{~}}
+
+\psset{arrows=->,arrowscale=2}
+
+\begin{psmatrix}[colsep=1.7]
+\start & \nd{0} & \nd{1}
+\ncline{start}{0}
+\ncline{0}{1} \myput{b,A}{nop}
+\nccircle{0}{0.5} \myput{a,\$}{A}
+\nccircle{1}{0.5} \myput{b,\$}{pop}
+\nccircle[angleA=180]{0}{0.5} \myput{a,A}{A}
+\nccircle[angleA=180]{1}{0.5} \myput{b,A}{pop}
+
+
+\end{psmatrix}
+
+

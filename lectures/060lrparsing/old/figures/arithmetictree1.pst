@@ -1,0 +1,38 @@
+
+\psset{arrows=->,arrowscale=2,levelsep=1}
+
+\newcommand{\nd}[1]{\Tcircle{#1}}
+
+\pstree{\nd{E}}
+{
+  \pstree{\nd{T}}
+  {
+    \pstree{\nd{T}}
+    {
+      \pstree{\nd{F}}
+      {
+        \nd{(}
+        \pstree{\nd{E}}
+	{
+	  \pstree{\nd{E}}
+ 	  {
+	    \pstree{\nd{T}}{\pstree{\nd{F}}{\nd{a}}}
+	  }
+          \nd{+}
+	  \pstree{\nd{T}}
+ 	  {
+	    \pstree{\nd{F}}{\nd{a}}
+	  }
+	}
+        \nd{)}
+      }
+    }
+    \nd{*}
+    \pstree{\nd{F}}
+    {
+      \nd{a}
+    }
+  }
+}
+
+

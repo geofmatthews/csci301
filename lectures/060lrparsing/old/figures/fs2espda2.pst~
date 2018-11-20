@@ -1,0 +1,28 @@
+
+
+\newcommand{\nd}[1]{\circlenode{#1}{#1}}
+\newcommand{\ndd}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\myput}[2]{\ncput*{$\frac{#1}{#2}$}}
+\newcommand{\start}{\rnode{Start}{\fbox{\tiny Start}}}
+
+\psset{arrows=->,arrowscale=2}
+
+\begin{psmatrix}[colsep=1.7]
+ & \rnode{s1}{~} & \circlenode[doubleline=true]{00}{0} && \circlenode[doubleline=true]{11}{1} \\
+\rnode{s2}{~} & \nd{$S'$} & \nd{0} && \nd{1} \\
+\rnode{s3}{~} & \circlenode{000}{0}   &           & \nd{$E'$}
+\ncline{s1}{00}
+\ncline{00}{11} \myput{a,\$}{nop}
+\ncline{s2}{$S'$}
+\ncline{$S'$}{0} \myput{\lambda,\$'}{\$}
+\ncline 01 \myput{a,\$}{nop}
+\ncline{0}{$E'$} \myput{\lambda,?}{pop}
+\ncline{1}{$E'$} \myput{\lambda,?}{pop}
+\nccircle[angleA=180]{$E'$}{0.5} \myput{\lambda,?}{pop}
+
+\ncline{s3}{000}
+\nccircle{000}{0.5} \myput{\lambda,\$}{pop}
+\nccircle[angleA=180]{000}{0.5} \myput{a,\$}{pop}
+\end{psmatrix}
+
+

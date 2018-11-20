@@ -144,31 +144,14 @@ to left, scanning the input left to right.
 \ei
 \column{0.4\textwidth}
 \bee
-S \arr AB\\
-A \arr aA \mid a\\
-B \arr b
+S \arr SA\ | \ \mt\\
+A \arr AA\ | \ a
 \eee
-\begin{tikzpicture}
-  \Tree
-      [.S
-        [.A
-          [.a ]
-          [.A
-            [.a ]
-          ]
-        ]
-        [.B
-          [.b ]
-        ]
-      ]
-\end{tikzpicture}
+\myfig{derivationtreelr}
 \end{columns}
 \vfill
 \[
-S \deriv{S\ar AB} AB
-  \deriv{B \ar b} Ab
-  \deriv{A \ar aA} aAb
-  \deriv{A \ar a} aab
+S \deriv{S\ar SA} SA \deriv{A\ar AA} SAA \deriv{A\ar a} SAa \deriv{A\ar a} Saa \deriv{S\ar\epsilon} aa
 \]
 \end{frame}
 
@@ -194,19 +177,7 @@ S \arr AB\\
 A \arr a\\
 B \arr b
 \eee
-
-\begin{tikzpicture}
-  \Tree
-      [.S
-        [.A
-          [.a ]
-        ]
-        [.B
-          [.b ]
-        ]
-      ]
-\end{tikzpicture}
-%\myfig{simplelrtree}
+\myfig{simplelrtree}
 
 \column{0.5\textwidth}
 
@@ -236,63 +207,35 @@ $S\deriv{S\ar AB} AB \deriv{B\ar b} Ab \deriv{A\ar a} ab$
 \begin{columns}
 \column{0.5\textwidth}
 \bee
-S \arr ASB \mid c\\
-A \arr a\\
-B \arr b
+S \arr SA\ | \ \mt\\
+A \arr AA\ | \ a
 \eee
-
-\begin{tikzpicture}
-  \Tree
-      [.S
-        [.S
-          [.$\epsilon$ ]
-        ]
-        [.A
-          [.A
-            [.a ]
-          ]
-          [.A
-            [.a ]
-          ]
-        ]
-      ]
-\end{tikzpicture}
-
-%\myfig{derivationtreelr}
+\myfig{derivationtreelr}
 
 \column{0.5\textwidth}
 \begin{tabular}{|lr|l|}\hline
 Stack & Input & Rule \\\hline
-\$ & aacbb \$ & shift\\
-\$ a & acbb \$ & $A\ar a$\\
-\$ A & acbb \$ & shift \\
-\$ Aa & cbb \$ & $A\ar a$\\
-\$ AA & cbb \$ & shift \\
-\$ AAc & bb \$ & $S \ar c$\\
-\$ AAS & bb \$ & shift \\
-\$ AASb & b \$ & $B\ar b$\\
-\$ AASB & b \$ & $S\ar ASB$\\
-\$ AS & b \$ & shift\\
-\$ ASb & \$ & $B\ar b$\\
-\$ ASB & \$ & $S\ar ASB$\\
-\$ S & \$ & accept \\\hline
+\$ & aa\$ & $S\ar\mt$\\
+\$S & aa\$ & shift\\
+\$Sa & a\$ & $A\ar a$\\
+\$SA & a\$ & shift\\
+\$SAa & \$ & $A\ar a$\\
+\$SAA & \$ & $A\ar AA$\\
+\$SA & \$ & $S\ar SA$\\
+\$S & \$ & accept\\\hline
 \end{tabular}
 
 \end{columns}
 
 \bigskip
 
-
 $
-S \deriv{S\ar ASB} ASB
-  \deriv{B \ar b} ASb
-  \deriv{S\ar ASB} AASBb
-  \deriv{B \ar b} AASbb
-  \deriv{S \ar c} AAcbb
-  \deriv{A\ar a} Aacbb
-  \deriv{A\ar a} aacbb
-  $
-
+S \deriv{S\ar SA} SA
+ \deriv{A\ar AA} SAA 
+\deriv{A\ar a} SAa 
+\deriv{A\ar a} Saa
+ \deriv{S\ar \epsilon} aa
+$
 
 \end{frame}
 
@@ -306,26 +249,7 @@ B \arr b
 \eee
 
 
-\begin{tikzpicture}
-  \Tree
-      [.S
-        [.a ]
-        [.S
-          [.a ]
-          [.S
-            [.d ]
-          ]
-          [.B
-            [.b ]
-          ]
-        ]
-        [.B
-          [.b ]
-        ]
-      ]
-      
-\end{tikzpicture}
-%\myfig{lrtree}
+\myfig{lrtree}
 
 \column{0.5\textwidth}
 \begin{tabular}{|lr|l|}\hline
@@ -396,32 +320,7 @@ Stack & Input & Rule \\\hline
 \$E & \$ &    accept\\\hline
 \end{tabular}
 \column{0.33\textwidth}
-
-\begin{tikzpicture}
-  \Tree
-      [.E
-        [.E
-          [.T
-            [.F
-              [.a ]
-            ]
-          ]
-        ]
-        [.$+$ ]
-        [.T
-          [.T
-            [.F
-              [.a ]
-            ]
-          ]
-          [.$*$ ]
-          [.F
-            [.a ]
-          ]
-        ]
-      ]
-\end{tikzpicture}
-%\myfigt{arithmetictree}
+\myfigt{arithmetictree}
 
 \end{columns}
 
@@ -618,9 +517,7 @@ Stack & Input \\
 \end{minipage}
 }
 
-\includegraphics[scale=0.15]{figures/lrparseexamples03}
-      
-
+\includegraphics[scale=0.15]{figures/lrparseexamples03.png}
 \end{frame}
 
 \sect{LR(1) parsing, a more complex example}
@@ -661,9 +558,13 @@ $S \dar aCd \dar acCd \dar accCd \dar acccd$
 
 \sect{LR(1) parsing}
 
-
 \begin{columns}
 \column{0.5\textwidth}
+\bee
+S \arr aCd \ | \ bCD\\
+C \arr cC \ | \ c\\
+D \arr d
+\eee
 
 
 \myfig{bccdtree}

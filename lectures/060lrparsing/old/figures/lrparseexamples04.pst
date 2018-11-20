@@ -1,0 +1,23 @@
+
+\newcommand{\no}[1]{\circlenode{#1}{#1}}
+\newcommand{\noo}[1]{\circlenode[doubleline=true]{#1}{#1}}
+\newcommand{\self}[2]{\nccircle{#1}{0.5}\nbput{#2}}
+\newcommand{\selfu}[2]{\nccircle[angleA=180]{#1}{0.5}\nbput{#2}}
+
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}
+\rnode{start}{start} & \noo{0} & \noo{1} & \noo{2} \\
+             &\noo{7}&\no{3} & \noo{4} & \noo{5}\\
+   &  &\noo{6}
+\ncline{start}{0}
+\ncline01\naput{a}
+\ncline12\naput{A}
+\self{1}{a}
+\ncline03\naput{A}
+\ncline34\naput{b}
+\ncline45\naput{B}
+\self{4}{b}
+\ncline36\naput{B}
+\ncline07\naput{S}
+\end{psmatrix}
+

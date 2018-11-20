@@ -1,0 +1,10 @@
+
+
+\newcommand{\nd}[1]{\Tcircle{#1}}
+\newcommand{\tree}[2]{\pstree{\Tcircle{#1}}{#2}}
+
+\psset{levelsep=1}
+
+\tree{S}{
+
+}
