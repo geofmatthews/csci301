@@ -28,6 +28,8 @@
 \newcommand{\colb}[1]{\end{column}\begin{column}{#1\textwidth}}
 \newcommand{\colc}{\end{column}\end{columns}}
 
+
+
 \title{Introduction to Theory of Computation}
 \author{Chapters 4 and 5, Turing Machines and Decidability}
 
@@ -79,6 +81,10 @@
 
 \bfr{Turing Machine}
 \includegraphics[width=\textwidth]{tm}
+\end{frame}
+
+\bfr{Tape Drives}
+\includegraphics[width=\textwidth]{tapedrives}
 \end{frame}
 
 \bfr{Even Palindromes}
@@ -163,7 +169,19 @@
 {\Large \bf
   Every computational process that is intuitively considered to
   be an algorithm can be converted to a Turing machine.  }
+
+
+\vfill
+\pause
+\begin{itemize}
+  \item Not a theorem.
+\item Can't be proved because it proposed as a {\em definition} of
+{\bf algorithm}.
+\end{itemize}
+
+
 \end{frame}
+
 
 \bfr{Decidability}
 
@@ -171,8 +189,8 @@ A language $A$ over $\Sigma$
 is {\em decidable} if there exists a Turing machine $M$
 such that for every string $w\in\Sigma^*$:
 \begin{enumerate}
-\item If $w\in A$ then $M$, started on $w$, halts in the accept state.
-\item If $w\not\in A$ then $M$, started on $w$, halts in the reject state.
+\item If $w\in A$ then $M$, started on $w$, halts in an accept state.
+\item If $w\not\in A$ then $M$, started on $w$, halts in a reject state.
 \end{enumerate}
 
 
@@ -180,7 +198,7 @@ such that for every string $w\in\Sigma^*$:
 
 \begin{itemize}
   \item
-I will call a machine like this a {\bf decider} for the language.
+We will call a machine like this a {\bf decider} for the language.
 \end{itemize}
 \end{frame}
 
@@ -198,10 +216,13 @@ such that for every string $w\in\Sigma^*$:
 \vfill
 \begin{itemize}
 \item
-I will call a machine like this a {\bf recognizer} for the language.
+We will call a machine like this a {\bf recognizer} for the language.
 \item
 A machine that produces each string in a language, one at a time, is
 an {\bf enumerator } for the language.
+\pause
+\item We will prove shortly that the existence of a recognizer is
+  equivalent to the existence of an enumerator.
 \end{itemize}
 \end{frame}
 
@@ -230,6 +251,7 @@ an {\bf enumerator } for the language.
 If we have an enumerator $M_E$ for a language $L$,\\
 we can construct a recognizer $M_R$ for $L$.
 \pause
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item $M_R$:
   \begin{itemize}
@@ -241,6 +263,16 @@ we can construct a recognizer $M_R$ for $L$.
     \end{itemize}
   \end{itemize}
 \end{itemize}
+}}
+
+\vfill
+\pause
+\begin{itemize}
+  \item
+If $x\in L$ then on input $x$, $M_R$ will halt with accept.
+\item
+If $x\not\in L$ then on input $x$, $M_R$ will run forever.
+\end{itemize}
 \end{frame}
 
 \bfr{Recognizer $\Rightarrow$ Enumerator}
@@ -248,6 +280,36 @@ If we have a recognizer $M_R$ for a language $L$,\\
 we can construct an enumerator $M_E$ for $L$.
 
 \pause
+\vfill
+
+\begin{itemize}
+\item This is tricky.
+\item We can build a machine to enumerate all possible strings:
+
+  \[\underbrace{\epsilon}_0,
+  \underbrace{0, 1}_1,
+  \underbrace{00, 01, 10, 11}_2,
+  \underbrace{000, 001, 010, 011, 100, ...}_3,
+  \underbrace{0000, ...}_4, ...\]
+
+\pause
+\item We might suppose we just run $M_R$ on each string, and output
+  any that are accepted.
+  \item That would be the machine, $M_E$, right?
+  \pause
+\item But we {\em can't} just run $M_R$ on each of these strings!
+  \item $M_R$ might not halt!
+\item What to do?
+\end{itemize}
+
+\end{frame}
+
+\bfr{Recognizer $\Rightarrow$ Enumerator}
+If we have a recognizer $M_R$ for a language $L$,\\
+we can construct an enumerator $M_E$ for $L$.
+
+\pause
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item $M_E$:
   \begin{itemize}
@@ -262,11 +324,13 @@ we can construct an enumerator $M_E$ for $L$.
       it from the list.
   \end{itemize}
 \end{itemize}
+}}
 \vfill
 
 This machine will eventually run all possible strings for all possible
 number of steps.  Hence, if $M_R$ ever recognizes a string, this
-machine will output it.
+machine will output it.  If a string is never recongized by $M_R$,
+it will never be output.
 
 \end{frame}
 
@@ -296,7 +360,7 @@ A_{DFA} = \{ \langle M,w\rangle : \mbox{$M$ is a DFA that accepts $w$}\}
 Proof?
 
 \pause
-
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item Given input $\langle M,w\rangle$:
   \begin{itemize}
@@ -304,7 +368,7 @@ Proof?
   \item It must terminate.
   \item If it accepts, accept, else reject.
   \end{itemize}
-\end{itemize}
+\end{itemize}}}
 \end{frame}
 
 \bfr{The language $A_{NFA}$ is decidable}
@@ -316,7 +380,7 @@ A_{NFA} = \{ \langle M,w\rangle : \mbox{$M$ is a NFA that accepts $w$}\}
 Proof?
 
 \pause
-
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item Given input $\langle M,w\rangle$:
   \begin{itemize}
@@ -326,7 +390,7 @@ Proof?
   \item It must terminate.
   \item If it accepts, accept, else reject.
   \end{itemize}
-\end{itemize}
+\end{itemize}}}
 \end{frame}
 
 \bfr{The language $A_{CGF}$ is decidable}
@@ -338,7 +402,7 @@ A_{CFG} = \{ \langle M,w\rangle : \mbox{$M$ is a CFG that accepts $w$}\}
 Proof?
 
 \pause
-
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item Given input $\langle M,w\rangle$:
   \begin{itemize}
@@ -348,7 +412,7 @@ Proof?
   \item There are a finite number of these, so it must terminate.
   \item If any derivation yields $w$, accept, else reject.
   \end{itemize}
-\end{itemize}
+\end{itemize}}}
 \end{frame}
 
 
@@ -428,13 +492,14 @@ A_{TM} = \{ \langle M,w\rangle : \mbox{$M$ is a TM that accepts $w$}\}
 
 Proof?
 \pause
+\fbox{\parbox{\textwidth}{
 \begin{itemize}
 \item Given input $\langle M,w\rangle$ :
   \begin{itemize}
   \item Simulate the operation of $M$ on $w$.
   \item If this terminates with accept, accept.
   \end{itemize}
-\end{itemize}
+\end{itemize}}}
       
 
 \end{frame}
@@ -836,7 +901,7 @@ Note: there are about $10^{80}$ atoms in the universe!
 \end{frame}
 
 
-\bfr{Proof Busy Beaver function is not enumerable}
+\bfr{Proof Busy Beaver function is not computable}
 
 Proof by contradiction.
 
