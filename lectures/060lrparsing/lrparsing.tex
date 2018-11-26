@@ -917,4 +917,35 @@ $A\ar a$\\$B\ar b$\\$C\ar c$
 \end{itemize}
 \end{frame}
     
+\sect{Non-LR language}
+
+\begin{columns}
+  \column{0.5\textwidth}
+Palindromes:
+\[  S \rightarrow \epsilon \mid a \mid b \mid aSa \mid bSb \]
+
+\begin{itemize}
+\item We never know where the middle is.
+\item We cannot know when to stop shifting and start reducing.
+\end{itemize}
+  \column{0.5\textwidth}
+\begin{tabular}{lr|l}
+  Stack & Input & Rule \\\hline
+  \$ & aababaa\$ & Shift \\
+  \$ a& ababaa\$ & Shift \\
+  \$ aa& babaa\$ & Shift \\
+  \$ aab& abaa\$ & Shift \\
+  \$ aaba& baa\$ & $S\rightarrow a$  {\color{blue} ???}\\
+  \$ aabS & baa\$ & Shift \\
+  \$ aabSb & aa\$ & $S\rightarrow bSb$\\
+  \$ aaS & aa\$ & Shift \\
+  \$ aaSa & a\$ & $S\rightarrow aSa$\\
+  \$ aS & a\$ & Shift \\
+  \$ aSa & \$ & $S\rightarrow aSa$\\
+  \$ S & \$ & Accept
+\end{tabular}  
+\end{columns}
+\end{frame}
+
+
 \end{document}

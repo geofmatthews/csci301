@@ -24,3 +24,4 @@
 \beamer@sectionintoc {22}{LR(k) languages, Knuth's theorem}{23}{0}{22}
 \beamer@sectionintoc {23}{LR parsing exercises}{24}{0}{23}
 \beamer@sectionintoc {24}{Lex and Yacc Style Parsers}{25}{0}{24}
+\beamer@sectionintoc {25}{Non-LR language}{26}{0}{25}
