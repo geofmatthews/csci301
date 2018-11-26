@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  20 NOV 2018 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  26 NOV 2018 07:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -815,6 +815,49 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \child@list=\toks46
 \root@node=\toks47
 ))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen276
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2008/07/14 v3.0.1a (rcs-revision 1.3)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box60
+\pgfnodeparttwobox=\box61
+\pgfnodepartthreebox=\box62
+\pgfnodepartfourbox=\box63
+\pgfnodeparttwentybox=\box64
+\pgfnodepartnineteenbox=\box65
+\pgfnodeparteighteenbox=\box66
+\pgfnodepartseventeenbox=\box67
+\pgfnodepartsixteenbox=\box68
+\pgfnodepartfifteenbox=\box69
+\pgfnodepartfourteenbox=\box70
+\pgfnodepartthirteenbox=\box71
+\pgfnodeparttwelvebox=\box72
+\pgfnodepartelevenbox=\box73
+\pgfnodeparttenbox=\box74
+\pgfnodepartninebox=\box75
+\pgfnodeparteightbox=\box76
+\pgfnodepartsevenbox=\box77
+\pgfnodepartsixbox=\box78
+\pgfnodepartfivebox=\box79
+)))
 \c@theo=\count168
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
@@ -826,7 +869,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count169
-\U@D=\dimen276
+\U@D=\dimen277
 LaTeX Info: Redefining \textlatin on input line 1448.
 )
 \l@canadian = a dialect from \language\l@american 
@@ -843,20 +886,20 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 )) (./lrparsing.aux)
 \openout1 = `lrparsing.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -895,13 +938,13 @@ LaTeX Font Info:    ... okay on input line 101.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count170
-\scratchdimen=\dimen277
-\scratchbox=\box60
+\scratchdimen=\dimen278
+\scratchbox=\box80
 \nofMPsegments=\count171
 \nofMParguments=\count172
 \everyMPshowfont=\toks50
 \MPscratchCnt=\count173
-\MPscratchDim=\dimen278
+\MPscratchDim=\dimen279
 \MPnumerator=\count174
 \makeMPintoPDFobject=\count175
 \everyMPtoPDFconversion=\toks51
@@ -921,8 +964,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 101.
+\AtBeginShipoutBox=\box81
+Package hyperref Info: Link coloring OFF on input line 131.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -932,56 +975,56 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count176
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \nameref on input line 131.
 
 (./lrparsing.out) (./lrparsing.out)
 \@outlinefile=\write6
 \openout6 = `lrparsing.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 101.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 131.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 101.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 131.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 101.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 101.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 101.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 101.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 101.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 101.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 101.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 101.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 101.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 101.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 131.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 101.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 101.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 131.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 101.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 131.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 101.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 101.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 101.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 101.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 101.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 101.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 131.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1007,11 +1050,11 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 101.
+LaTeX Info: Redefining \includegraphics on input line 131.
  (./lrparsing.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 105.
+(Font)              size <5> substituted on input line 135.
 
 [1
 
@@ -1039,11 +1082,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 206.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 206.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1052,11 +1095,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 213.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 183.
+(hyperref)                removing `math shift' on input line 213.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1065,11 +1108,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 234.
+(hyperref)                removing `math shift' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 234.
+(hyperref)                removing `math shift' on input line 264.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1083,11 +1126,11 @@ Overfull \hbox (1.01038pt too wide) in paragraph at lines 30--47
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 299.
+(hyperref)                removing `math shift' on input line 329.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 299.
+(hyperref)                removing `math shift' on input line 329.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1116,72 +1159,50 @@ Overfull \hbox (10.3561pt too wide) in paragraph at lines 21--39
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 449.
+(hyperref)                removing `math shift' on input line 479.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 449.
+(hyperref)                removing `math shift' on input line 479.
 
 \openout4 = `lrparsing.vrb'.
 
-(./lrparsing.vrb <figures/simplelrtree.png, id=364, 228.855pt x 297.11pt>
-File: figures/simplelrtree.png Graphic file (type png)
+(./lrparsing.vrb) [10
 
-<use figures/simplelrtree.png>
-Package pdftex.def Info: figures/simplelrtree.png used on input line 9.
-(pdftex.def)             Requested size: 57.21361pt x 74.27731pt.
-
-<figures/simplelrfsa.png, id=365, 525.965pt x 393.47pt>
-File: figures/simplelrfsa.png Graphic file (type png)
-
-<use figures/simplelrfsa.png>
-Package pdftex.def Info: figures/simplelrfsa.png used on input line 28.
-(pdftex.def)             Requested size: 131.49092pt x 98.36725pt.
-) [10
-
- <./figures/simplelrtree.png> <./figures/simplelrfsa.png>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 484.
+(hyperref)                removing `math shift' on input line 517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 484.
+(hyperref)                removing `math shift' on input line 517.
 
 \openout4 = `lrparsing.vrb'.
 
 (./lrparsing.vrb
-File: figures/simplelrtree.png Graphic file (type png)
- <use figures/simplelrtree.png>
-Package pdftex.def Info: figures/simplelrtree.png used on input line 10.
-(pdftex.def)             Requested size: 57.21361pt x 74.27731pt.
-
-Overfull \hbox (15.63806pt too wide) in paragraph at lines 32--41
+Overfull \hbox (15.63806pt too wide) in paragraph at lines 33--42
 [][]  
  []
 
-File: figures/simplelrfsa.png Graphic file (type png)
-<use figures/simplelrfsa.png>
-Package pdftex.def Info: figures/simplelrfsa.png used on input line 43.
-(pdftex.def)             Requested size: 131.49092pt x 98.36725pt.
 ) [11
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 532.
+(hyperref)                removing `math shift' on input line 567.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 532.
+(hyperref)                removing `\rightarrow' on input line 567.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 532.
+(hyperref)                removing `math shift' on input line 567.
 
 \openout4 = `lrparsing.vrb'.
 
-(./lrparsing.vrb <figures/lrparseexamples01.png, id=417, 819.06pt x 224.84pt>
+(./lrparsing.vrb <figures/lrparseexamples01.png, id=415, 819.06pt x 224.84pt>
 File: figures/lrparseexamples01.png Graphic file (type png)
 
 <use figures/lrparseexamples01.png>
@@ -1192,19 +1213,19 @@ Package pdftex.def Info: figures/lrparseexamples01.png used on input line 25.
  <./figures/lrparseexamples01.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 561.
+(hyperref)                removing `math shift' on input line 596.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 561.
+(hyperref)                removing `\rightarrow' on input line 596.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 561.
+(hyperref)                removing `math shift' on input line 596.
 
 \openout4 = `lrparsing.vrb'.
 
-(./lrparsing.vrb <figures/lrparseexamples02.png, id=443, 819.06pt x 333.245pt>
+(./lrparsing.vrb <figures/lrparseexamples02.png, id=441, 819.06pt x 333.245pt>
 File: figures/lrparseexamples02.png Graphic file (type png)
 
 <use figures/lrparseexamples02.png>
@@ -1215,15 +1236,15 @@ Package pdftex.def Info: figures/lrparseexamples02.png used on input line 25.
  <./figures/lrparseexamples02.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 589.
+(hyperref)                removing `math shift' on input line 624.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rightarrow' on input line 589.
+(hyperref)                removing `\rightarrow' on input line 624.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 589.
+(hyperref)                removing `math shift' on input line 624.
 
 \openout4 = `lrparsing.vrb'.
 
@@ -1232,14 +1253,14 @@ Overfull \hbox (38.71217pt too wide) in paragraph at lines 17--30
 [][] 
  []
 
-<figures/lrparseexamples03.png, id=470, 1585.925pt x 827.09pt>
+<figures/lrparseexamples03.png, id=468, 1585.925pt x 827.09pt>
 File: figures/lrparseexamples03.png Graphic file (type png)
 
 <use figures/lrparseexamples03.png>
 Package pdftex.def Info: figures/lrparseexamples03.png used on input line 33.
 (pdftex.def)             Requested size: 237.87848pt x 124.05814pt.
 )
-Overfull \vbox (5.58495pt too high) detected at line 624
+Overfull \vbox (5.58495pt too high) detected at line 659
  []
 
 [14
@@ -1248,7 +1269,7 @@ Overfull \vbox (5.58495pt too high) detected at line 624
 \openout4 = `lrparsing.vrb'.
 
  (./lrparsing.vrb
-<figures/accdtree.png, id=497, 369.38pt x 517.935pt>
+<figures/accdtree.png, id=495, 369.38pt x 517.935pt>
 File: figures/accdtree.png Graphic file (type png)
 
 <use figures/accdtree.png>
@@ -1260,7 +1281,7 @@ Package pdftex.def Info: figures/accdtree.png used on input line 12.
 \openout4 = `lrparsing.vrb'.
 
  (./lrparsing.vrb
-<figures/bccdtree.png, id=523, 453.695pt x 517.935pt>
+<figures/bccdtree.png, id=521, 453.695pt x 517.935pt>
 File: figures/bccdtree.png Graphic file (type png)
 
 <use figures/bccdtree.png>
@@ -1287,7 +1308,7 @@ Overfull \hbox (1.725pt too wide) in paragraph at lines 14--27
 ]
 \openout4 = `lrparsing.vrb'.
 
- (./lrparsing.vrb <figures/lrdfa.png, id=600, 722.7pt x 650.43pt>
+ (./lrparsing.vrb <figures/lrdfa.png, id=598, 722.7pt x 650.43pt>
 File: figures/lrdfa.png Graphic file (type png)
 
 <use figures/lrdfa.png>
@@ -1354,11 +1375,11 @@ Package pdftex.def Info: figures/lrdfa.png used on input line 25.
 \tf@snm=\write9
 \openout9 = `lrparsing.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 885.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 885.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 920.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 920.
  (./lrparsing.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 885.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 885.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 920.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 920.
 Package rerunfilecheck Info: File `lrparsing.out' has not changed.
 (rerunfilecheck)             Checksum: 01495FFDC3F31DC7C7CF1125CE287D21;1414.
 
@@ -1366,16 +1387,16 @@ Package rerunfilecheck Info: File `lrparsing.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 885.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 920.
  ) 
 Here is how much of TeX's memory you used:
- 21377 strings out of 494827
- 414454 string characters out of 6176975
- 514314 words of memory out of 5000000
- 24075 multiletter control sequences out of 15000+600000
+ 22665 strings out of 494827
+ 452709 string characters out of 6176975
+ 562856 words of memory out of 5000000
+ 25349 multiletter control sequences out of 15000+600000
  18071 words of font info for 68 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 52i,14n,62p,406b,1117s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,14n,73p,406b,1119s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
@@ -1392,10 +1413,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on lrparsing.pdf (25 pages, 317287 bytes).
+Output written on lrparsing.pdf (25 pages, 304535 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
+ 853 PDF objects out of 1000 (max. 8388607)
  789 compressed objects within 8 object streams
  75 named destinations out of 1000 (max. 500000)
- 275 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
 

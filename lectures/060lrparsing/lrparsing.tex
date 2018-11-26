@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikz-qtree}
+\usetikzlibrary{arrows,automata}
 
 \newcommand{\sect}[1]{
 \section{#1}
@@ -31,7 +32,7 @@
 \newcommand{\eee}{\end{eqnarray*}}
 \newcommand{\mt}{\ensuremath{\epsilon}}
 
-\newcommand{\deriv}[1]{\ensuremath{\stackrel{#1}{\Longrightarrow}}}
+\newcommand{\deriv}[1]{\ensuremath{\stackrel{{\color{blue} #1}}{\Longrightarrow}}}
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\li}{\item}
 \newcommand{\ei}{\end{itemize}}
@@ -50,6 +51,35 @@ Stack & Input & Rule & Peek\\\hline
 \end{tabular}
 }
 
+\newcommand{\simplelrfsa}{
+\begin{tikzpicture}[->,>=latex,thick,node distance=3cm,auto,
+  every node/.style={scale=0.5}]
+  \node[state,initial] (0) {0};
+  \node[state,accepting] (1) [above right of=0] {1};
+  \node[state] (2) [right of=0] {2};
+  \node[state,accepting] (5) [below right of=0] {5};
+  \node[state,accepting] (3) [above right of=2] {3};
+  \node[state,accepting] (4) [below right of=2] {4};
+  \path (0) edge node {a} (1);
+  \path (0) edge node {A} (2);
+  \path (0) edge node {S} (5);
+  \path (2) edge node {b} (3);
+  \path (2) edge node {B} (4);
+\end{tikzpicture}
+}
+\newcommand{\simplelrtree}{
+\begin{tikzpicture}
+  \Tree
+      [.S
+        [.A
+          [.a ]
+        ]
+        [.B
+          [.b ]
+        ]
+      ]
+\end{tikzpicture}
+}
 
 \mode<presentation>
 {
@@ -454,7 +484,8 @@ S \arr AB\\
 A \arr a\\
 B \arr b
 \eee
-\myfig{simplelrtree}
+%\myfig{simplelrtree}
+\simplelrtree
 
 \bigskip
 
@@ -473,7 +504,9 @@ Stack & Input & Rule \\\hline
 \end{tabular}
 
 \bigskip
-\myfig{simplelrfsa}
+%\myfig{simplelrfsa}
+\simplelrfsa
+
 \end{columns}
 \bigskip
 
@@ -490,7 +523,8 @@ A \arr a\\
 B \arr b
 \eee
 \column{0.25\textwidth}
-\myfig{simplelrtree}
+%\myfig{simplelrtree}
+\simplelrtree
 
 \column{0.5\textwidth}
 
@@ -523,7 +557,8 @@ Stack & Input & Rule \\\hline
 \end{tabular}
 \column{0.5\textwidth}
 
-\myfig{simplelrfsa}
+%\myfig{simplelrfsa}
+\simplelrfsa
 \end{columns}
 
 \end{frame}
