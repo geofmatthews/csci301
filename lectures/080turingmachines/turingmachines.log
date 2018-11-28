@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  26 NOV 2018 10:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.11.13)  28 NOV 2018 07:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1363,10 +1363,12 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 20--416
 ] (./turingmachines.vrb) [40
 
 ]
+(./turingmachines.vrb) [41
+
+]
 \openout4 = `turingmachines.vrb'.
 
-
-(./turingmachines.vrb
+ (./turingmachines.vrb
 Overfull \hbox (3.0371pt too wide) detected at line 19
 []
  []
@@ -1376,104 +1378,99 @@ Overfull \hbox (10.49016pt too wide) in paragraph at lines 19--20
 [][]  
  []
 
-) [41
+) [42
 
 ]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 6--16
-[]  
- []
-
-) [42
-
-] (./turingmachines.vrb
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 6--16
 []  
  []
 
 ) [43
 
-]
-\openout4 = `turingmachines.vrb'.
+] (./turingmachines.vrb
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 6--16
+[]  
+ []
 
- (./turingmachines.vrb) [44
-
-] (./turingmachines.vrb) [45
-
-]
-(./turingmachines.vrb) [46
+) [44
 
 ]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [47
+ (./turingmachines.vrb) [45
+
+] (./turingmachines.vrb) [46
+
+]
+(./turingmachines.vrb) [47
+
+]
+\openout4 = `turingmachines.vrb'.
+
+ (./turingmachines.vrb) [48
 
 ] (./turingmachines.vrb)
-[48
-
-] (./turingmachines.vrb) [49
+[49
 
 ] (./turingmachines.vrb) [50
 
+] (./turingmachines.vrb) [51
+
 ]
 \openout4 = `turingmachines.vrb'.
 
 
-(./turingmachines.vrb) [51
+(./turingmachines.vrb) [52
 
-] (./turingmachines.vrb) [52
+] (./turingmachines.vrb) [53
 
 ] (./turingmachines.vrb)
-[53
+[54
 
-] (./turingmachines.vrb) [54
-
-]
-\openout4 = `turingmachines.vrb'.
-
- (./turingmachines.vrb) [55
+] (./turingmachines.vrb) [55
 
 ]
 \openout4 = `turingmachines.vrb'.
 
+ (./turingmachines.vrb) [56
 
-(./turingmachines.vrb) [56
+]
+\openout4 = `turingmachines.vrb'.
+
+
+(./turingmachines.vrb) [57
 
 ]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb
-<Hilbert.jpg, id=1461, 331.2375pt x 448.67625pt>
+<Hilbert.jpg, id=1486, 331.2375pt x 448.67625pt>
 File: Hilbert.jpg Graphic file (type jpg)
  <use Hilbert.jpg>
 Package pdftex.def Info: Hilbert.jpg used on input line 14.
 (pdftex.def)             Requested size: 82.80916pt x 112.16878pt.
-) [57
+) [58
 
  <./Hilbert.jpg>]
-\openout4 = `turingmachines.vrb'.
-
- (./turingmachines.vrb) [58
-
-]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb) [59
 
 ]
-(./turingmachines.vrb) [60
-
-] (./turingmachines.vrb) [61
-
-] (./turingmachines.vrb)
-[62
-
-]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [63
+ (./turingmachines.vrb) [60
+
+]
+(./turingmachines.vrb) [61
+
+] (./turingmachines.vrb) [62
+
+] (./turingmachines.vrb)
+[63
 
 ]
 \openout4 = `turingmachines.vrb'.
@@ -1483,24 +1480,24 @@ Package pdftex.def Info: Hilbert.jpg used on input line 14.
 ]
 \openout4 = `turingmachines.vrb'.
 
-
-(./turingmachines.vrb) [65
+ (./turingmachines.vrb) [65
 
 ]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [66
+
+(./turingmachines.vrb) [66
+
+]
+\openout4 = `turingmachines.vrb'.
+
+ (./turingmachines.vrb) [67
 
 ]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb)
-[67
-
-]
-\openout4 = `turingmachines.vrb'.
-
- (./turingmachines.vrb) [68
+[68
 
 ]
 \openout4 = `turingmachines.vrb'.
@@ -1510,24 +1507,24 @@ Package pdftex.def Info: Hilbert.jpg used on input line 14.
 ]
 \openout4 = `turingmachines.vrb'.
 
-
-(./turingmachines.vrb) [70
+ (./turingmachines.vrb) [70
 
 ]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [71
+
+(./turingmachines.vrb) [71
+
+]
+\openout4 = `turingmachines.vrb'.
+
+ (./turingmachines.vrb) [72
 
 ]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb)
-[72
-
-]
-\openout4 = `turingmachines.vrb'.
-
- (./turingmachines.vrb) [73
+[73
 
 ]
 \openout4 = `turingmachines.vrb'.
@@ -1537,24 +1534,24 @@ Package pdftex.def Info: Hilbert.jpg used on input line 14.
 ]
 \openout4 = `turingmachines.vrb'.
 
-
-(./turingmachines.vrb) [75
+ (./turingmachines.vrb) [75
 
 ]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [76
+
+(./turingmachines.vrb) [76
+
+]
+\openout4 = `turingmachines.vrb'.
+
+ (./turingmachines.vrb) [77
 
 ]
 \openout4 = `turingmachines.vrb'.
 
  (./turingmachines.vrb)
-[77
-
-]
-\openout4 = `turingmachines.vrb'.
-
- (./turingmachines.vrb) [78
+[78
 
 ]
 \openout4 = `turingmachines.vrb'.
@@ -1562,15 +1559,20 @@ Package pdftex.def Info: Hilbert.jpg used on input line 14.
  (./turingmachines.vrb) [79
 
 ]
-(./turingmachines.vrb) [80
+\openout4 = `turingmachines.vrb'.
+
+ (./turingmachines.vrb) [80
+
+]
+(./turingmachines.vrb) [81
 
 ]
 \openout4 = `turingmachines.vrb'.
 
- (./turingmachines.vrb) [81
+ (./turingmachines.vrb) [82
 
 ] (./turingmachines.vrb)
-[82
+[83
 
 ]
 \tf@nav=\write7
@@ -1582,11 +1584,11 @@ Package pdftex.def Info: Hilbert.jpg used on input line 14.
 \tf@snm=\write9
 \openout9 = `turingmachines.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1113.
  (./turingmachines.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1113.
 
 Package rerunfilecheck Info: File `turingmachines.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1595,12 +1597,12 @@ Package rerunfilecheck Info: File `turingmachines.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1113.
  ) 
 Here is how much of TeX's memory you used:
- 21621 strings out of 494827
- 435257 string characters out of 6176975
- 510946 words of memory out of 5000000
+ 21625 strings out of 494827
+ 435314 string characters out of 6176975
+ 510945 words of memory out of 5000000
  24126 multiletter control sequences out of 15000+600000
  20810 words of font info for 82 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
@@ -1626,10 +1628,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist
 /type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on turingmachines.pdf (82 pages, 2562070 bytes).
+Output written on turingmachines.pdf (83 pages, 2564230 bytes).
 PDF statistics:
- 2230 PDF objects out of 2487 (max. 8388607)
- 2093 compressed objects within 21 object streams
- 165 named destinations out of 1000 (max. 500000)
+ 2256 PDF objects out of 2487 (max. 8388607)
+ 2117 compressed objects within 22 object streams
+ 167 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
