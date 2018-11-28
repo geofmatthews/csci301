@@ -1,4 +1,4 @@
-\frametitle{ The language $A_{TM}$ is not decidable: EASY PROOF! }
+\frametitle{The language $A_{TM}$ is not decidable: EASY PROOF!}
 \[
 A_{TM} = \{ \langle M,w\rangle : \mbox{$M$ is a TM that accepts $w$}\}
 \]

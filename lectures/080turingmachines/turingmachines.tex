@@ -21,7 +21,7 @@
 \newcommand{\ec}{\end{columns}}
 \newcommand{\cc}[1]{\column{#1\textwidth}}
 
-\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{ #1 }}}
+\newcommand{\bfr}[1]{\begin{frame}[fragile]\frametitle{{#1}}}
 \newcommand{\efr}{\end{frame}}
 
 \newcommand{\cola}[1]{\begin{columns}\begin{column}{#1\textwidth}}
@@ -463,17 +463,19 @@ Proof?\pause\ By contradiction.
   \item
     Machine $H$ that decides $A_{TM}$ can fill in this table:
 
+    \newcommand{\mybf}{\bf\color{blue}}
+    
 \fbox{\parbox{4in}{\[
 \begin{array}{cccccccc}
  &  \langle M_0 \rangle &  \langle M_1 \rangle &  \langle M_2 \rangle
  &  \langle M_3 \rangle &  \langle M_4 \rangle &  \langle M_5 \rangle
   & ...\\
-  M_0 & \bf accept & accept & accept & reject & accept & reject & ...\\
-  M_1 & accept & \bf reject & accept & accept & accept & reject & ...\\
-  M_2 & accept & reject & \bf accept & accept & accept & reject & ...\\
-  M_3 & accept & accept & reject & \bf reject & accept & accept & ...\\
-  M_4 & reject & accept & accept & reject & \bf accept & accept & ...\\
-  M_5 & reject & reject & accept & accept & accept & \bf reject & ...\\
+  M_0 & \mybf accept & accept & accept & reject & accept & reject & ...\\
+  M_1 & accept & \mybf reject & accept & accept & accept & reject & ...\\
+  M_2 & accept & reject & \mybf accept & accept & accept & reject & ...\\
+  M_3 & accept & accept & reject & \mybf reject & accept & accept & ...\\
+  M_4 & reject & accept & accept & reject & \mybf accept & accept & ...\\
+  M_5 & reject & reject & accept & accept & accept & \mybf reject & ...\\
   ... &  ... &  ... &  ... &  ... &  ... &  ... &  ... 
 \end{array}
 \]}}
@@ -531,6 +533,10 @@ language.  Construct the following TM, $Q$:
 \begin{itemize}
 \item
   What happens if we run $Q$ on itself?
+\item If $H$ says   $Q(\langle Q\rangle) $ terminates,
+    $Q(\langle Q\rangle) $ does not terminate.
+\item If $H$ says   $Q(\langle Q\rangle) $ does not terminate,
+    $Q(\langle Q\rangle) $  terminates.
 \item
   $Q(\langle Q\rangle) $
   terminates iff   $Q(\langle Q\rangle) $ does not terminate.
@@ -630,14 +636,24 @@ Then $\mathcal{P}$ is undecidable.
 \begin{enumerate}
   \item $\{\langle M\rangle\mid \mbox{$M$ accepts only inputs in the language $a^*b^*$}\}$
 \item  $\{\langle M\rangle\mid \mbox{$M$ accepts only input of length $n^2$}\}$
-\item  $\{\langle M\rangle\mid \mbox{$M$ accepts only input of length $k$}\}$
+\item  $\{\langle M\rangle\mid \mbox{$M$ accepts only input of length $10$}\}$
 \item $\{\langle  M\rangle\mid \mbox{$M$ accepts all inputs}\}$
-\item $\{\langle  M\rangle\mid \mbox{$M$ does not accept all inputs}\}$
-\item $\{\langle  M\rangle\mid \mbox{$M$ accepts some input}\}$
-\item $\{\langle  M\rangle\mid \mbox{$M$ does not accept any input}\}$
+\item $\{\langle  M\rangle\mid \mbox{$M$ rejects all inputs}\}$
 \end{enumerate}
 
 None of these is decideable.
+
+\pause
+
+\begin{itemize}
+\item
+  Note that it is easy to find a machine in each of these sets.
+\item
+  It is also easy to find a machine not in each of these sets.
+\item
+  What {\em cannot} be done is find a machine that will
+  decide if {\em another} machine is in one of these sets.
+\end{itemize}
 
 \end{frame}
 
@@ -695,7 +711,12 @@ Where the top and bottom rows are both: bbaabbbaa
   Turing machine which, given $n$ on its initial tape, terminates
   with the $n$th digit of the decimal expansion of that
   number encoded on its tape.
-  \pause
+  \begin{itemize}
+\item $\pi$ and $\sqrt{2}$ are computable, even though their decimal
+  expansions never end.
+  \end{itemize}
+
+ \pause
 \item
   All possible Turing machines can be enumerated, since each is
   represented by a unique string.  Let the $i$th Turing machine be
